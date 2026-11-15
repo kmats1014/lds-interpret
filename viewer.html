@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDS Interpret — 参加者用リアルタイム字幕</title>
+  <script src="./mqtt.min.js"></script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --elevated: #f8fafc;
+      --primary: #2563eb;
+      --green: #16a34a;
+      --font-scale: 1.25rem;
+    }
+
+    body[data-theme="dark"] {
+      --bg: #090d16;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --elevated: #111827;
+      --primary: #3b82f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--elevated);
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .brand-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.74rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f59e0b;
+    }
+
+    .status-badge.connected .status-dot {
+      background: var(--green);
+      box-shadow: 0 0 6px rgba(22, 163, 74, 0.6);
+    }
+
+    .status-badge.connected {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .controls-group {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .select-input {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .btn-icon {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-icon:hover {
+      background: var(--elevated);
+    }
+
+    .viewer-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.25rem 1.5rem 4rem;
+      position: relative;
+    }
+
+    .stream-text {
+      font-size: var(--font-scale);
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .placeholder-hint {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .chunk-new {
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.2; transform: translateY(2px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-scroll-bottom {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.5rem 1.15rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      z-index: 20;
+    }
+
+    .btn-scroll-bottom[hidden] {
+      display: none;
+    }
+
+    .connecting-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.5rem;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .connecting-overlay[hidden] {
+      display: none;
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="viewer-header">
+    <div class="brand-title">
+      <span>📖</span>
+      <span id="headerTitle">LDS Interpret 字幕</span>
+    </div>
+
+    <div class="controls-group">
+      <select id="viewerLangSelect" class="select-input" aria-label="字幕言語の選択">
+        <option value="en">🇺🇸 英語 (English)</option>
+        <option value="tl">🇵🇭 タガログ語 (Tagalog)</option>
+        <option value="id">🇮🇩 インドネシア語</option>
+        <option value="ja">🇯🇵 日本語</option>
+      </select>
+
+      <button type="button" id="fontDecBtn" class="btn-icon" title="文字を小さく">A-</button>
+      <button type="button" id="fontIncBtn" class="btn-icon" title="文字を大きく">A+</button>
+      <button type="button" id="themeToggleBtn" class="btn-icon" title="ダーク / ライト切り替え">🌓</button>
+
+      <div class="status-badge" id="statusBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">接続中...</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="viewer-content" id="viewerScrollContainer">
+    <div class="connecting-overlay" id="connectingOverlay">
+      <div class="spinner" id="connectingSpinner"></div>
+      <p id="connectingMessage" style="font-size: 0.95rem; font-weight: 600;">ルーム「<span id="overlayRoomId"></span>」に接続中...</p>
+      <p id="connectingSub" class="field-hint" style="color: var(--text-muted); font-size: 0.82rem; max-width: 340px; line-height: 1.5;">
+        通訳ホスト（パソコン側）の準備を待機しています。<br>配信が始まると自動的に字幕が流れます。
+      </p>
+      <button type="button" id="manualRetryBtn" class="btn-icon" style="margin-top: 0.6rem; padding: 0.4rem 1.1rem; border-radius: 999px; background: var(--primary); color: #fff; border: none; cursor: pointer; display: none;">
+        🔄 今すぐ再接続を試す
+      </button>
+    </div>
+
+    <div class="stream-text" id="streamText">
+      <div class="placeholder-hint" id="streamPlaceholder" style="text-align: center; margin: 2rem auto; max-width: 440px; padding: 1.5rem; border: 1px dashed var(--border); border-radius: 12px; background: var(--elevated);">
+        <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem;" id="placeholderStatusTitle">⏳ 通訳ホストの配信開始を待機中</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;" id="placeholderStatusDesc">
+          通訳アプリ（パソコン側）で通訳が開始されると、自動的にこの画面にリアルタイム字幕が表示されます。<br>
+          この画面を開いたままお待ちください。
+        </p>
+        <button type="button" id="placeholderRetryBtn" class="btn-icon" style="padding: 0.4rem 1rem; border-radius: 999px; background: var(--primary); color: #fff; border: none; font-size: 0.82rem; cursor: pointer;">
+          🔄 今すぐ再接続を試す
+        </button>
+      </div>
+      <span id="streamCommitted"></span>
+      <span id="streamInterim" style="opacity: 0.65;"></span>
+    </div>
+
+    <button type="button" id="scrollToLatestBtn" class="btn-scroll-bottom" hidden>
+      ⬇ 最新の字幕へ戻る
+    </button>
+  </main>
+
+  <script type="module">
+    const SUPPORTED_LANGS = {
+      en: { code: 'en', flag: '🇺🇸', name: '英語 (English)' },
+      tl: { code: 'tl', flag: '🇵🇭', name: 'タガログ語 (Tagalog)' },
+      id: { code: 'id', flag: '🇮🇩', name: 'インドネシア語 (Indonesian)' },
+      ja: { code: 'ja', flag: '🇯🇵', name: '日本語' },
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const roomId = urlParams.get('room') || 'lds-live';
+    let currentLang = urlParams.get('lang') || 'en';
+
+    const headerTitle = document.getElementById('headerTitle');
+    const viewerLangSelect = document.getElementById('viewerLangSelect');
+    const statusBadge = document.getElementById('statusBadge');
+    const statusText = document.getElementById('statusText');
+    const connectingOverlay = document.getElementById('connectingOverlay');
+    const connectingMessage = document.getElementById('connectingMessage');
+    const streamScroll = document.getElementById('viewerScrollContainer');
+    const streamPlaceholder = document.getElementById('streamPlaceholder');
+    const streamCommitted = document.getElementById('streamCommitted');
+    const streamInterim = document.getElementById('streamInterim');
+    const scrollToLatestBtn = document.getElementById('scrollToLatestBtn');
+    const fontIncBtn = document.getElementById('fontIncBtn');
+    const fontDecBtn = document.getElementById('fontDecBtn');
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+    let historyRecords = [];
+    let autoScroll = true;
+    let fontRem = 1.25;
+
+    viewerLangSelect.value = currentLang;
+
+    // 言語切替
+    viewerLangSelect.addEventListener('change', () => {
+      currentLang = viewerLangSelect.value;
+      renderCurrentLangStream();
+    });
+
+    // 文字サイズ調整
+    fontIncBtn.addEventListener('click', () => {
+      fontRem = Math.min(2.5, fontRem + 0.15);
+      document.documentElement.style.setProperty('--font-scale', `${fontRem}rem`);
+    });
+    fontDecBtn.addEventListener('click', () => {
+      fontRem = Math.max(0.85, fontRem - 0.15);
+      document.documentElement.style.setProperty('--font-scale', `${fontRem}rem`);
+    });
+
+    // テーマ切替
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = document.body.dataset.theme === 'dark';
+      document.body.dataset.theme = isDark ? 'light' : 'dark';
+    });
+
+    // スクロール検知
+    streamScroll.addEventListener('scroll', () => {
+      const distance = streamScroll.scrollHeight - streamScroll.scrollTop - streamScroll.clientHeight;
+      if (distance > 60) {
+        autoScroll = false;
+        scrollToLatestBtn.hidden = false;
+      } else {
+        autoScroll = true;
+        scrollToLatestBtn.hidden = true;
+      }
+    });
+
+    scrollToLatestBtn.addEventListener('click', () => {
+      autoScroll = true;
+      scrollToLatestBtn.hidden = true;
+      scrollToBottom();
+    });
+
+    function scrollToBottom() {
+      if (autoScroll) {
+        requestAnimationFrame(() => {
+          streamScroll.scrollTo({ top: streamScroll.scrollHeight, behavior: 'smooth' });
+        });
+      }
+    }
+
+    function renderCurrentLangStream() {
+      streamPlaceholder.style.display = historyRecords.length > 0 ? 'none' : 'inline';
+      streamCommitted.innerHTML = '';
+      streamInterim.textContent = '';
+
+      for (const entry of historyRecords) {
+        if (entry.isParagraphBreak) {
+          streamCommitted.appendChild(document.createTextNode('\n\n'));
+          continue;
+        }
+
+        const text =
+          entry.translations?.[currentLang] ||
+          (currentLang === 'ja' ? entry.sourceText || entry.ja : entry.translations?.en || entry.en || '');
+
+        if (text) {
+          const span = document.createElement('span');
+          span.className = 'chunk-new';
+          span.textContent = text + (currentLang === 'ja' ? '' : ' ');
+          streamCommitted.appendChild(span);
+        }
+      }
+      scrollToBottom();
+    }
+
+    // MQTT over Secure WebSocket (WSS) によるホスト接続（携帯4G/5G・教会Wi-FiでもNAT越え不要で確実接続）
+    const topicPrefix = `lds-interpret/room/${roomId}`;
+    const streamTopic = `${topicPrefix}/stream`;
+    const presenceTopic = `${topicPrefix}/presence`;
+    const ctrlTopic = `${topicPrefix}/ctrl`;
+    const viewerClientId = `lds-viewer-${Math.random().toString(36).slice(2, 8)}`;
+
+    let mqttClient = null;
+    let hostOnline = false;
+    let connectTimeout = null;
+    let pingTimer = null;
+
+    const overlayRoomId = document.getElementById('overlayRoomId');
+    if (overlayRoomId) overlayRoomId.textContent = roomId;
+    const manualRetryBtn = document.getElementById('manualRetryBtn');
+    const placeholderRetryBtn = document.getElementById('placeholderRetryBtn');
+    const placeholderStatusTitle = document.getElementById('placeholderStatusTitle');
+    const placeholderStatusDesc = document.getElementById('placeholderStatusDesc');
+
+    function setStandbyUI(message, subMessage) {
+      if (placeholderStatusTitle && message) placeholderStatusTitle.textContent = message;
+      if (placeholderStatusDesc && subMessage) placeholderStatusDesc.innerHTML = subMessage;
+      statusBadge.className = 'status-badge';
+      statusText.textContent = '待機中 (ホスト準備待ち)';
+    }
+
+    function setConnectedUI() {
+      hostOnline = true;
+      clearTimeout(connectTimeout);
+      connectingOverlay.hidden = true;
+      statusBadge.className = 'status-badge connected';
+      statusText.textContent = '🟢 接続中 (リアルタイム受信)';
+      if (historyRecords.length === 0) {
+        if (placeholderStatusTitle) {
+          placeholderStatusTitle.textContent = '🟢 ホストに接続しました（通訳待機中）';
+        }
+        if (placeholderStatusDesc) {
+          placeholderStatusDesc.innerHTML = '通訳が話すと、ここにリアルタイムで字幕が流れ始めます...';
+        }
+        if (placeholderRetryBtn) {
+          placeholderRetryBtn.style.display = 'none';
+        }
+      }
+    }
+
+    function initViewerConnection() {
+      if (typeof mqtt === 'undefined') {
+        connectingOverlay.hidden = false;
+        connectingMessage.textContent = '⚠️ 通信ライブラリの読み込みに失敗しました';
+        document.getElementById('connectingSub').textContent = 'ネットワーク接続を確認し、ページを再読み込みしてください。';
+        manualRetryBtn.style.display = 'inline-block';
+        manualRetryBtn.textContent = '🔄 ページを再読み込み';
+        manualRetryBtn.onclick = () => window.location.reload();
+        return;
+      }
+
+      statusBadge.className = 'status-badge';
+      statusText.textContent = '接続中...';
+      connectingOverlay.hidden = false;
+      connectingMessage.textContent = `ルーム「${roomId}」に接続中...`;
+      manualRetryBtn.style.display = 'none';
+
+      // 4秒以内にホストの配信信号が来ない場合はオーバーレイを閉じ、待機画面を表示して操作可能にする
+      clearTimeout(connectTimeout);
+      connectTimeout = setTimeout(() => {
+        if (!hostOnline) {
+          connectingOverlay.hidden = true;
+          setStandbyUI(
+            '⏳ 通訳ホストの配信開始を待機中',
+            `ルーム「<b>${roomId}</b>」の通訳ホスト（パソコン側）を待機しています。<br>パソコン側で通訳アプリが開かれると自動的に接続されます。（※ホスト側の「参加者URL・QR発行」に表示されているルームIDと一致しているかもご確認ください）`
+          );
+        }
+      }, 4000);
+
+      try {
+        if (mqttClient) {
+          try { mqttClient.end(true); } catch {}
+        }
+
+        mqttClient = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
+          clientId: viewerClientId,
+          clean: true,
+          connectTimeout: 8000,
+          reconnectPeriod: 3000,
+          keepalive: 25,
+          timerVariant: 'native',
+        });
+
+        mqttClient.on('connect', () => {
+          mqttClient.subscribe([streamTopic, presenceTopic], { qos: 0 });
+          mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+
+          clearInterval(pingTimer);
+          pingTimer = setInterval(() => {
+            if (mqttClient && mqttClient.connected) {
+              mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'ping', clientId: viewerClientId }));
+            }
+          }, 20000);
+        });
+
+        mqttClient.on('message', (topic, payload) => {
+          try {
+            const msg = JSON.parse(payload.toString());
+            if (!msg) return;
+
+            if (topic === presenceTopic) {
+              if (msg.online) {
+                setConnectedUI();
+                mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+              } else {
+                hostOnline = false;
+                setStandbyUI(
+                  '⏳ 通訳ホストの配信開始を待機中',
+                  `ホスト（ルーム「<b>${roomId}</b>」）が終了または再起動中です。再開すると自動的に接続されます。`
+                );
+                if (placeholderRetryBtn) placeholderRetryBtn.style.display = 'inline-block';
+              }
+              return;
+            }
+
+            if (topic === streamTopic) {
+              if (!hostOnline) setConnectedUI();
+              if (!msg.type) return;
+
+              if (msg.type === 'history') {
+                if (msg.targetClient && msg.targetClient !== viewerClientId) return;
+                historyRecords = Array.isArray(msg.payload) ? msg.payload : [];
+                renderCurrentLangStream();
+              } else if (msg.type === 'new_segment') {
+                historyRecords.push(msg.payload);
+                streamPlaceholder.style.display = 'none';
+                streamInterim.textContent = '';
+
+                const text =
+                  msg.payload.translations?.[currentLang] ||
+                  (currentLang === 'ja' ? msg.payload.sourceText || msg.payload.ja : msg.payload.translations?.en || msg.payload.en || '');
+
+                if (text) {
+                  const span = document.createElement('span');
+                  span.className = 'chunk-new';
+                  span.textContent = text + (currentLang === 'ja' ? '' : ' ');
+                  streamCommitted.appendChild(span);
+                  scrollToBottom();
+                }
+              } else if (msg.type === 'streaming') {
+                if (msg.payload?.lang === currentLang) {
+                  streamPlaceholder.style.display = 'none';
+                  streamInterim.textContent = msg.payload.text || '';
+                  scrollToBottom();
+                }
+              } else if (msg.type === 'paragraph_break') {
+                streamCommitted.appendChild(document.createTextNode('\n\n'));
+                historyRecords.push({ isParagraphBreak: true });
+                scrollToBottom();
+              } else if (msg.type === 'clear') {
+                historyRecords = [];
+                renderCurrentLangStream();
+              }
+            }
+          } catch {}
+        });
+
+        mqttClient.on('reconnect', () => {
+          if (!hostOnline) {
+            statusBadge.className = 'status-badge';
+            statusText.textContent = '再接続中...';
+          }
+        });
+
+        mqttClient.on('error', (err) => {
+          console.warn('Viewer MQTT error:', err?.message || err);
+        });
+
+        window.addEventListener('beforeunload', () => {
+          if (mqttClient && mqttClient.connected) {
+            try {
+              mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'bye', clientId: viewerClientId }));
+              mqttClient.end(true);
+            } catch {}
+          }
+        });
+      } catch (err) {
+        console.error('Failed to init MQTT viewer:', err);
+      }
+    }
+
+    manualRetryBtn?.addEventListener('click', () => {
+      manualRetryBtn.textContent = '🔄 再試行中...';
+      if (mqttClient && mqttClient.connected) {
+        mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+      } else {
+        initViewerConnection();
+      }
+      setTimeout(() => { manualRetryBtn.textContent = '🔄 今すぐ再接続を試す'; }, 2000);
+    });
+
+    placeholderRetryBtn?.addEventListener('click', () => {
+      placeholderRetryBtn.textContent = '🔄 再試行中...';
+      if (mqttClient && mqttClient.connected) {
+        mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+      } else {
+        initViewerConnection();
+      }
+      setTimeout(() => { placeholderRetryBtn.textContent = '🔄 今すぐ再接続を試す'; }, 2000);
+    });
+
+    initViewerConnection();
+  </script>
+</body>
+</html>

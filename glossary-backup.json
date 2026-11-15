@@ -1,0 +1,3312 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-15T09:06:36.141Z",
+  "count": 296,
+  "terms": [
+    {
+      "id": "sermon-1794733590760-19",
+      "ja": "ティファナ神殿",
+      "en": "Tijuana Mexico Temple",
+      "category": "custom",
+      "reading": "てぃふぁなしんでん",
+      "variants": [],
+      "note": "メキシコ・ティファナにある神殿の固有名詞",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-18",
+      "ja": "ヒラマン書",
+      "en": "Helaman",
+      "category": "scripture",
+      "reading": "ひらまんしょ",
+      "variants": [],
+      "note": "モルモン書の書名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-17",
+      "ja": "モーサヤ書",
+      "en": "Mosiah",
+      "category": "scripture",
+      "reading": "もーさやしょ",
+      "variants": [],
+      "note": "モルモン書の書名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-16",
+      "ja": "モロナイ書",
+      "en": "Moroni",
+      "category": "scripture",
+      "reading": "もろないしょ",
+      "variants": [],
+      "note": "モルモン書の最後の書",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-15",
+      "ja": "主の果樹園",
+      "en": "Lord’s vineyard",
+      "category": "theology",
+      "reading": "しゅのかじゅえん",
+      "variants": [],
+      "note": "モルモン書ヤコブ5章などに登場する世のたとえ",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-14",
+      "ja": "聖霊の促し",
+      "en": "promptings of the Holy Ghost",
+      "category": "theology",
+      "reading": "せいれいのうながし",
+      "variants": [],
+      "note": "聖霊からの霊感や静かな導き",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-13",
+      "ja": "割り当て",
+      "en": "assignments",
+      "category": "roles",
+      "reading": "わりあて",
+      "variants": [],
+      "note": "教会活動における担当任務",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-12",
+      "ja": "神殿",
+      "en": "temple",
+      "category": "worship",
+      "reading": "しんでん",
+      "variants": [],
+      "note": "主の宮、救いと昇栄の儀式を執り行う聖所",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-11",
+      "ja": "姉妹宣教師",
+      "en": "sister missionaries",
+      "category": "roles",
+      "reading": "しまいでんきょうし",
+      "variants": [],
+      "note": "女性の専任宣教師",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-10",
+      "ja": "自立",
+      "en": "self-reliant / self-reliance",
+      "category": "life",
+      "reading": "じりつ",
+      "variants": [
+        "自律"
+      ],
+      "note": "霊的・物質的に他者に過度に依存しない状態",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-9",
+      "ja": "最後まで堪え忍ぶ",
+      "en": "endure to the end",
+      "category": "theology",
+      "reading": "さいごまでたえしのぶ",
+      "variants": [],
+      "note": "福音の原則を守り通すこと",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-8",
+      "ja": "神から託された責任",
+      "en": "divinely appointed responsibilities",
+      "category": "theology",
+      "reading": "かみからたくされたせきにん",
+      "variants": [],
+      "note": "救いと昇栄の業における4つの主要責任",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-7",
+      "ja": "結び固め",
+      "en": "sealing",
+      "category": "worship",
+      "reading": "むすびがため",
+      "variants": [],
+      "note": "夫婦や親子を永遠に結ぶ神殿儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-6",
+      "ja": "エンダウメント",
+      "en": "endowment",
+      "category": "worship",
+      "reading": "えんだうめんと",
+      "variants": [],
+      "note": "神殿で授かる霊的な力・知識・祝福の儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-5",
+      "ja": "授与",
+      "en": "Conferral",
+      "category": "worship",
+      "reading": "じゅよ",
+      "variants": [
+        "受領"
+      ],
+      "note": "神権を与えること",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-4",
+      "ja": "聖霊の賜物",
+      "en": "gift of the Holy Ghost",
+      "category": "theology",
+      "reading": "せいれいのたまもの",
+      "variants": [],
+      "note": "確認の儀式により与えられる聖霊の伴従の権利",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-3",
+      "ja": "確認",
+      "en": "Confirmation",
+      "category": "worship",
+      "reading": "かくにん",
+      "variants": [],
+      "note": "バプテスマ後に聖霊の賜物を授ける儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-2",
+      "ja": "儀式",
+      "en": "ordinances / ordinance",
+      "category": "worship",
+      "reading": "ぎしき",
+      "variants": [],
+      "note": "神権により執行される神聖な儀式（バプテスマ、エンダウメント等）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-1",
+      "ja": "キリストのもとに行く",
+      "en": "come unto Christ",
+      "category": "theology",
+      "reading": "きりすとのもとにいく",
+      "variants": [],
+      "note": "信仰を持ってキリストに従うこと（モロナイ10:32）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733590760-0",
+      "ja": "幸福の計画",
+      "en": "plan of happiness",
+      "category": "theology",
+      "reading": "こうふくのけいかく",
+      "variants": [],
+      "note": "神が人のために用意した救いの計画",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733519932-0",
+      "ja": "神権の授与と聖任",
+      "en": "Priesthood Conferral and Ordination",
+      "category": "worship",
+      "reading": "しんけんのじゅよとせいにん",
+      "variants": [
+        "聖任"
+      ],
+      "note": "神権を授け、特定の職務に任命すること",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-8",
+      "ja": "高等評議会",
+      "en": "high council",
+      "category": "roles",
+      "reading": "こうとうひょうぎかい",
+      "variants": [],
+      "note": "ステーク運営を補佐する12人の評議員組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-7",
+      "ja": "ステーク祝福師",
+      "en": "stake patriarch",
+      "category": "roles",
+      "reading": "すてーくしゅくふくし",
+      "variants": [],
+      "note": "会員に祝福師の祝福（Patriarchal Blessing）を授ける職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-6",
+      "ja": "一般判士",
+      "en": "common judge",
+      "category": "roles",
+      "reading": "いっぱんはんし",
+      "variants": [
+        "判事"
+      ],
+      "note": "信徒の霊性や適格性を審理する指導者の役割",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-5",
+      "ja": "管理大祭司",
+      "en": "presiding high priest",
+      "category": "roles",
+      "reading": "かんりたいさいし",
+      "variants": [
+        "大祭司"
+      ],
+      "note": "ステーク会長またはビショップが持つ役職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-4",
+      "ja": "地域会長会",
+      "en": "Area Presidency",
+      "category": "roles",
+      "reading": "ちいきかいちょうかい",
+      "variants": [],
+      "note": "特定の地域を統括する管理会長会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-3",
+      "ja": "中央役員",
+      "en": "General Officers",
+      "category": "roles",
+      "reading": "ちゅうおうやくいん",
+      "variants": [],
+      "note": "各補助組織の中央役員",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-2",
+      "ja": "人の不死不滅と永遠の命をもたらす",
+      "en": "to bring to pass the immortality and eternal life of man",
+      "category": "scripture",
+      "reading": "ひとのふしふめつとえいえんのいのちをもたらす",
+      "variants": [],
+      "note": "モーセ1:39の定型引用句",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486550-1",
+      "ja": "神権の権能と鍵",
+      "en": "priesthood authority and keys",
+      "category": "theology",
+      "reading": "しんけんのけんのうとかぎ",
+      "variants": [
+        "親権"
+      ],
+      "note": "教会における管理および執行の権能",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733486549-0",
+      "ja": "救いと昇栄の業",
+      "en": "work of salvation and exaltation",
+      "category": "theology",
+      "reading": "すくいとしょうえいのわざ",
+      "variants": [
+        "昇映",
+        "省営"
+      ],
+      "note": "神の業を表す最重要神学概念",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-19",
+      "ja": "礼拝堂",
+      "en": "Chapel",
+      "category": "worship",
+      "reading": "れいはいどう",
+      "variants": [],
+      "note": "説教原稿内の対訳一致から検出",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-18",
+      "ja": "初等協会",
+      "en": "Primary",
+      "category": "custom",
+      "reading": "しょとうきょうかい",
+      "variants": [],
+      "note": "教会内の子供のための組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-17",
+      "ja": "扶助協会",
+      "en": "Relief Society",
+      "category": "custom",
+      "reading": "ふじょきょうかい",
+      "variants": [
+        "扶助協会"
+      ],
+      "note": "教会内の女性組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-16",
+      "ja": "祝福師",
+      "en": "patriarch",
+      "category": "roles",
+      "reading": "しゅくふくし",
+      "variants": [
+        "祝福士"
+      ],
+      "note": "祝福を与える神権職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-15",
+      "ja": "大祭司",
+      "en": "high priest",
+      "category": "roles",
+      "reading": "だいさいし",
+      "variants": [
+        "代祭司"
+      ],
+      "note": "神権の職名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-14",
+      "ja": "長老定員会",
+      "en": "elders quorum",
+      "category": "roles",
+      "reading": "ちょうろうていいんかい",
+      "variants": [
+        "長老定員界"
+      ],
+      "note": "神権保有者の定員会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-13",
+      "ja": "ワード",
+      "en": "ward",
+      "category": "custom",
+      "reading": "わーど",
+      "variants": [
+        "和人"
+      ],
+      "note": "地域教会・会衆の単位",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-12",
+      "ja": "ビショップリック",
+      "en": "bishopric",
+      "category": "roles",
+      "reading": "びしょっぷりっく",
+      "variants": [],
+      "note": "ビショップとその顧問からなる指導部",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-11",
+      "ja": "ステーク会長会",
+      "en": "stake presidency",
+      "category": "roles",
+      "reading": "すてーくかいちょうかい",
+      "variants": [],
+      "note": "ステークの指導部",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-10",
+      "ja": "ステーク",
+      "en": "stake",
+      "category": "custom",
+      "reading": "すてーく",
+      "variants": [
+        "ステーキ"
+      ],
+      "note": "教区に相当する組織単位",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-9",
+      "ja": "地域七十人",
+      "en": "Area Seventies",
+      "category": "roles",
+      "reading": "ちいきななじゅうにん",
+      "variants": [
+        "地域70人"
+      ],
+      "note": "教会指導者の役職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-8",
+      "ja": "中央幹部",
+      "en": "General Authorities",
+      "category": "roles",
+      "reading": "ちゅうおうかんぶ",
+      "variants": [],
+      "note": "教会中央の指導者階層",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-7",
+      "ja": "家庭の夕べ",
+      "en": "home evening",
+      "category": "custom",
+      "reading": "かていのゆうべ",
+      "variants": [],
+      "note": "家庭で行う活動・集会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-6",
+      "ja": "メルキゼデク神権",
+      "en": "Melchizedek Priesthood",
+      "category": "theology",
+      "reading": "めるきぜでくしんけん",
+      "variants": [],
+      "note": "高位の神権",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-5",
+      "ja": "神権の鍵",
+      "en": "priesthood keys",
+      "category": "theology",
+      "reading": "しんけんのかぎ",
+      "variants": [
+        "親権の鍵"
+      ],
+      "note": "教会を管理・指示する神権の権能",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-4",
+      "ja": "儀式と聖約",
+      "en": "ordinances and covenants",
+      "category": "theology",
+      "reading": "ぎしきとせいやく",
+      "variants": [
+        "儀式と制約"
+      ],
+      "note": "教会の重要な神学概念",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-3",
+      "ja": "昇栄",
+      "en": "exaltation",
+      "category": "theology",
+      "reading": "しょうえい",
+      "variants": [
+        "上映",
+        "唱和"
+      ],
+      "note": "LDS特有の神学概念",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-2",
+      "ja": "神の幸福の計画",
+      "en": "God’s Plan of Happiness",
+      "category": "theology",
+      "reading": "かみのこうふくのけいかく",
+      "variants": [],
+      "note": "救いの計画を表す教義用語",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-1",
+      "ja": "神の救いと昇栄の業",
+      "en": "God’s work of salvation and exaltation",
+      "category": "theology",
+      "reading": "かみのすくいとしょうえいのわざ",
+      "variants": [
+        "神の救いと証言の業"
+      ],
+      "note": "教会の中心的な教義・目的",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733419749-0",
+      "ja": "総合手引き",
+      "en": "General Handbook",
+      "category": "custom",
+      "reading": "そうごうてびき",
+      "variants": [
+        "総合手引"
+      ],
+      "note": "教会公式の管理運営ハンドブック",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-12",
+      "ja": "黙示録",
+      "en": "Revelation",
+      "category": "scripture",
+      "reading": "もくしろく",
+      "variants": [],
+      "note": "説教原稿内の対訳一致から検出",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-11",
+      "ja": "ヨハネによる福音書",
+      "en": "John",
+      "category": "scripture",
+      "reading": "よはねによるふくいんしょ",
+      "variants": [],
+      "note": "説教原稿内の対訳一致から検出",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-10",
+      "ja": "ニーファイ人",
+      "en": "Nephites",
+      "category": "scripture",
+      "reading": "にーふぁいにん",
+      "variants": [],
+      "note": "モルモン書に登場する民族名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-9",
+      "ja": "シオン",
+      "en": "Zion",
+      "category": "theology",
+      "reading": "しおん",
+      "variants": [
+        "詩音"
+      ],
+      "note": "聖なる共同体または約束の地",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-8",
+      "ja": "ビショップ",
+      "en": "bishop",
+      "category": "roles",
+      "reading": "びしょっぷ",
+      "variants": [],
+      "note": "教会の地方指導者・役職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-7",
+      "ja": "按手",
+      "en": "laying on of hands",
+      "category": "custom",
+      "reading": "あんしゅ",
+      "variants": [
+        "案主"
+      ],
+      "note": "手を頭に置いて行う祝福・聖任の儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-6",
+      "ja": "聖任",
+      "en": "ordination",
+      "category": "custom",
+      "reading": "せいにん",
+      "variants": [
+        "選任",
+        "専任"
+      ],
+      "note": "神権や職務への任命",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-5",
+      "ja": "メルキゼデクの神権",
+      "en": "Priesthood of Melchizedek",
+      "category": "theology",
+      "reading": "めるきぜでくのしんけん",
+      "variants": [],
+      "note": "大神権の名称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-4",
+      "ja": "アロン神権",
+      "en": "Aaronic Priesthood",
+      "category": "theology",
+      "reading": "あろんしんけん",
+      "variants": [
+        "亜倫神権"
+      ],
+      "note": "小神権の名称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-3",
+      "ja": "天使モロナイ",
+      "en": "angel Moroni",
+      "category": "scripture",
+      "reading": "てんしもろない",
+      "variants": [],
+      "note": "モルモン書に登場する預言者・天使の名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-2",
+      "ja": "神権時代",
+      "en": "dispensation",
+      "category": "theology",
+      "reading": "しんけんじだい",
+      "variants": [
+        "神剣時代"
+      ],
+      "note": "神が啓示や権能を授ける時代区分",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-1",
+      "ja": "神の王国",
+      "en": "kingdom of God",
+      "category": "theology",
+      "reading": "かみのおうこく",
+      "variants": [
+        "神の御国"
+      ],
+      "note": "神の統治領域を表す神学概念",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794729701413-0",
+      "ja": "教義と聖約",
+      "en": "Doctrine and Covenants",
+      "category": "scripture",
+      "reading": "きょうぎとせいやく",
+      "variants": [
+        "教義と誓約"
+      ],
+      "note": "末日聖徒イエス・キリスト教会の聖典書名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-29",
+      "ja": "永遠の父なる神",
+      "en": "God, the Eternal Father",
+      "category": "theology",
+      "reading": "えいえんのちちなるとしかみ",
+      "variants": [],
+      "note": "神格・父なる神の呼称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-28",
+      "ja": "信仰箇条",
+      "en": "Articles of Faith",
+      "category": "theology",
+      "reading": "しんこうかじょう",
+      "variants": [],
+      "note": "基本信条・文書名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-27",
+      "ja": "ジョセフ・スミス—歴史",
+      "en": "Joseph Smith—History",
+      "category": "scripture",
+      "reading": "じょせふすみすれきし",
+      "variants": [],
+      "note": "書名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-26",
+      "ja": "ジョセフ・スミス—マタイ",
+      "en": "Joseph Smith—Matthew",
+      "category": "scripture",
+      "reading": "じょせふすみすまたい",
+      "variants": [],
+      "note": "書名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-25",
+      "ja": "模写",
+      "en": "Facsimiles",
+      "category": "scripture",
+      "reading": "もしゃ",
+      "variants": [],
+      "note": "アブラハム書に含まれる図版",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-24",
+      "ja": "神々",
+      "en": "The Gods",
+      "category": "theology",
+      "reading": "かみがみ",
+      "variants": [],
+      "note": "アブラハム書の創造の記述における呼称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-23",
+      "ja": "第二の位",
+      "en": "second estate",
+      "category": "theology",
+      "reading": "だいにのくらい",
+      "variants": [],
+      "note": "教義用語（地上での生涯）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-22",
+      "ja": "予任",
+      "en": "foreordination",
+      "category": "theology",
+      "reading": "よにん",
+      "variants": [
+        "余命"
+      ],
+      "note": "教義用語",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-21",
+      "ja": "前世",
+      "en": "pre-earth life",
+      "category": "theology",
+      "reading": "ぜんせい",
+      "variants": [
+        "前世"
+      ],
+      "note": "教義用語（地上に来る前の霊の存在）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-20",
+      "ja": "ウリムとトンミム",
+      "en": "Urim and Thummim",
+      "category": "scripture",
+      "reading": "うりむととんみむ",
+      "variants": [],
+      "note": "聖書・啓示の器具",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-19",
+      "ja": "カルデヤ",
+      "en": "Chaldea",
+      "category": "scripture",
+      "reading": "かるでや",
+      "variants": [],
+      "note": "地名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-18",
+      "ja": "族長制度",
+      "en": "patriarchal order",
+      "category": "theology",
+      "reading": "ぞくちょうせいど",
+      "variants": [],
+      "note": "神権・教理の制度",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-17",
+      "ja": "アブラハム書",
+      "en": "Abraham",
+      "category": "scripture",
+      "reading": "あぶらはむしょ",
+      "variants": [],
+      "note": "書名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-16",
+      "ja": "メトセラ",
+      "en": "Methuselah",
+      "category": "scripture",
+      "reading": "めとせら",
+      "variants": [],
+      "note": "聖書・経典の人物名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-15",
+      "ja": "集合",
+      "en": "Gathering",
+      "category": "theology",
+      "reading": "しゅうごう",
+      "variants": [],
+      "note": "イスラエルの集合に関する教義用語",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-14",
+      "ja": "回復",
+      "en": "restore / restored",
+      "category": "theology",
+      "reading": "かいふく",
+      "variants": [],
+      "note": "ジョセフ・スミスを通して真の福音や神権が地上に戻されたこと",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-13",
+      "ja": "贖いの犠牲",
+      "en": "atoning sacrifice",
+      "category": "theology",
+      "reading": "あがないのぎせい",
+      "variants": [],
+      "note": "キリストの贖罪",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-12",
+      "ja": "人の子",
+      "en": "Son of Man",
+      "category": "theology",
+      "reading": "ひとのこ",
+      "variants": [],
+      "note": "メシア・イエス・キリストの称号",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-11",
+      "ja": "シオンの町",
+      "en": "city of Zion",
+      "category": "scripture",
+      "reading": "しおんのまち",
+      "variants": [],
+      "note": "エノクが設立した町",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389871-10",
+      "ja": "神権",
+      "en": "priesthood",
+      "category": "theology",
+      "reading": "しんけん",
+      "variants": [
+        "親権"
+      ],
+      "note": "教会制度・神学用語",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-9",
+      "ja": "救いの計画",
+      "en": "plan of salvation",
+      "category": "theology",
+      "reading": "すくいのけいかく",
+      "variants": [],
+      "note": "神学教義用語",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-8",
+      "ja": "覚えの書",
+      "en": "book of remembrance",
+      "category": "scripture",
+      "reading": "おぼえのしょ",
+      "variants": [],
+      "note": "経典中の記録名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-7",
+      "ja": "滅びとなる",
+      "en": "becomes Perdition",
+      "category": "theology",
+      "reading": "ほろびとなる",
+      "variants": [],
+      "note": "カインに関する記述（Perdition）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-6",
+      "ja": "ふさわしい助け手",
+      "en": "help meet",
+      "category": "theology",
+      "reading": "ふさわしいたすけて",
+      "variants": [],
+      "note": "聖書・経典表現（創世記/モーセ書）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-5",
+      "ja": "霊的に創造された",
+      "en": "created all things spiritually",
+      "category": "theology",
+      "reading": "れいてきにそうぞうされた",
+      "variants": [],
+      "note": "創造に関する教義",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-4",
+      "ja": "不死不滅",
+      "en": "immortality",
+      "category": "theology",
+      "reading": "ふしふめつ",
+      "variants": [],
+      "note": "神学教義用語",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-3",
+      "ja": "変貌する",
+      "en": "is transfigured",
+      "category": "theology",
+      "reading": "へんぼうする",
+      "variants": [
+        "変貌"
+      ],
+      "note": "神学的表現・モーセの姿が変わること",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-2",
+      "ja": "モーセ書",
+      "en": "Book of Moses",
+      "category": "scripture",
+      "reading": "もーせしょ",
+      "variants": [],
+      "note": "高価な真珠に含まれる聖典箇所（例：モーセ1:39）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-1",
+      "ja": "末日聖徒イエス・キリスト教会",
+      "en": "The Church of Jesus Christ of Latter-day Saints",
+      "category": "roles",
+      "reading": "まつじつせいといえすきりすときょうかい",
+      "variants": [],
+      "note": "教会名・教派名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794718389870-0",
+      "ja": "高価な真珠",
+      "en": "Pearl of Great Price",
+      "category": "scripture",
+      "reading": "こうかなしんじゅ",
+      "variants": [
+        "効果な真珠"
+      ],
+      "note": "書名・テキストタイトル",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-awne",
+      "ja": "中央指導者",
+      "en": "general leadership",
+      "category": "roles",
+      "reading": "ちゅうおうしどうしゃ",
+      "variants": [
+        "中央指導社"
+      ],
+      "note": "教会全体の指導職組織",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-o44i",
+      "ja": "霊的な証",
+      "en": "spiritual witness",
+      "category": "theology",
+      "reading": "れいてきなあかし",
+      "variants": [
+        "霊的な証し"
+      ],
+      "note": "聖霊を通じた真理の個人的な確証",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-9omz",
+      "ja": "現世",
+      "en": "mortal lives",
+      "category": "theology",
+      "reading": "げんせ",
+      "variants": [
+        "現世"
+      ],
+      "note": "永遠の命に対する地上の死すべき生涯",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-b10r",
+      "ja": "天の御父の荘厳な計画",
+      "en": "the majesty of our Heavenly Father’s plan",
+      "category": "theology",
+      "reading": "てんのおんちのそうごんなけいかく",
+      "variants": [],
+      "note": "救いの計画",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-b7fx",
+      "ja": "霊的な勇気",
+      "en": "spiritual courage",
+      "category": "theology",
+      "reading": "れいてきなゆうき",
+      "variants": [],
+      "note": "本説教の主題キーワード",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-x6hv",
+      "ja": "正義を選ぶ",
+      "en": "choose the right",
+      "category": "custom",
+      "reading": "せいぎをえらぶ",
+      "variants": [
+        "正義を択ぶ"
+      ],
+      "note": "信仰生活における決断の教義的モットー",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-jenu",
+      "ja": "モロナイ",
+      "en": "Moroni",
+      "category": "scripture",
+      "reading": "もろない",
+      "variants": [],
+      "note": "モルモン書に登場する預言者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-9oa1",
+      "ja": "キリストを否定しない",
+      "en": "not deny the Christ",
+      "category": "theology",
+      "reading": "きりすとをひていしない",
+      "variants": [],
+      "note": "モロナイの信仰の宣言（モロナイ1:3）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-w6y3",
+      "ja": "聖餐",
+      "en": "The Sacrament",
+      "category": "worship",
+      "reading": "せいさん",
+      "variants": [
+        "清算",
+        "生産"
+      ],
+      "note": "礼拝行事・儀式",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-aox6",
+      "ja": "聖約に忠実になる",
+      "en": "true to our covenants",
+      "category": "theology",
+      "reading": "せいやくにちゅうじつになる",
+      "variants": [
+        "制約に忠実になる"
+      ],
+      "note": "神と交わした契約を守ること",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-l64w",
+      "ja": "神権指導者",
+      "en": "priesthood leaders",
+      "category": "roles",
+      "reading": "しんけんしどうしゃ",
+      "variants": [
+        "親権指導者"
+      ],
+      "note": "神の権能を持つ指導者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-unab",
+      "ja": "召し",
+      "en": "callings / calling",
+      "category": "roles",
+      "reading": "めし",
+      "variants": [
+        "飯"
+      ],
+      "note": "教会において奉仕するために神から任命される役職",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-ra85",
+      "ja": "ステーク会長",
+      "en": "stake president",
+      "category": "roles",
+      "reading": "すてーくかいちょう",
+      "variants": [],
+      "note": "ステーク（地方教区組織）の指導者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-6cm2",
+      "ja": "ステーク伝道部会長会顧問",
+      "en": "counselor in the stake mission presidency",
+      "category": "roles",
+      "reading": "すてーくでんどうぶかいちょうかいこもん",
+      "variants": [],
+      "note": "地域宣教会長会の補佐役",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-kz8g",
+      "ja": "知恵の言葉",
+      "en": "Word of Wisdom",
+      "category": "custom",
+      "reading": "ちえのことば",
+      "variants": [
+        "知恵の詞"
+      ],
+      "note": "教会の健康律法（教義と聖約89章）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-1cz2",
+      "ja": "純潔の律法",
+      "en": "law of chastity",
+      "category": "custom",
+      "reading": "じゅんけつのりっぽう",
+      "variants": [],
+      "note": "性的純潔に関する戒め",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-48wj",
+      "ja": "什分の一",
+      "en": "tithing",
+      "category": "worship",
+      "reading": "じゅうぶんのいち",
+      "variants": [
+        "十分の一"
+      ],
+      "note": "収入の10%を主に捧げる律法",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-4sdq",
+      "ja": "セミナリー",
+      "en": "seminary",
+      "category": "custom",
+      "reading": "せみなりー",
+      "variants": [],
+      "note": "中高生対象の聖典学習プログラム",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-esak",
+      "ja": "主の宮",
+      "en": "house of the Lord",
+      "category": "worship",
+      "reading": "しゅのみや",
+      "variants": [],
+      "note": "神殿（テンプル）を指す表現",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-lcfb",
+      "ja": "生ける預言者",
+      "en": "living prophets",
+      "category": "roles",
+      "reading": "いけるよげんしゃ",
+      "variants": [],
+      "note": "現代において神の啓示を受ける指導者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-2l0b",
+      "ja": "聖霊の静かな促し",
+      "en": "quiet impressions of the Holy Ghost",
+      "category": "theology",
+      "reading": "せいれいのしずかなうながし",
+      "variants": [],
+      "note": "聖霊による内面的な導き・ガイダンス",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-w3d1",
+      "ja": "救いの岩",
+      "en": "rock of her salvation",
+      "category": "theology",
+      "reading": "すくいのいわ",
+      "variants": [],
+      "note": "救い主イエス・キリストを指す比喩的表現",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-sr05",
+      "ja": "ナザレ人イエス・キリスト",
+      "en": "Jesus Christ of Nazareth",
+      "category": "scripture",
+      "reading": "なざれびといえす・きりすと",
+      "variants": [
+        "ナザレ人イエス・キリスト"
+      ],
+      "note": "使徒行伝4:10の引用にみられる主の称号",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-ncag",
+      "ja": "回復されたイエス・キリストの福音",
+      "en": "restored gospel of Jesus Christ",
+      "category": "theology",
+      "reading": "かいふくされたいえす・きりすとのふくいん",
+      "variants": [],
+      "note": "末日における福音の完全な回復",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-lign",
+      "ja": "モルモン書",
+      "en": "Book of Mormon",
+      "category": "scripture",
+      "reading": "もるもんしょ",
+      "variants": [],
+      "note": "モルモン教（末日聖徒イエス・キリスト教会）の聖典",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-wlgg",
+      "ja": "ニーファイ",
+      "en": "Nephi",
+      "category": "roles",
+      "reading": "にーふぁい",
+      "variants": [],
+      "note": "モルモン書に登場する預言者・記録者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-vmwa",
+      "ja": "レーマン人",
+      "en": "Lamanites",
+      "category": "scripture",
+      "reading": "れーまんじん",
+      "variants": [],
+      "note": "モルモン書に登場する民",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-mlrc",
+      "ja": "イスラエルの家",
+      "en": "house of Israel",
+      "category": "theology",
+      "reading": "いすらえるのいえ",
+      "variants": [],
+      "note": "イスラエルの民全体を指す聖書・聖典用語",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-y1qn",
+      "ja": "永遠の福音",
+      "en": "everlasting gospel",
+      "category": "theology",
+      "reading": "えいえんのふくいん",
+      "variants": [],
+      "note": "神の永遠の救いの教え",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-u3of",
+      "ja": "三人の証人",
+      "en": "Three Witnesses",
+      "category": "roles",
+      "reading": "さんにんのしょうにん",
+      "variants": [],
+      "note": "金版を目撃したとされる3人の証人",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-y57m",
+      "ja": "八人の証人",
+      "en": "Eight Witnesses",
+      "category": "roles",
+      "reading": "はちにんのしょうにん",
+      "variants": [],
+      "note": "金版を手に触れたとされる8人の証人",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-j91u",
+      "ja": "ジョセフ・スミス",
+      "en": "Joseph Smith",
+      "category": "roles",
+      "reading": "じょせふ・すみす",
+      "variants": [],
+      "note": "末日聖徒イエス・キリスト教会の創始者・預言者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-pi1k",
+      "ja": "リーハイ",
+      "en": "Lehi",
+      "category": "roles",
+      "reading": "りーはい",
+      "variants": [],
+      "note": "エルサレムを離れ約束の地へ導かれた預言者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-wvkf",
+      "ja": "真鍮の版",
+      "en": "plates of brass",
+      "category": "scripture",
+      "reading": "しんちゅうのはん",
+      "variants": [],
+      "note": "モーセ五書などが記されていたとされる金属版",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-nab5",
+      "ja": "命の木",
+      "en": "tree of life",
+      "category": "theology",
+      "reading": "いのちのき",
+      "variants": [],
+      "note": "神の愛や永遠の命を象徴する示現の木",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247960-tu8z",
+      "ja": "細くて狭い道",
+      "en": "strait and narrow path",
+      "category": "theology",
+      "reading": "ほそくてせまいみち",
+      "variants": [],
+      "note": "命の木に至る小道",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-1mrt",
+      "ja": "神の小羊",
+      "en": "Lamb of God",
+      "category": "theology",
+      "reading": "かみのこひつじ",
+      "variants": [],
+      "note": "イエス・キリストの称号",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-d9gi",
+      "ja": "イスラエルの散乱と集合",
+      "en": "scattering and gathering of Israel",
+      "category": "theology",
+      "reading": "いすらえるのさんらんとしゅうごう",
+      "variants": [],
+      "note": "イスラエルの離散と終末における回復",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-7b6o",
+      "ja": "福千年",
+      "en": "millennium",
+      "category": "theology",
+      "reading": "ふくせんねん",
+      "variants": [
+        "千年間",
+        "千年王国"
+      ],
+      "note": "キリストが直接統治する平和の千年王国",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-sdts",
+      "ja": "贖罪",
+      "en": "Atonement",
+      "category": "theology",
+      "reading": "しょくざい",
+      "variants": [
+        "贖い"
+      ],
+      "note": "キリストによる罪のあがない",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-l7t2",
+      "ja": "聖見者",
+      "en": "seer",
+      "category": "roles",
+      "reading": "せいけんしゃ",
+      "variants": [
+        "先見者"
+      ],
+      "note": "神の示現や記録の翻訳を行う特別な預言者の職分",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-900s",
+      "ja": "リアホナ",
+      "en": "Liahona",
+      "category": "custom",
+      "reading": "りあほな",
+      "variants": [],
+      "note": "荒れ野で進路を指し示した羅針盤・球",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-z22d",
+      "ja": "イスラエルの聖者",
+      "en": "Holy One of Israel",
+      "category": "theology",
+      "reading": "いすらえるのせいじゃ",
+      "variants": [],
+      "note": "主なる神、救い主イエス・キリストの称号",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-egj8",
+      "ja": "マタイによる福音書",
+      "en": "Matthew",
+      "category": "scripture",
+      "reading": "またいによるふくいんしょ",
+      "variants": [],
+      "note": "説教原稿内の対訳一致から検出",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-xkej",
+      "ja": "イザヤ書",
+      "en": "Isaiah",
+      "category": "scripture",
+      "reading": "いざやしょ",
+      "variants": [],
+      "note": "説教原稿内の対訳一致から検出",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-ypjh",
+      "ja": "異邦人",
+      "en": "Gentile",
+      "category": "theology",
+      "reading": "いほうじん",
+      "variants": [
+        "違法仁",
+        "遺法仁"
+      ],
+      "note": "非ユダヤ人・異邦の民",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-fc12",
+      "ja": "ヤレドの民",
+      "en": "people of Jared",
+      "category": "scripture",
+      "reading": "やれどのたみ",
+      "variants": [],
+      "note": "民族名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-1jxl",
+      "ja": "ジョセフ・スミス・ジュニア",
+      "en": "Joseph Smith, Jun.",
+      "category": "roles",
+      "reading": "じょせふすみすじゅにあ",
+      "variants": [],
+      "note": "翻訳者・預言者名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-w0oi",
+      "ja": "レムエル",
+      "en": "Lemuel",
+      "category": "scripture",
+      "reading": "れむえる",
+      "variants": [],
+      "note": "人名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-fjfe",
+      "ja": "ラバン",
+      "en": "Laban",
+      "category": "scripture",
+      "reading": "らばん",
+      "variants": [],
+      "note": "人名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-7aoc",
+      "ja": "サライア",
+      "en": "Sariah",
+      "category": "scripture",
+      "reading": "さらいあ",
+      "variants": [],
+      "note": "人名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-hgfn",
+      "ja": "イシマエル",
+      "en": "Ishmael",
+      "category": "scripture",
+      "reading": "いしまうえる",
+      "variants": [],
+      "note": "人名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-3nrc",
+      "ja": "約束の地",
+      "en": "land of promise / promised land",
+      "category": "theology",
+      "reading": "やくそくのち",
+      "variants": [
+        "約束の血"
+      ],
+      "note": "神から約束された土地",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-pub0",
+      "ja": "鉄の棒",
+      "en": "rod of iron",
+      "category": "theology",
+      "reading": "てつのぼう",
+      "variants": [
+        "鉄の謀"
+      ],
+      "note": "示現に登場する象徴（神の言葉を表す）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-u0x1",
+      "ja": "選択の自由",
+      "en": "freedom of choice (agency)",
+      "category": "theology",
+      "reading": "せんたくのじゆう",
+      "variants": [
+        "洗濯の自由"
+      ],
+      "note": "教義上の重要概念",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-kb4l",
+      "ja": "モーサヤ",
+      "en": "Mosiah",
+      "category": "scripture",
+      "reading": "もーさや",
+      "variants": [],
+      "note": "王名・書名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-pr5n",
+      "ja": "ベニヤミン王",
+      "en": "King Benjamin",
+      "category": "roles",
+      "reading": "べにやまにおう",
+      "variants": [],
+      "note": "王名・預言者名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-yqab",
+      "ja": "生まれながらの人",
+      "en": "natural man",
+      "category": "theology",
+      "reading": "うまれながらのひと",
+      "variants": [],
+      "note": "肉に属する人間の本性",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-srvc",
+      "ja": "アビナダイ",
+      "en": "Abinadi",
+      "category": "scripture",
+      "reading": "あびなだい",
+      "variants": [],
+      "note": "預言者名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-571k",
+      "ja": "アルマ",
+      "en": "Alma",
+      "category": "scripture",
+      "reading": "あるま",
+      "variants": [],
+      "note": "人名・預言者名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-gex2",
+      "ja": "出エジプト記",
+      "en": "Exodus",
+      "category": "scripture",
+      "reading": "しゅつえじぷとき",
+      "variants": [
+        "出エジプト気"
+      ],
+      "note": "聖書巻名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-9jq2",
+      "ja": "レビ記",
+      "en": "Leviticus",
+      "category": "scripture",
+      "reading": "れびき",
+      "variants": [
+        "レビ気"
+      ],
+      "note": "聖書巻名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-8a3r",
+      "ja": "民数記",
+      "en": "Numbers",
+      "category": "scripture",
+      "reading": "みんすうき",
+      "variants": [
+        "民数気"
+      ],
+      "note": "聖書巻名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-gzul",
+      "ja": "申命記",
+      "en": "Deuteronomy",
+      "category": "scripture",
+      "reading": "しんめいき",
+      "variants": [
+        "神命記"
+      ],
+      "note": "聖書巻名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-qam9",
+      "ja": "ヨシュア記",
+      "en": "Joshua",
+      "category": "scripture",
+      "reading": "よしゅあき",
+      "variants": [
+        "ヨシュア気"
+      ],
+      "note": "聖書巻名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-l8hf",
+      "ja": "創造",
+      "en": "Creation / create",
+      "category": "theology",
+      "reading": "そうぞう",
+      "variants": [
+        "想像"
+      ],
+      "note": "神による天地創造",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-wase",
+      "ja": "主なる神",
+      "en": "the Lord God / the Lord",
+      "category": "theology",
+      "reading": "しゅなるかみ",
+      "variants": [
+        "主なる紙"
+      ],
+      "note": "神の呼称（ヤハウェ・エロヒム）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-95k9",
+      "ja": "全能の神",
+      "en": "God Almighty",
+      "category": "theology",
+      "reading": "ぜんのうのかみ",
+      "variants": [
+        "全能の紙"
+      ],
+      "note": "神の呼称（エル・シャダイ）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-90mg",
+      "ja": "箱舟",
+      "en": "ark",
+      "category": "scripture",
+      "reading": "はこぶね",
+      "variants": [
+        "箱船"
+      ],
+      "note": "ノアの箱舟",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-4wsg",
+      "ja": "割礼",
+      "en": "circumcision",
+      "category": "custom",
+      "reading": "かつれい",
+      "variants": [],
+      "note": "契約のしるしとしての儀礼",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-w9zo",
+      "ja": "犠牲",
+      "en": "sacrifices / sacrifice",
+      "category": "worship",
+      "reading": "ぎせい",
+      "variants": [],
+      "note": "生贄・ささげ物",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-bk49",
+      "ja": "会見の幕屋",
+      "en": "tabernacle of the congregation",
+      "category": "worship",
+      "reading": "かいけんのまくや",
+      "variants": [],
+      "note": "荒野で神が臨在された天幕",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-u7fk",
+      "ja": "祭壇",
+      "en": "altar",
+      "category": "worship",
+      "reading": "さいだん",
+      "variants": [
+        "裁断"
+      ],
+      "note": "いけにえをささげる壇",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-kqok",
+      "ja": "燔祭",
+      "en": "burnt offering",
+      "category": "worship",
+      "reading": "はんさい",
+      "variants": [
+        "万歳"
+      ],
+      "note": "全焼のいけにえ",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-1doy",
+      "ja": "素祭",
+      "en": "meat offering / grain offering",
+      "category": "worship",
+      "reading": "そさい",
+      "variants": [
+        "粗砕"
+      ],
+      "note": "穀物のささげ物",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-9lze",
+      "ja": "酬恩祭",
+      "en": "peace offering",
+      "category": "worship",
+      "reading": "しゅうおんさい",
+      "variants": [
+        "集音祭"
+      ],
+      "note": "和解・感謝のいけにえ",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-2uf8",
+      "ja": "聖別",
+      "en": "sanctify / consecrate",
+      "category": "theology",
+      "reading": "せいべつ",
+      "variants": [
+        "性別"
+      ],
+      "note": "聖なるものとして分かつこと",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-ytfc",
+      "ja": "祭司",
+      "en": "priest",
+      "category": "roles",
+      "reading": "さいし",
+      "variants": [
+        "祭祀",
+        "妻子"
+      ],
+      "note": "神に仕える職務",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-ofj9",
+      "ja": "過越の祭",
+      "en": "passover",
+      "category": "custom",
+      "reading": "すぎこしのまつり",
+      "variants": [],
+      "note": "出エジプトを記念する例祭",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-5ebw",
+      "ja": "嗣業",
+      "en": "inheritance",
+      "category": "theology",
+      "reading": "しぎょう",
+      "variants": [
+        "施行",
+        "執行"
+      ],
+      "note": "神から受け継ぐ嗣業・財産",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-3ang",
+      "ja": "パロ",
+      "en": "Pharaoh",
+      "category": "roles",
+      "reading": "ぱろ",
+      "variants": [],
+      "note": "古代エジプトの王（ファラオ）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-rnw3",
+      "ja": "会衆",
+      "en": "congregation",
+      "category": "roles",
+      "reading": "かいしゅう",
+      "variants": [
+        "回収",
+        "改修"
+      ],
+      "note": "説教原稿内の対訳一致から検出",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-5jlh",
+      "ja": "神をかたどって",
+      "en": "in His own image",
+      "category": "theology",
+      "reading": "かみをかたどって",
+      "variants": [],
+      "note": "神のかたち（イマーゴ・デイ）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-2zlu",
+      "ja": "アブラム",
+      "en": "Abram",
+      "category": "scripture",
+      "reading": "あぶらむ",
+      "variants": [],
+      "note": "アブラハムの改名前の名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-twbn",
+      "ja": "アブラハム",
+      "en": "Abraham",
+      "category": "scripture",
+      "reading": "あぶらはむ",
+      "variants": [],
+      "note": "信仰の父",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-ky7y",
+      "ja": "サライ",
+      "en": "Sarai",
+      "category": "scripture",
+      "reading": "さらい",
+      "variants": [],
+      "note": "サラの改名前の名",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-qn49",
+      "ja": "サラ",
+      "en": "Sarah",
+      "category": "scripture",
+      "reading": "さら",
+      "variants": [],
+      "note": "アブラハムの妻",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-osl5",
+      "ja": "ハガル",
+      "en": "Hagar",
+      "category": "scripture",
+      "reading": "はがる",
+      "variants": [],
+      "note": "サライの仕え女、イシュマエルの母",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-kihh",
+      "ja": "イサク",
+      "en": "Isaac",
+      "category": "scripture",
+      "reading": "いさく",
+      "variants": [],
+      "note": "アブラハムとサラの約束の子",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-nof2",
+      "ja": "エサウ",
+      "en": "Esau",
+      "category": "scripture",
+      "reading": "えさう",
+      "variants": [],
+      "note": "イサクの長男、エドムの祖",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-6j8l",
+      "ja": "ヤコブ",
+      "en": "Jacob",
+      "category": "scripture",
+      "reading": "やこぶ",
+      "variants": [],
+      "note": "イサクの子、イスラエル十二部族の父",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-6pzb",
+      "ja": "ヨセフ",
+      "en": "Joseph",
+      "category": "scripture",
+      "reading": "よせふ",
+      "variants": [],
+      "note": "ヤコブの愛息、エジプトの宰相",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-acvu",
+      "ja": "モーセ",
+      "en": "Moses",
+      "category": "roles",
+      "reading": "もーせ",
+      "variants": [],
+      "note": "出エジプトの指導者・預言者",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-whfy",
+      "ja": "アロン",
+      "en": "Aaron",
+      "category": "roles",
+      "reading": "あろん",
+      "variants": [],
+      "note": "モーセの兄、初代大祭司",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-485u",
+      "ja": "愆祭",
+      "en": "trespass offering",
+      "category": "worship",
+      "reading": "けんさい",
+      "variants": [],
+      "note": "代償のささげ物（新改訳：代償のいけにえ）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-uyn6",
+      "ja": "レビびと",
+      "en": "Levite",
+      "category": "roles",
+      "reading": "れびびと",
+      "variants": [
+        "レビ人"
+      ],
+      "note": "祭司の務めを行う部族",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-4y19",
+      "ja": "カナン",
+      "en": "Canaan",
+      "category": "scripture",
+      "reading": "かなん",
+      "variants": [],
+      "note": "約束の地",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-xlx6",
+      "ja": "ソドム",
+      "en": "Sodom",
+      "category": "scripture",
+      "reading": "そどむ",
+      "variants": [],
+      "note": "滅ぼされた背教の町",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-8aar",
+      "ja": "ゴモラ",
+      "en": "Gomorrah",
+      "category": "scripture",
+      "reading": "ごもら",
+      "variants": [],
+      "note": "ソドムと共に滅ぼされた町",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-3nlw",
+      "ja": "シナイ山",
+      "en": "Mount Sinai",
+      "category": "scripture",
+      "reading": "しないさん",
+      "variants": [],
+      "note": "律法が与えられた山",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-4vui",
+      "ja": "ホレブ",
+      "en": "Horeb",
+      "category": "scripture",
+      "reading": "ほれぶ",
+      "variants": [],
+      "note": "神の山（シナイ山と同義）",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247959-2hmp",
+      "ja": "ヨルダン",
+      "en": "Jordan",
+      "category": "scripture",
+      "reading": "よるだん",
+      "variants": [],
+      "note": "約束の地の境界となる川",
+      "enabled": true
+    },
+    {
+      "id": "imp-1794714247958-vn2t",
+      "ja": "エリコ",
+      "en": "Jericho",
+      "category": "scripture",
+      "reading": "えりこ",
+      "variants": [],
+      "note": "ヨシュアが最初に攻略した堅固な町",
+      "enabled": true
+    },
+    {
+      "id": "w-1",
+      "ja": "主日礼拝",
+      "reading": "しゅじつれいはい",
+      "variants": [
+        "休日礼拝",
+        "終日礼拝"
+      ],
+      "en": "Sunday Worship Service",
+      "category": "worship",
+      "note": "日曜日の公同礼拝",
+      "enabled": true
+    },
+    {
+      "id": "w-2",
+      "ja": "礼拝",
+      "reading": "れいはい",
+      "variants": [],
+      "en": "worship service",
+      "category": "worship",
+      "note": "文脈により worship / worship service",
+      "enabled": true
+    },
+    {
+      "id": "w-3",
+      "ja": "招詞",
+      "reading": "しょうし",
+      "variants": [
+        "生死",
+        "証紙",
+        "少子"
+      ],
+      "en": "Call to Worship",
+      "category": "worship",
+      "note": "礼拝冒頭の招きの聖句朗読",
+      "enabled": true
+    },
+    {
+      "id": "w-4",
+      "ja": "交読文",
+      "reading": "こうどくぶん",
+      "variants": [
+        "購読文",
+        "公文書"
+      ],
+      "en": "Responsive Reading",
+      "category": "worship",
+      "note": "司会者と会衆が交互に読む詩篇など",
+      "enabled": true
+    },
+    {
+      "id": "w-5",
+      "ja": "讃美歌",
+      "reading": "さんびか",
+      "variants": [
+        "賛美歌"
+      ],
+      "en": "Hymn",
+      "category": "worship",
+      "note": "讃美歌21や聖歌など",
+      "enabled": true
+    },
+    {
+      "id": "w-6",
+      "ja": "賛美",
+      "reading": "さんび",
+      "variants": [
+        "讃美",
+        "酸味"
+      ],
+      "en": "praise and worship",
+      "category": "worship",
+      "note": "神をほめたたえる歌・行為",
+      "enabled": true
+    },
+    {
+      "id": "w-7",
+      "ja": "使徒信条",
+      "reading": "しとしんじょう",
+      "variants": [
+        "使途信条"
+      ],
+      "en": "the Apostles' Creed",
+      "category": "worship",
+      "note": "信仰告白",
+      "enabled": true
+    },
+    {
+      "id": "w-8",
+      "ja": "主の祈り",
+      "reading": "しゅのいのり",
+      "variants": [
+        "首の祈り"
+      ],
+      "en": "the Lord's Prayer",
+      "category": "worship",
+      "note": "主イエスが教えられた祈り",
+      "enabled": true
+    },
+    {
+      "id": "w-9",
+      "ja": "献金",
+      "reading": "けんきん",
+      "variants": [
+        "現金",
+        "検診"
+      ],
+      "en": "offering",
+      "category": "worship",
+      "note": "礼拝中のささげもの（tithes and offerings）",
+      "enabled": true
+    },
+    {
+      "id": "w-10",
+      "ja": "頌栄",
+      "reading": "しょうえい",
+      "variants": [
+        "繁栄",
+        "照英",
+        "省営"
+      ],
+      "en": "Doxology",
+      "category": "worship",
+      "note": "礼拝終盤の栄光頌",
+      "enabled": true
+    },
+    {
+      "id": "w-11",
+      "ja": "祝祷",
+      "reading": "しゅくとう",
+      "variants": [
+        "宿当",
+        "粛党",
+        "祝島"
+      ],
+      "en": "Benediction",
+      "category": "worship",
+      "note": "牧師による礼拝結びの祝福の祈り",
+      "enabled": true
+    },
+    {
+      "id": "w-12",
+      "ja": "聖餐式",
+      "reading": "せいさんしき",
+      "variants": [
+        "生産式",
+        "清算式"
+      ],
+      "en": "Holy Communion (the Lord's Supper)",
+      "category": "worship",
+      "note": "パンと杯に与る礼典",
+      "enabled": true
+    },
+    {
+      "id": "w-13",
+      "ja": "洗礼式",
+      "reading": "せんれいしき",
+      "variants": [
+        "バプテスマ式"
+      ],
+      "en": "Baptismal Service",
+      "category": "worship",
+      "note": "洗礼（Baptism）を授ける式",
+      "enabled": true
+    },
+    {
+      "id": "w-14",
+      "ja": "前奏",
+      "reading": "ぜんそう",
+      "variants": [],
+      "en": "Prelude",
+      "category": "worship",
+      "note": "礼拝開始の奏楽",
+      "enabled": true
+    },
+    {
+      "id": "w-15",
+      "ja": "後奏",
+      "reading": "こうそう",
+      "variants": [
+        "構想",
+        "抗争"
+      ],
+      "en": "Postlude",
+      "category": "worship",
+      "note": "祝祷後の奏楽",
+      "enabled": true
+    },
+    {
+      "id": "r-1",
+      "ja": "牧師",
+      "reading": "ぼくし",
+      "variants": [
+        "墨子",
+        "牧志"
+      ],
+      "en": "Pastor",
+      "category": "roles",
+      "note": "「〇〇牧師」は Pastor [Name]",
+      "enabled": true
+    },
+    {
+      "id": "r-2",
+      "ja": "主任牧師",
+      "reading": "しゅにんぼくし",
+      "variants": [],
+      "en": "Senior Pastor",
+      "category": "roles",
+      "note": "教会の主任牧師",
+      "enabled": true
+    },
+    {
+      "id": "r-3",
+      "ja": "副牧師",
+      "reading": "ふくぼくし",
+      "variants": [],
+      "en": "Associate Pastor",
+      "category": "roles",
+      "note": "協力牧師・副牧師",
+      "enabled": true
+    },
+    {
+      "id": "r-4",
+      "ja": "伝道師",
+      "reading": "でんどうし",
+      "variants": [
+        "電動師"
+      ],
+      "en": "Minister / Evangelist",
+      "category": "roles",
+      "note": "日本のプロテスタント教会の伝道師",
+      "enabled": true
+    },
+    {
+      "id": "r-5",
+      "ja": "長老",
+      "reading": "ちょうろう",
+      "variants": [],
+      "en": "Elder",
+      "category": "roles",
+      "note": "教会役員としての長老",
+      "enabled": true
+    },
+    {
+      "id": "r-6",
+      "ja": "執事",
+      "reading": "しつじ",
+      "variants": [
+        "羊"
+      ],
+      "en": "Deacon",
+      "category": "roles",
+      "note": "教会役員としての執事",
+      "enabled": true
+    },
+    {
+      "id": "r-7",
+      "ja": "兄弟姉妹",
+      "reading": "きょうだいしまい",
+      "variants": [
+        "愛する兄弟姉妹"
+      ],
+      "en": "brothers and sisters in Christ",
+      "category": "roles",
+      "note": "会衆への呼びかけ",
+      "enabled": true
+    },
+    {
+      "id": "r-8",
+      "ja": "求道者",
+      "reading": "きゅうどうしゃ",
+      "variants": [
+        "弓道者"
+      ],
+      "en": "seeker",
+      "category": "roles",
+      "note": "信仰を求めている方",
+      "enabled": true
+    },
+    {
+      "id": "r-9",
+      "ja": "教会学校",
+      "reading": "きょうかいがっこう",
+      "variants": [
+        "日曜学校",
+        "CS"
+      ],
+      "en": "Sunday School (Church School)",
+      "category": "roles",
+      "note": "子ども・中高生向けの礼拝と学び",
+      "enabled": true
+    },
+    {
+      "id": "r-10",
+      "ja": "祈祷会",
+      "reading": "きとうかい",
+      "variants": [
+        "気筒会"
+      ],
+      "en": "Prayer Meeting",
+      "category": "roles",
+      "note": "週日の聖書研究・祈祷会",
+      "enabled": true
+    },
+    {
+      "id": "t-1",
+      "ja": "福音",
+      "reading": "ふくいん",
+      "variants": [
+        "福井",
+        "複音"
+      ],
+      "en": "the Gospel (the Good News)",
+      "category": "theology",
+      "note": "イエス・キリストによる救いの良き知らせ",
+      "enabled": true
+    },
+    {
+      "id": "t-2",
+      "ja": "恵み",
+      "reading": "めぐみ",
+      "variants": [
+        "神の恵み"
+      ],
+      "en": "grace",
+      "category": "theology",
+      "note": "神からの無償の恩寵 (the grace of God)",
+      "enabled": true
+    },
+    {
+      "id": "t-3",
+      "ja": "救い",
+      "reading": "すくい",
+      "variants": [],
+      "en": "salvation",
+      "category": "theology",
+      "note": "罪からの救い",
+      "enabled": true
+    },
+    {
+      "id": "t-4",
+      "ja": "贖い",
+      "reading": "あがない",
+      "variants": [
+        "あがない",
+        "購い"
+      ],
+      "en": "redemption (atonement)",
+      "category": "theology",
+      "note": "キリストの十字架による罪の贖い",
+      "enabled": true
+    },
+    {
+      "id": "t-5",
+      "ja": "十字架",
+      "reading": "じゅうじか",
+      "variants": [],
+      "en": "the Cross",
+      "category": "theology",
+      "note": "キリストの十字架",
+      "enabled": true
+    },
+    {
+      "id": "t-6",
+      "ja": "復活",
+      "reading": "ふっかつ",
+      "variants": [],
+      "en": "the Resurrection",
+      "category": "theology",
+      "note": "キリストのよみがえり",
+      "enabled": true
+    },
+    {
+      "id": "t-7",
+      "ja": "悔い改め",
+      "reading": "くいあらため",
+      "variants": [
+        "悔い改める"
+      ],
+      "en": "repentance (repent)",
+      "category": "theology",
+      "note": "神に立ち返ること",
+      "enabled": true
+    },
+    {
+      "id": "t-8",
+      "ja": "罪の赦し",
+      "reading": "つみのゆるし",
+      "variants": [
+        "罪の許し"
+      ],
+      "en": "forgiveness of sins",
+      "category": "theology",
+      "note": "神による罪の赦し",
+      "enabled": true
+    },
+    {
+      "id": "t-9",
+      "ja": "義とされる",
+      "reading": "ぎとされる",
+      "variants": [
+        "信仰義認",
+        "義認"
+      ],
+      "en": "justified by faith (justification)",
+      "category": "theology",
+      "note": "信仰によって義と認められること",
+      "enabled": true
+    },
+    {
+      "id": "t-10",
+      "ja": "聖化",
+      "reading": "せいか",
+      "variants": [
+        "成果",
+        "聖火",
+        "製菓"
+      ],
+      "en": "sanctification",
+      "category": "theology",
+      "note": "キリストの姿に似せられていく歩み",
+      "enabled": true
+    },
+    {
+      "id": "t-11",
+      "ja": "聖霊",
+      "reading": "せいれい",
+      "variants": [
+        "精霊",
+        "政令"
+      ],
+      "en": "the Holy Ghost (the Holy Spirit)",
+      "category": "theology",
+      "note": "聖霊との交わり = communion with the Holy Ghost",
+      "enabled": true
+    },
+    {
+      "id": "t-12",
+      "ja": "三位一体",
+      "reading": "さんみいったい",
+      "variants": [],
+      "en": "the Trinity (Triune God)",
+      "category": "theology",
+      "note": "父・子・聖霊なる唯一の神",
+      "enabled": true
+    },
+    {
+      "id": "t-13",
+      "ja": "神の国",
+      "reading": "かみのくに",
+      "variants": [],
+      "en": "the Kingdom of God",
+      "category": "theology",
+      "note": "神の統治・御国",
+      "enabled": true
+    },
+    {
+      "id": "t-14",
+      "ja": "永遠の命",
+      "reading": "えいえんのいのち",
+      "variants": [
+        "永遠のいのち"
+      ],
+      "en": "eternal life",
+      "category": "theology",
+      "note": "神と共に生きる永遠のいのち",
+      "enabled": true
+    },
+    {
+      "id": "t-15",
+      "ja": "召命",
+      "reading": "しょうめい",
+      "variants": [
+        "照明",
+        "証明"
+      ],
+      "en": "calling (divine calling)",
+      "category": "theology",
+      "note": "神からの召し",
+      "enabled": true
+    },
+    {
+      "id": "t-16",
+      "ja": "摂理",
+      "reading": "せつり",
+      "variants": [],
+      "en": "God's providence",
+      "category": "theology",
+      "note": "神の導きとご計画",
+      "enabled": true
+    },
+    {
+      "id": "t-17",
+      "ja": "契約",
+      "reading": "けいやく",
+      "variants": [],
+      "en": "covenant",
+      "category": "theology",
+      "note": "聖書における神と人との契約（contractではなくcovenant）",
+      "enabled": true
+    },
+    {
+      "id": "l-1",
+      "ja": "証し",
+      "reading": "あかし",
+      "variants": [
+        "明石",
+        "証"
+      ],
+      "en": "testimony",
+      "category": "life",
+      "note": "神の恵みの体験を語ること (share a testimony)",
+      "enabled": true
+    },
+    {
+      "id": "l-2",
+      "ja": "とりなしの祈り",
+      "reading": "とりなしのいのり",
+      "variants": [
+        "取りなしの祈り"
+      ],
+      "en": "intercessory prayer (intercession)",
+      "category": "life",
+      "note": "他者や世界のために執り成して祈ること",
+      "enabled": true
+    },
+    {
+      "id": "l-3",
+      "ja": "交わり",
+      "reading": "まじわり",
+      "variants": [],
+      "en": "fellowship",
+      "category": "life",
+      "note": "キリストにある兄姉の交わり",
+      "enabled": true
+    },
+    {
+      "id": "l-4",
+      "ja": "奉仕",
+      "reading": "ほうし",
+      "variants": [
+        "胞子",
+        "法師"
+      ],
+      "en": "ministry / service",
+      "category": "life",
+      "note": "教会での奉仕・働き",
+      "enabled": true
+    },
+    {
+      "id": "l-5",
+      "ja": "伝道",
+      "reading": "でんどう",
+      "variants": [
+        "電動",
+        "殿堂"
+      ],
+      "en": "evangelism (outreach)",
+      "category": "life",
+      "note": "福音を伝える働き",
+      "enabled": true
+    },
+    {
+      "id": "l-6",
+      "ja": "宣教",
+      "reading": "せんきょう",
+      "variants": [
+        "選挙",
+        "戦況"
+      ],
+      "en": "Mission",
+      "category": "life",
+      "note": "説教原稿内の対訳一致から検出",
+      "enabled": true
+    },
+    {
+      "id": "l-7",
+      "ja": "平安",
+      "reading": "へいあん",
+      "variants": [
+        "主の平安"
+      ],
+      "en": "peace (the peace of the Lord)",
+      "category": "life",
+      "note": "キリストが与えられる心の平安",
+      "enabled": true
+    },
+    {
+      "id": "l-8",
+      "ja": "試練",
+      "reading": "しれん",
+      "variants": [],
+      "en": "trials and tribulations",
+      "category": "life",
+      "note": "信仰の試練・苦難",
+      "enabled": true
+    },
+    {
+      "id": "l-9",
+      "ja": "天の父なる神様",
+      "reading": "てんのちちなるかみさま",
+      "variants": [
+        "愛する天の父なる神様"
+      ],
+      "en": "Heavenly Father (Gracious Heavenly Father)",
+      "category": "life",
+      "note": "祈りの冒頭の呼びかけ",
+      "enabled": true
+    },
+    {
+      "id": "l-10",
+      "ja": "主イエス・キリストの御名によって祈ります",
+      "reading": "しゅいえすきりすとのみなによっていのります",
+      "variants": [
+        "イエス様の御名によってお祈りいたします",
+        "主の御名によって祈ります"
+      ],
+      "en": "In the name of our Lord Jesus Christ we pray",
+      "category": "life",
+      "note": "祈りの結びの定型句",
+      "enabled": true
+    },
+    {
+      "id": "s-1",
+      "ja": "御言葉",
+      "reading": "みことば",
+      "variants": [
+        "みことば",
+        "神の言葉",
+        "神のみことば"
+      ],
+      "en": "the Word of God (Scripture)",
+      "category": "scripture",
+      "note": "聖書の言葉",
+      "enabled": true
+    },
+    {
+      "id": "s-2",
+      "ja": "旧約聖書",
+      "reading": "きゅうやくせいしょ",
+      "variants": [],
+      "en": "the Old Testament",
+      "category": "scripture",
+      "note": "旧約聖書",
+      "enabled": true
+    },
+    {
+      "id": "s-3",
+      "ja": "新約聖書",
+      "reading": "しんやくせいしょ",
+      "variants": [],
+      "en": "the New Testament",
+      "category": "scripture",
+      "note": "新約聖書",
+      "enabled": true
+    },
+    {
+      "id": "s-4",
+      "ja": "福音書",
+      "reading": "ふくいんしょ",
+      "variants": [],
+      "en": "the Gospels",
+      "category": "scripture",
+      "note": "マタイ・マルコ・ルカ・ヨハネによる福音書",
+      "enabled": true
+    },
+    {
+      "id": "s-5",
+      "ja": "詩篇",
+      "reading": "しへん",
+      "variants": [
+        "詩編",
+        "紙片"
+      ],
+      "en": "Psalms",
+      "category": "scripture",
+      "note": "例: 詩篇23篇 = Psalm 23",
+      "enabled": true
+    },
+    {
+      "id": "s-6",
+      "ja": "創世記",
+      "reading": "そうせいき",
+      "variants": [],
+      "en": "Genesis",
+      "category": "scripture",
+      "note": "旧約聖書最初の書",
+      "enabled": true
+    },
+    {
+      "id": "s-7",
+      "ja": "使徒言行録",
+      "reading": "しとげんこうろく",
+      "variants": [
+        "使徒の働き",
+        "使徒行伝"
+      ],
+      "en": "the Book of Acts (Acts of the Apostles)",
+      "category": "scripture",
+      "note": "新約聖書の歴史書",
+      "enabled": true
+    },
+    {
+      "id": "s-8",
+      "ja": "ローマ人への手紙",
+      "reading": "ろーまびとへのてがみ",
+      "variants": [
+        "ローマの信徒への手紙"
+      ],
+      "en": "the Epistle to the Romans (Romans)",
+      "category": "scripture",
+      "note": "パウロ書簡",
+      "enabled": true
+    },
+    {
+      "id": "s-9",
+      "ja": "御心",
+      "reading": "みこころ",
+      "variants": [
+        "みこころ",
+        "神の御心"
+      ],
+      "en": "God's will (His will)",
+      "category": "scripture",
+      "note": "神のご意志・みこころ",
+      "enabled": true
+    },
+    {
+      "id": "f-1",
+      "ja": "断食の律法",
+      "reading": "だんじきのりっぽう",
+      "variants": [
+        "断食の立法",
+        "男児期の律法"
+      ],
+      "en": "the law of the fast",
+      "category": "worship",
+      "note": "断食に関する主の律法",
+      "enabled": true
+    },
+    {
+      "id": "f-2",
+      "ja": "断食献金",
+      "reading": "だんじきけんきん",
+      "variants": [
+        "断食現金",
+        "断食検診"
+      ],
+      "en": "fast offerings",
+      "category": "worship",
+      "note": "助けの必要な人々を祝福するための献金",
+      "enabled": true
+    },
+    {
+      "id": "f-3",
+      "ja": "断食",
+      "reading": "だんじき",
+      "variants": [
+        "暖色"
+      ],
+      "en": "fasting (the fast)",
+      "category": "worship",
+      "note": "祈りとともに飲食を断つ礼拝行為",
+      "enabled": true
+    },
+    {
+      "id": "f-4",
+      "ja": "愛する兄弟姉妹の皆さん",
+      "reading": "あいするきょうだいしまいのみなさん",
+      "variants": [],
+      "en": "My beloved brothers and sisters",
+      "category": "roles",
+      "note": "説教冒頭の呼びかけ",
+      "enabled": true
+    },
+    {
+      "id": "f-5",
+      "ja": "天の御父",
+      "reading": "てんのおんちち",
+      "variants": [
+        "天の御父",
+        "てんのみちち"
+      ],
+      "en": "Heavenly Father",
+      "category": "theology",
+      "note": "父なる神",
+      "enabled": true
+    },
+    {
+      "id": "f-6",
+      "ja": "愛する御子イエス・キリスト",
+      "reading": "あいするおんこいえすきりすと",
+      "variants": [
+        "愛する巫女イエス・キリスト",
+        "愛する神子イエス・キリスト"
+      ],
+      "en": "His Beloved Son, Jesus Christ",
+      "category": "theology",
+      "note": "御父の愛する御子",
+      "enabled": true
+    },
+    {
+      "id": "f-7",
+      "ja": "より高く、より神聖な方法で",
+      "reading": "よりたかくよりしんせいなほうほうで",
+      "variants": [],
+      "en": "in a higher and holier way",
+      "category": "life",
+      "note": "律法を形式以上に実践する姿勢",
+      "enabled": true
+    },
+    {
+      "id": "f-8",
+      "ja": "聖め",
+      "reading": "きよめ",
+      "variants": [
+        "清め",
+        "聖めをもたらす"
+      ],
+      "en": "sanctifying (sanctification)",
+      "category": "theology",
+      "note": "聖めをもたらす霊的な力 = sanctifying spiritual power",
+      "enabled": true
+    },
+    {
+      "id": "f-9",
+      "ja": "現世の旅",
+      "reading": "げんせのたび",
+      "variants": [
+        "現世での務め"
+      ],
+      "en": "mortal journey (mortal ministry)",
+      "category": "life",
+      "note": "地上での生涯・務め",
+      "enabled": true
+    },
+    {
+      "id": "f-10",
+      "ja": "末日",
+      "reading": "まつじつ",
+      "variants": [],
+      "en": "these latter days (latter days)",
+      "category": "theology",
+      "note": "この末日における = in these latter days",
+      "enabled": true
+    },
+    {
+      "id": "f-11",
+      "ja": "聖約",
+      "reading": "せいやく",
+      "variants": [
+        "制約",
+        "誓約",
+        "製薬"
+      ],
+      "en": "covenant / covenants",
+      "category": "theology",
+      "note": "神と人との間で交わされる神聖な契約",
+      "enabled": true
+    },
+    {
+      "id": "f-12",
+      "ja": "聖約の民",
+      "reading": "せいやくのたみ",
+      "variants": [
+        "制約の民",
+        "誓約の民"
+      ],
+      "en": "covenant people",
+      "category": "theology",
+      "note": "主と聖約を交わした民",
+      "enabled": true
+    },
+    {
+      "id": "f-13",
+      "ja": "聖約の道",
+      "reading": "せいやくのみち",
+      "variants": [
+        "制約の道",
+        "誓約の道"
+      ],
+      "en": "the covenant path",
+      "category": "life",
+      "note": "聖約を守って歩む信仰の道",
+      "enabled": true
+    },
+    {
+      "id": "f-14",
+      "ja": "聖約の力",
+      "reading": "せいやくのちから",
+      "variants": [
+        "制約の力",
+        "誓約の力"
+      ],
+      "en": "covenant power",
+      "category": "theology",
+      "note": "聖約によってもたらされる神の力",
+      "enabled": true
+    },
+    {
+      "id": "f-15",
+      "ja": "弟子としての生き方",
+      "reading": "でしとしてのいきかた",
+      "variants": [],
+      "en": "discipleship",
+      "category": "life",
+      "note": "キリストの弟子としての歩み",
+      "enabled": true
+    },
+    {
+      "id": "f-16",
+      "ja": "預言者イザヤ",
+      "reading": "よげんしゃいざや",
+      "variants": [
+        "予言者イザヤ"
+      ],
+      "en": "the prophet Isaiah",
+      "category": "scripture",
+      "note": "旧約の預言者イザヤ (the Old Testament prophet Isaiah)",
+      "enabled": true
+    },
+    {
+      "id": "f-17",
+      "ja": "預言者",
+      "reading": "よげんしゃ",
+      "variants": [
+        "予言者"
+      ],
+      "en": "prophet",
+      "category": "roles",
+      "note": "神の言葉を語る預言者（「予言者」の誤変換を補正）",
+      "enabled": true
+    },
+    {
+      "id": "f-18",
+      "ja": "大管長",
+      "reading": "だいかんちょう",
+      "variants": [
+        "代官町",
+        "大館長",
+        "大艦長"
+      ],
+      "en": "President",
+      "category": "roles",
+      "note": "例: ジョセフ・F・スミス大管長 = President Joseph F. Smith",
+      "enabled": true
+    },
+    {
+      "id": "f-19",
+      "ja": "ジョセフ・F・スミス大管長",
+      "reading": "じょせふえふすみすだいかんちょう",
+      "variants": [
+        "ジョセフスミス大管長"
+      ],
+      "en": "President Joseph F. Smith",
+      "category": "roles",
+      "note": "説教内で引用される人物名",
+      "enabled": true
+    },
+    {
+      "id": "f-20",
+      "ja": "預言者ジョセフ・スミス",
+      "reading": "よげんしゃじょせふすみす",
+      "variants": [
+        "予言者ジョセフ・スミス",
+        "予言者ジョセフスミス"
+      ],
+      "en": "The Prophet Joseph Smith",
+      "category": "roles",
+      "note": "説教内で引用される人物名",
+      "enabled": true
+    },
+    {
+      "id": "f-21",
+      "ja": "聖霊との交わり",
+      "reading": "せいれいとのまじわり",
+      "variants": [
+        "精霊との交わり"
+      ],
+      "en": "communion with the Holy Ghost",
+      "category": "theology",
+      "note": "聖霊 (the Holy Ghost) との深い交わり",
+      "enabled": true
+    },
+    {
+      "id": "f-22",
+      "ja": "個人の啓示",
+      "reading": "こじんのけいじ",
+      "variants": [
+        "個人の掲示",
+        "個人の刑事"
+      ],
+      "en": "personal revelation",
+      "category": "theology",
+      "note": "聖霊を通して個人に与えられる啓示",
+      "enabled": true
+    },
+    {
+      "id": "f-23",
+      "ja": "啓示",
+      "reading": "けいじ",
+      "variants": [
+        "掲示",
+        "刑事",
+        "計時"
+      ],
+      "en": "revelation",
+      "category": "theology",
+      "note": "霊感と啓示 = inspiration and revelation",
+      "enabled": true
+    },
+    {
+      "id": "f-24",
+      "ja": "救い主",
+      "reading": "すくいぬし",
+      "variants": [],
+      "en": "the Savior",
+      "category": "theology",
+      "note": "イエス・キリストの称号",
+      "enabled": true
+    },
+    {
+      "id": "f-25",
+      "ja": "世の贖い主",
+      "reading": "よのあがないぬし",
+      "variants": [
+        "世の購い主",
+        "贖い主"
+      ],
+      "en": "Redeemer of the world (Redeemer)",
+      "category": "theology",
+      "note": "イエス・キリストの称号",
+      "enabled": true
+    },
+    {
+      "id": "f-26",
+      "ja": "肉における神の独り子",
+      "reading": "にくにおけるかみのひとりご",
+      "variants": [
+        "神の独り子",
+        "神のひとり子"
+      ],
+      "en": "the Only Begotten Son of God in the flesh",
+      "category": "theology",
+      "note": "イエス・キリストの称号",
+      "enabled": true
+    },
+    {
+      "id": "f-27",
+      "ja": "地上での務め",
+      "reading": "ちじょうでのつとめ",
+      "variants": [
+        "現世での務め"
+      ],
+      "en": "earthly ministry (mortal ministry)",
+      "category": "scripture",
+      "note": "救い主の地上における公生涯・務め",
+      "enabled": true
+    },
+    {
+      "id": "f-28",
+      "ja": "サタンの誘惑",
+      "reading": "さたんのゆうわく",
+      "variants": [],
+      "en": "the temptations of the adversary",
+      "category": "theology",
+      "note": "サタン（敵対者 = the adversary）の誘惑",
+      "enabled": true
+    },
+    {
+      "id": "f-29",
+      "ja": "しえたげられる者を放ち去らせ",
+      "reading": "しえたげられるものをはなちさらせ",
+      "variants": [
+        "虐げられる者を放ち去らせ"
+      ],
+      "en": "to let the oppressed go free",
+      "category": "scripture",
+      "note": "イザヤ書58章6節の引用句",
+      "enabled": true
+    },
+    {
+      "id": "f-30",
+      "ja": "すべてのくびきを折る",
+      "reading": "すべてのくびきをおる",
+      "variants": [
+        "全てのくびきを折る",
+        "すべての首木を折る"
+      ],
+      "en": "break every yoke",
+      "category": "scripture",
+      "note": "イザヤ書58章6節の引用句",
+      "enabled": true
+    },
+    {
+      "id": "f-31",
+      "ja": "キリストのような慈愛",
+      "reading": "きりすとのようなじあい",
+      "variants": [
+        "キリストのような自愛",
+        "慈愛"
+      ],
+      "en": "Christlike charity (charity)",
+      "category": "theology",
+      "note": "キリストの純粋な愛（音声認識の「自愛」誤変換を補正）",
+      "enabled": true
+    },
+    {
+      "id": "f-32",
+      "ja": "ミニスタリング",
+      "reading": "みにすたりんぐ",
+      "variants": [],
+      "en": "ministering (to minister)",
+      "category": "life",
+      "note": "キリストのように人々に仕え養う働き",
+      "enabled": true
+    },
+    {
+      "id": "f-33",
+      "ja": "聖別された",
+      "reading": "せいべつされた",
+      "variants": [
+        "性別された"
+      ],
+      "en": "consecrated",
+      "category": "theology",
+      "note": "神のために聖別された（音声認識の「性別された」誤変換を補正）",
+      "enabled": true
+    },
+    {
+      "id": "f-34",
+      "ja": "奉献",
+      "reading": "ほうけん",
+      "variants": [
+        "貢献",
+        "法権",
+        "宝剣"
+      ],
+      "en": "consecration (consecrate)",
+      "category": "theology",
+      "note": "奉献の精神 = spirit of consecration",
+      "enabled": true
+    },
+    {
+      "id": "f-35",
+      "ja": "神の王国の建設",
+      "reading": "かみのおうこくのけんせつ",
+      "variants": [],
+      "en": "the building of the kingdom of God",
+      "category": "theology",
+      "note": "地上に神の王国を築く業",
+      "enabled": true
+    },
+    {
+      "id": "f-36",
+      "ja": "主の御手に使われる者",
+      "reading": "しゅのみてにつかわれるもの",
+      "variants": [
+        "主の見てに使われる者"
+      ],
+      "en": "instruments in His hands",
+      "category": "life",
+      "note": "主の御業の道具として使われること",
+      "enabled": true
+    },
+    {
+      "id": "f-37",
+      "ja": "主の御霊",
+      "reading": "しゅのみたま",
+      "variants": [
+        "御霊",
+        "みたま"
+      ],
+      "en": "His Spirit (the Spirit)",
+      "category": "theology",
+      "note": "主の御霊と祝福 = His Spirit and blessings",
+      "enabled": true
+    },
+    {
+      "id": "f-38",
+      "ja": "厳粛に証します",
+      "reading": "げんしゅくにあかしします",
+      "variants": [
+        "厳粛に明かします"
+      ],
+      "en": "I bear my solemn testimony",
+      "category": "life",
+      "note": "説教結びの証しの定型表現",
+      "enabled": true
+    },
+    {
+      "id": "f-39",
+      "ja": "イエス・キリストの聖なる御名により証します、アーメン",
+      "reading": "いえすきりすとのせいなるみなによりあかししますあーめん",
+      "variants": [
+        "イエス・キリストの聖なる御名により明かします、アーメン"
+      ],
+      "en": "Of these things I bear my witness in His holy name, even Jesus Christ, amen.",
+      "category": "life",
+      "note": "説教結びの定型句",
+      "enabled": true
+    }
+  ]
+}

@@ -190,17 +190,19 @@
           <div class="stage-header-left">
             <span class="stage-tag">LIVE CONTINUOUS STREAM</span>
             <span class="history-count-badge" id="historyCountLabel">0 文字</span>
-            <div class="stream-layout-tabs" id="streamLayoutTabs" role="group" aria-label="2つの枠の配置切替">
-              <button type="button" class="layout-tab active" data-layout="horizontal" title="左に書き起こし枠、右に通訳枠を並べて表示します">
-                左右2枠（書き起こし ｜ 通訳）
-              </button>
-              <button type="button" class="layout-tab" data-layout="vertical" title="上に英語通訳枠、下に日本語書き起こし枠を並べて表示します">
-                上下2枠（上：通訳 ／ 下：書き起こし）
+            <div class="stage-layout-actions">
+              <div class="stream-layout-tabs" id="streamLayoutTabs" role="group" aria-label="2つの枠の配置切替">
+                <button type="button" class="layout-tab active" data-layout="horizontal" title="左に書き起こし枠、右に通訳枠を並べて表示します">
+                  左右2枠（書き起こし ｜ 通訳）
+                </button>
+                <button type="button" class="layout-tab" data-layout="vertical" title="上に英語通訳枠、下に日本語書き起こし枠を並べて表示します">
+                  上下2枠（上：通訳 ／ 下：書き起こし）
+                </button>
+              </div>
+              <button type="button" id="insertParagraphBtn" class="btn btn-compact btn-outline" title="書き起こしと通訳の文章に段落の改行を入れます">
+                ↵ 段落改行
               </button>
             </div>
-            <button type="button" id="insertParagraphBtn" class="btn btn-compact btn-outline" title="書き起こしと通訳の文章に段落の改行を入れます">
-              ↵ 段落改行
-            </button>
           </div>
           <div class="stage-header-right">
             <span class="stage-model-info" id="stageModelInfo">Demo Engine (用語集連動)</span>

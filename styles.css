@@ -363,7 +363,7 @@ body.projector-mode .live-stage {
   border-color: var(--border-strong);
 }
 
-.exit-projector-only {
+body:not(.projector-mode) .exit-projector-only {
   display: none;
 }
 
@@ -601,6 +601,18 @@ body.compact-mode .btn-toggle-compact {
   background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
+}
+
+.stage-layout-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+#insertParagraphBtn {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .stream-layout-tabs {

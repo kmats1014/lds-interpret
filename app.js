@@ -88,7 +88,6 @@ class GraceInterpretApp {
 
     // Audio & Live stage controls
     this.micToggleBtn = document.getElementById('micToggleBtn');
-    this.micBtnIcon = document.getElementById('micBtnIcon');
     this.micBtnText = document.getElementById('micBtnText');
     this.liveStatusBadge = document.getElementById('liveStatusBadge');
     this.liveStatusText = document.getElementById('liveStatusText');
@@ -1546,7 +1545,6 @@ class GraceInterpretApp {
 
   updateMicUI(active, statusText, badgeStateClass) {
     this.micToggleBtn.setAttribute('aria-pressed', String(active));
-    this.micBtnIcon.textContent = active ? '⏹️' : '🎙️';
     this.micBtnText.textContent = active
       ? '同時通訳を停止（マイクOFF）'
       : '同時通訳を開始（マイクON）';

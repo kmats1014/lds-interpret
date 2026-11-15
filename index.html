@@ -125,7 +125,6 @@
 
           <button type="button" id="micToggleBtn" class="btn-mic" aria-pressed="false">
             <span class="mic-pulse-ring"></span>
-            <span class="mic-icon" id="micBtnIcon">🎙️</span>
             <span id="micBtnText">同時通訳を開始（マイクON）</span>
           </button>
 
@@ -133,14 +132,14 @@
             <span class="icon">📱</span> 参加者URL・QR発行
             <span class="share-live-dot" id="shareLiveDot" title="配信準備完了"></span>
           </button>
+        </div>
 
+        <div class="audio-secondary-actions">
           <div class="live-status-indicator" id="liveStatusBadge">
             <span class="pulse-dot"></span>
             <span id="liveStatusText">待機中</span>
           </div>
-        </div>
 
-        <div class="audio-secondary-actions">
           <label class="toggle-pill" title="通訳された文章を自動で音声読み上げします">
             <input type="checkbox" id="ttsToggleCheckbox" />
             <span id="ttsToggleLabelText">🔊 英語読み上げ</span>

@@ -313,8 +313,14 @@
       <!-- 用語リスト -->
       <div class="glossary-list" id="glossaryListContainer"></div>
 
-      <!-- 辞書インポート / エクスポート / リセット -->
-      <div class="sidebar-footer">
+      <!-- 辞書インポート / エクスポート / リセット / GitHubバックアップ -->
+      <div class="sidebar-footer" style="flex-wrap: wrap;">
+        <button type="button" id="backupGlossaryGithubBtn" class="btn btn-compact btn-secondary" title="現在の用語集をGitHubリポジトリ（glossary-backup.json）に保存します">
+          ☁️ GitHub保存
+        </button>
+        <button type="button" id="restoreGlossaryGithubBtn" class="btn btn-compact btn-outline" title="GitHubリポジトリ上のバックアップから用語集を復元します">
+          ☁️ GitHub復元
+        </button>
         <button type="button" id="exportGlossaryCsvBtn" class="btn btn-compact btn-outline" title="用語集をCSV形式で書き出します（Excel等で編集可能）">
           CSV出力
         </button>
@@ -497,6 +503,36 @@
               value="26"
             />
             <small class="field-hint">読点や息継ぎごとに素早く通訳を開始する文字数目安です（初期値: 26文字）。</small>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid var(--border-color); margin: 0.75rem 0;" />
+
+          <div class="form-field">
+            <label for="githubRepoInput">☁️ GitHub 辞書バックアップ先リポジトリ</label>
+            <input
+              type="text"
+              id="githubRepoInput"
+              class="text-input"
+              placeholder="kmats1014/lds-interpret"
+            />
+            <small class="field-hint">「ユーザー名/リポジトリ名」形式で指定します（<code>glossary-backup.json</code> に保存・復元）。</small>
+          </div>
+
+          <div class="form-field">
+            <label for="githubTokenInput">GitHub Personal Access Token（保存時のみ必要）</label>
+            <div class="password-input-wrap">
+              <input
+                type="password"
+                id="githubTokenInput"
+                class="text-input"
+                placeholder="github_pat_... または ghp_..."
+                autocomplete="off"
+              />
+              <button type="button" id="toggleGithubTokenVisibilityBtn" class="btn btn-compact btn-outline">
+                表示
+              </button>
+            </div>
+            <small class="field-hint">※ 公開リポジトリからの「GitHub復元」はトークン不要です。「GitHub保存」を使う場合のみ <code>Contents: Read &amp; write</code> 権限のトークンを入力してください。</small>
           </div>
         </div>
       </div>

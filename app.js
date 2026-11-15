@@ -162,6 +162,8 @@ class GraceInterpretApp {
     this.exportGlossaryCsvBtn = document.getElementById('exportGlossaryCsvBtn');
     this.importGlossaryFileInput = document.getElementById('importGlossaryFileInput');
     this.resetGlossaryBtn = document.getElementById('resetGlossaryBtn');
+    this.backupGlossaryGithubBtn = document.getElementById('backupGlossaryGithubBtn');
+    this.restoreGlossaryGithubBtn = document.getElementById('restoreGlossaryGithubBtn');
 
     // Term Dialog
     this.termDialog = document.getElementById('termDialog');
@@ -188,6 +190,9 @@ class GraceInterpretApp {
     this.audioInputModeSelect = document.getElementById('audioInputModeSelect');
     this.churchNameInput = document.getElementById('churchNameInput');
     this.autoCommitLengthInput = document.getElementById('autoCommitLengthInput');
+    this.githubRepoInput = document.getElementById('githubRepoInput');
+    this.githubTokenInput = document.getElementById('githubTokenInput');
+    this.toggleGithubTokenVisibilityBtn = document.getElementById('toggleGithubTokenVisibilityBtn');
     this.closeSettingsDialogBtn = document.getElementById('closeSettingsDialogBtn');
     this.cancelSettingsBtn = document.getElementById('cancelSettingsBtn');
 
@@ -307,6 +312,8 @@ class GraceInterpretApp {
       autoCommitLength: 42,
       fontScale: 1.15,
       boxSplitRatio: 50,
+      githubRepo: 'kmats1014/lds-interpret',
+      githubToken: '',
     };
     try {
       const legacy = localStorage.getItem('grace_interpret_settings_v1');
@@ -931,7 +938,9 @@ class GraceInterpretApp {
       this.saveTermFromDialog();
     });
 
-    // CSV出力・読込・初期値リセット
+    // CSV出力・読込・初期値リセット・GitHubバックアップ
+    this.backupGlossaryGithubBtn?.addEventListener('click', () => this.backupGlossaryToGithub());
+    this.restoreGlossaryGithubBtn?.addEventListener('click', () => this.restoreGlossaryFromGithub());
     this.exportGlossaryCsvBtn.addEventListener('click', () => this.exportGlossaryCsv());
     this.importGlossaryFileInput.addEventListener('change', (e) => this.importGlossaryFile(e));
     this.resetGlossaryBtn.addEventListener('click', () => {
@@ -982,6 +991,12 @@ class GraceInterpretApp {
       }
     });
 
+    this.toggleGithubTokenVisibilityBtn?.addEventListener('click', () => {
+      const isPw = this.githubTokenInput.type === 'password';
+      this.githubTokenInput.type = isPw ? 'text' : 'password';
+      this.toggleGithubTokenVisibilityBtn.textContent = isPw ? '隠す' : '表示';
+    });
+
     this.settingsForm.addEventListener('submit', (e) => {
       e.preventDefault();
       this.settings.apiKey = this.apiKeyInput.value.trim();
@@ -992,6 +1007,8 @@ class GraceInterpretApp {
         20,
         parseInt(this.autoCommitLengthInput.value, 10) || 42
       );
+      this.settings.githubRepo = (this.githubRepoInput?.value.trim() || 'kmats1014/lds-interpret').replace(/^https?:\/\/github\.com\//, '').replace(/\.git$/, '');
+      this.settings.githubToken = this.githubTokenInput?.value.trim() || '';
       this.saveSettings();
       this.settingsDialog.close();
     });
@@ -3225,8 +3242,184 @@ class GraceInterpretApp {
     this.audioInputModeSelect.value = this.settings.audioInputMode || 'webspeech-gemini';
     this.churchNameInput.value = this.settings.churchName || '';
     this.autoCommitLengthInput.value = String(this.settings.autoCommitLength || 42);
+    if (this.githubRepoInput) {
+      this.githubRepoInput.value = this.settings.githubRepo || 'kmats1014/lds-interpret';
+    }
+    if (this.githubTokenInput) {
+      this.githubTokenInput.value = this.settings.githubToken || '';
+    }
     this.apiTestResultBox.textContent = '';
     this.settingsDialog.showModal();
+  }
+
+  encodeBase64Utf8(str) {
+    const bytes = new TextEncoder().encode(str);
+    let bin = '';
+    for (let i = 0; i < bytes.length; i++) {
+      bin += String.fromCharCode(bytes[i]);
+    }
+    return btoa(bin);
+  }
+
+  decodeBase64Utf8(b64) {
+    const clean = b64.replace(/\s+/g, '');
+    const bin = atob(clean);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) {
+      bytes[i] = bin.charCodeAt(i);
+    }
+    return new TextDecoder('utf-8').decode(bytes);
+  }
+
+  async backupGlossaryToGithub() {
+    const repo = (this.settings.githubRepo || 'kmats1014/lds-interpret').trim();
+    const token = (this.settings.githubToken || '').trim();
+    if (!token) {
+      const goSetting = window.confirm(
+        'GitHub に辞書を保存するには、Personal Access Token（トークン）の設定が必要です。\n「⚙ API・環境設定」画面を開いて設定しますか？'
+      );
+      if (goSetting) {
+        this.openSettingsDialog();
+        setTimeout(() => this.githubTokenInput?.focus(), 100);
+      }
+      return;
+    }
+
+    const filePath = 'glossary-backup.json';
+    const apiUrl = `https://api.github.com/repos/${repo}/contents/${filePath}`;
+    const btn = this.backupGlossaryGithubBtn;
+    const origLabel = btn ? btn.textContent : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '☁️ 保存中...';
+    }
+
+    try {
+      const headers = {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${token}`,
+      };
+
+      // 既存ファイルの sha を確認
+      let existingSha = undefined;
+      const getRes = await fetch(`${apiUrl}?t=${Date.now()}`, { headers });
+      if (getRes.ok) {
+        const existingData = await getRes.json();
+        existingSha = existingData.sha;
+      } else if (getRes.status !== 404) {
+        const errBody = await getRes.json().catch(() => ({}));
+        throw new Error(errBody.message || `HTTP ${getRes.status}`);
+      }
+
+      const payloadObj = {
+        version: 1,
+        updatedAt: new Date().toISOString(),
+        count: this.glossary.length,
+        terms: this.glossary,
+      };
+      const contentB64 = this.encodeBase64Utf8(JSON.stringify(payloadObj, null, 2));
+
+      const putBody = {
+        message: `Backup church glossary (${this.glossary.length} terms)`,
+        content: contentB64,
+        ...(existingSha ? { sha: existingSha } : {}),
+      };
+
+      const putRes = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(putBody),
+      });
+
+      if (!putRes.ok) {
+        const errBody = await putRes.json().catch(() => ({}));
+        throw new Error(errBody.message || `HTTP ${putRes.status}`);
+      }
+
+      window.alert(`✅ GitHub (${repo}) の ${filePath} に ${this.glossary.length} 語の辞書をバックアップしました！`);
+    } catch (err) {
+      window.alert(`❌ GitHub への保存に失敗しました:\n${err?.message || err}`);
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = origLabel;
+      }
+    }
+  }
+
+  async restoreGlossaryFromGithub() {
+    const repo = (this.settings.githubRepo || 'kmats1014/lds-interpret').trim();
+    const token = (this.settings.githubToken || '').trim();
+    const filePath = 'glossary-backup.json';
+    const apiUrl = `https://api.github.com/repos/${repo}/contents/${filePath}?t=${Date.now()}`;
+    const btn = this.restoreGlossaryGithubBtn;
+    const origLabel = btn ? btn.textContent : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '☁️ 取得中...';
+    }
+
+    try {
+      const headers = { Accept: 'application/vnd.github+json' };
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+
+      const res = await fetch(apiUrl, { headers });
+      if (res.status === 404) {
+        window.alert(
+          `GitHub (${repo}) にまだバックアップファイル（${filePath}）がありません。\n先に辞書を登録した状態で「☁️ GitHub保存」を実行してください。`
+        );
+        return;
+      }
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({}));
+        throw new Error(errBody.message || `HTTP ${res.status}`);
+      }
+
+      const fileData = await res.json();
+      const rawJson = this.decodeBase64Utf8(fileData.content || '');
+      const parsed = JSON.parse(rawJson);
+      const terms = Array.isArray(parsed) ? parsed : Array.isArray(parsed.terms) ? parsed.terms : null;
+      if (!terms) {
+        throw new Error('バックアップデータの形式が正しくありません。');
+      }
+
+      const updatedStr = parsed.updatedAt ? new Date(parsed.updatedAt).toLocaleString('ja-JP') : '不明';
+      const ok = window.confirm(
+        `GitHub バックアップ（${terms.length} 語 / 更新: ${updatedStr}）が見つかりました。\n現在の辞書と統合（マージ）して復元しますか？\n（※同じ日本語の用語はバックアップの内容で更新され、現在の独自の用語は残ります）`
+      );
+      if (!ok) return;
+
+      const byJa = new Map(this.glossary.map((g) => [g.ja, g]));
+      let added = 0;
+      let updated = 0;
+      for (const item of terms) {
+        if (!item || !item.ja || !item.en) continue;
+        if (byJa.has(item.ja)) {
+          Object.assign(byJa.get(item.ja), item);
+          updated++;
+        } else {
+          this.glossary.push(item);
+          byJa.set(item.ja, item);
+          added++;
+        }
+      }
+
+      this.saveGlossary();
+      this.renderGlossary();
+      window.alert(`✅ GitHub から辞書を復元しました！（新規追加: ${added} 語 / 更新: ${updated} 語 / 合計: ${this.glossary.length} 語）`);
+    } catch (err) {
+      window.alert(`❌ GitHub からの復元に失敗しました:\n${err?.message || err}`);
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = origLabel;
+      }
+    }
   }
 
   exportGlossaryCsv() {

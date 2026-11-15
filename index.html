@@ -314,23 +314,27 @@
       <div class="glossary-list" id="glossaryListContainer"></div>
 
       <!-- 辞書インポート / エクスポート / リセット / GitHubバックアップ -->
-      <div class="sidebar-footer" style="flex-wrap: wrap;">
-        <button type="button" id="backupGlossaryGithubBtn" class="btn btn-compact btn-secondary" title="現在の用語集をGitHubリポジトリ（glossary-backup.json）に保存します">
-          ☁️ GitHub保存
-        </button>
-        <button type="button" id="restoreGlossaryGithubBtn" class="btn btn-compact btn-outline" title="GitHubリポジトリ上のバックアップから用語集を復元します">
-          ☁️ GitHub復元
-        </button>
-        <button type="button" id="exportGlossaryCsvBtn" class="btn btn-compact btn-outline" title="用語集をCSV形式で書き出します（Excel等で編集可能）">
-          CSV出力
-        </button>
-        <label class="btn btn-compact btn-outline file-upload-label" title="CSVまたはJSONファイルから用語集を一括読み込みします">
-          CSV読込
-          <input type="file" id="importGlossaryFileInput" accept=".csv,.json" hidden />
-        </label>
-        <button type="button" id="resetGlossaryBtn" class="btn btn-compact btn-ghost" title="初期のプロテスタント教会用語集に戻します">
-          初期値に戻す
-        </button>
+      <div class="sidebar-footer" style="flex-direction: column; align-items: stretch; gap: 0.45rem;">
+        <div style="display: flex; gap: 0.4rem;">
+          <button type="button" id="backupGlossaryGithubBtn" class="btn btn-compact btn-secondary" style="flex: 1;" title="現在の用語集をGitHubリポジトリ（glossary-backup.json）に保存します">
+            ☁️ GitHub保存
+          </button>
+          <button type="button" id="restoreGlossaryGithubBtn" class="btn btn-compact btn-outline" style="flex: 1;" title="GitHubリポジトリ上のバックアップから用語集を復元します">
+            ☁️ GitHub復元
+          </button>
+        </div>
+        <div style="display: flex; gap: 0.4rem; align-items: center; justify-content: space-between;">
+          <button type="button" id="exportGlossaryCsvBtn" class="btn btn-compact btn-outline" style="flex: 1;" title="用語集をCSV形式で書き出します（Excel等で編集可能）">
+            CSV出力
+          </button>
+          <label class="btn btn-compact btn-outline file-upload-label" style="flex: 1;" title="CSVまたはJSONファイルから用語集を一括読み込みします">
+            CSV読込
+            <input type="file" id="importGlossaryFileInput" accept=".csv,.json" hidden />
+          </label>
+          <button type="button" id="resetGlossaryBtn" class="btn btn-compact btn-ghost" title="初期のプロテスタント教会用語集に戻します">
+            初期値に戻す
+          </button>
+        </div>
       </div>
     </aside>
   </main>
@@ -481,59 +485,57 @@
           </small>
         </div>
 
-        <div class="form-row-2col">
-          <div class="form-field">
-            <label for="churchNameInput">教会名（任意・プロンプトに反映）</label>
+        <div class="form-field">
+          <label for="churchNameInput">教会名（任意・プロンプトに反映）</label>
+          <input
+            type="text"
+            id="churchNameInput"
+            class="text-input"
+            placeholder="例：〇〇キリスト教会 / Grace Church"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="autoCommitLengthInput">句節の自動区切り文字数（小さいほど高速）</label>
+          <input
+            type="number"
+            id="autoCommitLengthInput"
+            class="text-input"
+            min="15"
+            max="120"
+            value="26"
+          />
+          <small class="field-hint">読点や息継ぎごとに素早く通訳を開始する文字数目安です（初期値: 26文字）。</small>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 0.25rem 0;" />
+
+        <div class="form-field">
+          <label for="githubRepoInput">☁️ GitHub 辞書バックアップ先リポジトリ</label>
+          <input
+            type="text"
+            id="githubRepoInput"
+            class="text-input"
+            placeholder="kmats1014/lds-interpret"
+          />
+          <small class="field-hint">「ユーザー名/リポジトリ名」形式で指定します（<code>glossary-backup.json</code> に保存・復元）。</small>
+        </div>
+
+        <div class="form-field">
+          <label for="githubTokenInput">GitHub Personal Access Token（保存時のみ必要）</label>
+          <div class="password-input-wrap">
             <input
-              type="text"
-              id="churchNameInput"
+              type="password"
+              id="githubTokenInput"
               class="text-input"
-              placeholder="例：〇〇キリスト教会 / Grace Church"
+              placeholder="github_pat_... または ghp_..."
+              autocomplete="off"
             />
+            <button type="button" id="toggleGithubTokenVisibilityBtn" class="btn btn-compact btn-outline">
+              表示
+            </button>
           </div>
-
-          <div class="form-field">
-            <label for="autoCommitLengthInput">句節の自動区切り文字数（小さいほど高速）</label>
-            <input
-              type="number"
-              id="autoCommitLengthInput"
-              class="text-input"
-              min="15"
-              max="120"
-              value="26"
-            />
-            <small class="field-hint">読点や息継ぎごとに素早く通訳を開始する文字数目安です（初期値: 26文字）。</small>
-          </div>
-
-          <hr style="border: none; border-top: 1px solid var(--border-color); margin: 0.75rem 0;" />
-
-          <div class="form-field">
-            <label for="githubRepoInput">☁️ GitHub 辞書バックアップ先リポジトリ</label>
-            <input
-              type="text"
-              id="githubRepoInput"
-              class="text-input"
-              placeholder="kmats1014/lds-interpret"
-            />
-            <small class="field-hint">「ユーザー名/リポジトリ名」形式で指定します（<code>glossary-backup.json</code> に保存・復元）。</small>
-          </div>
-
-          <div class="form-field">
-            <label for="githubTokenInput">GitHub Personal Access Token（保存時のみ必要）</label>
-            <div class="password-input-wrap">
-              <input
-                type="password"
-                id="githubTokenInput"
-                class="text-input"
-                placeholder="github_pat_... または ghp_..."
-                autocomplete="off"
-              />
-              <button type="button" id="toggleGithubTokenVisibilityBtn" class="btn btn-compact btn-outline">
-                表示
-              </button>
-            </div>
-            <small class="field-hint">※ 公開リポジトリからの「GitHub復元」はトークン不要です。「GitHub保存」を使う場合のみ <code>Contents: Read &amp; write</code> 権限のトークンを入力してください。</small>
-          </div>
+          <small class="field-hint">※ 公開リポジトリからの「GitHub復元」はトークン不要です。「GitHub保存」を使う場合のみ <code>Contents: Read &amp; write</code> 権限のトークンを入力してください。</small>
         </div>
       </div>
 

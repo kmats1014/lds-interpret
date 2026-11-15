@@ -1,8 +1,1513 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15T09:06:36.141Z",
-  "count": 296,
+  "updatedAt": "2026-11-15T09:32:38.455Z",
+  "count": 438,
   "terms": [
+    {
+      "id": "sermon-1794735098237-7",
+      "ja": "CES宗務クリアランス事務局",
+      "en": "CES Ecclesiastical Clearance Office",
+      "category": "roles",
+      "reading": "しーいーえすしゅうむくりあらんすじむきょく",
+      "variants": [],
+      "note": "教会教育機関の雇用等に必要な宗務適格性を審査する事務局",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735098237-6",
+      "ja": "教会教育システム",
+      "en": "Church Educational System",
+      "category": "roles",
+      "reading": "きょうかいきょういくしすてむ",
+      "variants": [],
+      "note": "教会の教育部門（CES）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735098237-5",
+      "ja": "リリーストタイムセミナリー",
+      "en": "Released-Time Seminary",
+      "category": "custom",
+      "reading": "りりーすとたいむせみなりー",
+      "variants": [],
+      "note": "学校の授業時間中に校外へ出て参加するセミナリー形式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735098237-4",
+      "ja": "宗務指導者の推薦",
+      "en": "ecclesiastical endorsement",
+      "category": "custom",
+      "reading": "しゅうむしどうしゃのすいせん",
+      "variants": [],
+      "note": "教会の教育機関受講や卒業に求められる推薦",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735098237-3",
+      "ja": "定員会会長会",
+      "en": "quorum presidencies",
+      "category": "roles",
+      "reading": "ていいんかいかいちょうかい",
+      "variants": [],
+      "note": "神権定員会の会長会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735098237-2",
+      "ja": "教会教育管理会",
+      "en": "Church Board of Education",
+      "category": "roles",
+      "reading": "きょうかいきょういくかんりかい",
+      "variants": [],
+      "note": "教会の教育プログラムを統轄する組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735098237-1",
+      "ja": "回復された福音",
+      "en": "restored gospel",
+      "category": "theology",
+      "reading": "かいふくされたふくいん",
+      "variants": [],
+      "note": "末日聖徒運動における中核的信仰箇条",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735098236-0",
+      "ja": "宗教教育セミナリー・インスティテュート",
+      "en": "Seminaries and Institutes of Religion",
+      "category": "roles",
+      "reading": "しゅうきょうきょういくせみなりー・いんすてぃてゅーと",
+      "variants": [
+        "宗教教育セミナー"
+      ],
+      "note": "教会教育組織の正式名称（S&I）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735014266-6",
+      "ja": "集いの場",
+      "en": "gathering place",
+      "category": "custom",
+      "reading": "つどいのば",
+      "variants": [],
+      "note": "YSAなどが交流や学習のために集まる指定された場所",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735014266-5",
+      "ja": "死者のための儀式",
+      "en": "ordinances for the deceased",
+      "category": "worship",
+      "reading": "ししゃのためのぎしき",
+      "variants": [],
+      "note": "神殿で先祖・死者の代理として行うバプテスマ等の儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735014266-4",
+      "ja": "家族を永遠に結ぶ",
+      "en": "uniting families for eternity",
+      "category": "theology",
+      "reading": "かぞくをえいえんにむすぶ",
+      "variants": [],
+      "note": "神殿の結び固めの儀式などを通じた家族の永遠の結合",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735014266-3",
+      "ja": "地理的に区分されたユニット",
+      "en": "geographic units",
+      "category": "custom",
+      "reading": "ちりてきにくぶんされたゆにっと",
+      "variants": [],
+      "note": "特定の対象限定ではない通常の境界線に基づくワード/ユニット",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735014266-2",
+      "ja": "七十人会長会",
+      "en": "Presidency of the Seventy",
+      "category": "roles",
+      "reading": "ななじゅうにんかいちょうかい",
+      "variants": [],
+      "note": "教会のGeneral Authority組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735014266-1",
+      "ja": "シングルアダルト",
+      "en": "single adults",
+      "category": "roles",
+      "reading": "しんぐるあだると",
+      "variants": [],
+      "note": "36歳以上の独身会員（略称: SA）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794735014266-0",
+      "ja": "独身会員",
+      "en": "single members",
+      "category": "roles",
+      "reading": "どくしんかいいん",
+      "variants": [],
+      "note": "未婚・離婚・死別を含む現在結婚していない成人会員",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734949464-0",
+      "ja": "リソースセンター・スペシャリスト",
+      "en": "resource center specialist",
+      "category": "roles",
+      "reading": "りそーすせんたーすぺしゃりすと",
+      "variants": [],
+      "note": "リソースセンターを管理・運営する担当者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-9",
+      "ja": "ファミリーサーチセンター",
+      "en": "FamilySearch center",
+      "category": "custom",
+      "reading": "ふぁみりーさーちせんたー",
+      "variants": [],
+      "note": "家族歴史・系図調査施設",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-8",
+      "ja": "インスティテュート",
+      "en": "institute",
+      "category": "custom",
+      "reading": "いんすてぃてゅーと",
+      "variants": [],
+      "note": "青年・大学生向け宗教教育プログラム",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-7",
+      "ja": "リソースセンター",
+      "en": "resource center",
+      "category": "custom",
+      "reading": "りそーすせんたー",
+      "variants": [
+        "図書室"
+      ],
+      "note": "集会所内の図書・教材管理部門",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-6",
+      "ja": "ヤングシングルアダルト",
+      "en": "Young single adults",
+      "category": "roles",
+      "reading": "やんぐしんぐるあだると",
+      "variants": [
+        "YSA"
+      ],
+      "note": "18〜30歳前後の未婚青年層",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-5",
+      "ja": "教師評議会集会",
+      "en": "teacher council meetings",
+      "category": "custom",
+      "reading": "きょうしひょうぎかいしゅうかい",
+      "variants": [],
+      "note": "教師の指導力向上のための定期集会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-4",
+      "ja": "メルキゼデク神権者",
+      "en": "Melchizedek Priesthood holder",
+      "category": "roles",
+      "reading": "めるきぜでくしんけんしゃ",
+      "variants": [],
+      "note": "上級神権の保持者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-3",
+      "ja": "任命する",
+      "en": "set apart",
+      "category": "custom",
+      "reading": "にんめいする",
+      "variants": [],
+      "note": "按手して聖別・任命する儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-2",
+      "ja": "召す",
+      "en": "call",
+      "category": "custom",
+      "reading": "めす",
+      "variants": [
+        "召し"
+      ],
+      "note": "教会役員・職務へ任命・召命すること",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-1",
+      "ja": "救い主の方法で教える",
+      "en": "Teaching in the Savior’s Way",
+      "category": "custom",
+      "reading": "すくいぬしのほうほうでおしえる",
+      "variants": [],
+      "note": "教会公式の指導手引書・原則の名称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734922847-0",
+      "ja": "王国の教義",
+      "en": "the doctrine of the kingdom",
+      "category": "theology",
+      "reading": "おうこくのきょうぎ",
+      "variants": [],
+      "note": "教義と聖約88:77に出てくる重要教理句",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734860080-2",
+      "ja": "指導者と書記のためのリソース",
+      "en": "Leader and Clerk Resources",
+      "category": "custom",
+      "reading": "しどうしゃとしょきのためのりそーす",
+      "variants": [],
+      "note": "教会管理システム（略称LCR）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734860080-1",
+      "ja": "初等協会会長会",
+      "en": "Primary presidency",
+      "category": "roles",
+      "reading": "しょとうきょうかいかいちょうかい",
+      "variants": [],
+      "note": "会長と顧問からなるリーダーシップ組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734860080-0",
+      "ja": "神殿の儀式",
+      "en": "temple ordinances",
+      "category": "worship",
+      "reading": "しんでんのぎしき",
+      "variants": [],
+      "note": "神殿内で行われる神聖な儀礼",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-9",
+      "ja": "開会行事",
+      "en": "Opening",
+      "category": "worship",
+      "reading": "かいかいぎょうじ",
+      "variants": [],
+      "note": "初等協会集会の開会の部",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-8",
+      "ja": "バプテスマおよび確認準備集会",
+      "en": "Baptism and Confirmation Preparation meeting",
+      "category": "custom",
+      "reading": "ばぷてすまおよびかくにんじゅんびしゅうかい",
+      "variants": [],
+      "note": "勇者7クラスを対象とする集会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-7",
+      "ja": "神殿および神権準備集会",
+      "en": "Temple and Priesthood Preparation meeting",
+      "category": "custom",
+      "reading": "しんでんおよびしんけんじゅんびしゅうかい",
+      "variants": [
+        "神殿および新券準備集会"
+      ],
+      "note": "勇者10クラスを対象とする集会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-6",
+      "ja": "聖餐会での子供の発表",
+      "en": "Children’s Sacrament Meeting Presentation",
+      "category": "worship",
+      "reading": "せいさんかいでのこどものはっぴょう",
+      "variants": [],
+      "note": "年に一度行われる初等協会の礼拝発表",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-5",
+      "ja": "歌の時間",
+      "en": "Singing Time",
+      "category": "worship",
+      "reading": "うたのじかん",
+      "variants": [],
+      "note": "初等協会の集会で行われる音楽プログラム",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-4",
+      "ja": "進級証明書",
+      "en": "certificate of advancement",
+      "category": "custom",
+      "reading": "しんきゅうしょうめいしょ",
+      "variants": [],
+      "note": "初等協会から進級する際に授与される証明書",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-3",
+      "ja": "執事定員会",
+      "en": "deacons quorum",
+      "category": "roles",
+      "reading": "しつじていいんかい",
+      "variants": [
+        "執事定員階"
+      ],
+      "note": "アロン神権の12歳以上の少年組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-2",
+      "ja": "勇者",
+      "en": "Valiant",
+      "category": "custom",
+      "reading": "Valiant",
+      "variants": [],
+      "note": "7歳から10歳の初等協会クラス区分",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-1",
+      "ja": "ひかり",
+      "en": "Sunbeam",
+      "category": "custom",
+      "reading": "ひかり",
+      "variants": [],
+      "note": "3歳の初等協会クラス名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734799968-0",
+      "ja": "託児",
+      "en": "Nursery",
+      "category": "custom",
+      "reading": "たくじ",
+      "variants": [],
+      "note": "18か月から3歳までのクラス",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723781-12",
+      "ja": "祭司定員会",
+      "en": "priests quorum",
+      "category": "roles",
+      "reading": "さいしていいんかい",
+      "variants": [],
+      "note": "アロン神権の位階（祭司）の定員会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723781-11",
+      "ja": "アロン神権定員会",
+      "en": "Aaronic Priesthood quorums",
+      "category": "roles",
+      "reading": "あろんしんけんていいんかい",
+      "variants": [],
+      "note": "青少年の男性が所属する神権組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723781-10",
+      "ja": "所属を表すエンブレム",
+      "en": "emblems of belonging",
+      "category": "custom",
+      "reading": "しょぞくをあらわすえんぶれむ",
+      "variants": [],
+      "note": "12歳で若い女性進級時に授与される記念品",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723781-9",
+      "ja": "わたしに従ってきなさい",
+      "en": "Come, Follow Me",
+      "category": "custom",
+      "reading": "わたしにしたがってきなさい",
+      "variants": [],
+      "note": "教会公式の家庭・日曜学校用福音学習教材",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723781-8",
+      "ja": "神殿結婚",
+      "en": "temple marriage",
+      "category": "theology",
+      "reading": "しんでんけっこん",
+      "variants": [],
+      "note": "神殿で結び固められる永遠の結婚",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-7",
+      "ja": "専任宣教師",
+      "en": "full-time missionary",
+      "category": "roles",
+      "reading": "せんにんせんきょうし",
+      "variants": [
+        "専任宣教使"
+      ],
+      "note": "一定期間専従で伝道を行う宣教師",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-6",
+      "ja": "クラス会長会",
+      "en": "class presidency / age-group presidencies",
+      "category": "roles",
+      "reading": "くらすかいちょうかい",
+      "variants": [],
+      "note": "各クラス（年齢グループ）を導く青少年リーダー陣",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-5",
+      "ja": "光を集める者",
+      "en": "Gatherers of Light",
+      "category": "roles",
+      "reading": "ひかりをあつめるもの",
+      "variants": [],
+      "note": "16-17歳の若い女性の年齢別グループ名称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-4",
+      "ja": "希望の使者",
+      "en": "Messengers of Hope",
+      "category": "roles",
+      "reading": "きぼうのししゃ",
+      "variants": [
+        "希望の死者"
+      ],
+      "note": "14-15歳の若い女性の年齢別グループ名称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-3",
+      "ja": "信仰の建設者",
+      "en": "Builders of Faith",
+      "category": "roles",
+      "reading": "しんこうのけんせつしゃ",
+      "variants": [],
+      "note": "12-13歳の若い女性の年齢別グループ名称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-2",
+      "ja": "年齢別グループ",
+      "en": "Age-Groups",
+      "category": "roles",
+      "reading": "ねんれいべつぐるーぷ",
+      "variants": [],
+      "note": "信仰の建設者、希望の使者などの年齢区分",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-1",
+      "ja": "神の証人",
+      "en": "witness of God",
+      "category": "theology",
+      "reading": "かみのしょうにん",
+      "variants": [
+        "神の商人"
+      ],
+      "note": "モーサヤ18:9に由来するフレーズ",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734723780-0",
+      "ja": "若い女性のテーマ",
+      "en": "Young Women theme",
+      "category": "custom",
+      "reading": "わかいじょせいのてーま",
+      "variants": [],
+      "note": "日曜日の集会等で唱和される定型信条文",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734636201-0",
+      "ja": "青少年の強さのために（FSY）",
+      "en": "For the Strength of Youth (FSY)",
+      "category": "custom",
+      "reading": "せいしょうねんのつよさのために（えふえすわい）",
+      "variants": [],
+      "note": "大規模な青少年向けカンファレンスおよびガイドの名称",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734617414-3",
+      "ja": "誓詞と聖約",
+      "en": "oath and covenant",
+      "category": "theology",
+      "reading": "せいしとせいやく",
+      "variants": [],
+      "note": "神権の誓詞と聖約（D&C 84章）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734617414-2",
+      "ja": "代理のバプテスマ",
+      "en": "vicarious baptism / baptism for the dead",
+      "category": "custom",
+      "reading": "だいりのばぷてすま",
+      "variants": [],
+      "note": "神殿で死者のために行う儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734617414-1",
+      "ja": "青少年の強さのために",
+      "en": "For the Strength of Youth",
+      "category": "custom",
+      "reading": "せいしょうねんのつよさのために",
+      "variants": [],
+      "note": "指導書・標準ガイドライン（FSY）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734617414-0",
+      "ja": "神聖な聖約",
+      "en": "sacred covenants",
+      "category": "theology",
+      "reading": "しんせいなせいやく",
+      "variants": [],
+      "note": "神と結ぶ厳粛な約束",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734594783-5",
+      "ja": "代理のバプテスマと確認",
+      "en": "proxy baptisms and confirmations",
+      "category": "worship",
+      "reading": "だいりのばぷてすまとかくにん",
+      "variants": [
+        "代理のバプテスマと確信"
+      ],
+      "note": "神殿で死者のために身代わりで行うバプテスマ儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734594783-4",
+      "ja": "キリストのもとに来る",
+      "en": "come unto Christ",
+      "category": "theology",
+      "reading": "きりすとのもとにくる",
+      "variants": [
+        "キリストの下に来る"
+      ],
+      "note": "頻出する招きの定型句",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734594783-3",
+      "ja": "青少年の強さのために（FSY）カンファレンス",
+      "en": "For the Strength of Youth (FSY) conference",
+      "category": "custom",
+      "reading": "せいしょうねんのつよさのためにえふえすわいかんふぁれんす",
+      "variants": [
+        "FSYカンファレンス"
+      ],
+      "note": "大規模な青少年向け合同大会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734594783-2",
+      "ja": "聖餐のパス",
+      "en": "passing the sacrament",
+      "category": "worship",
+      "reading": "せいさんのぱす",
+      "variants": [
+        "清算のパス"
+      ],
+      "note": "執事の主な務め（聖餐を配ること）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734594783-1",
+      "ja": "神殿の祝福",
+      "en": "temple blessings",
+      "category": "custom",
+      "reading": "しんでんのしゅくふく",
+      "variants": [
+        "神殿の祝服"
+      ],
+      "note": "定員会テーマ内の表現",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734594783-0",
+      "ja": "神聖な特質",
+      "en": "divine identity",
+      "category": "theology",
+      "reading": "しんせいなとくしつ",
+      "variants": [
+        "神聖な特質"
+      ],
+      "note": "定員会テーマのキーワード",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734523364-3",
+      "ja": "ワード評議会",
+      "en": "ward council",
+      "category": "roles",
+      "reading": "わーどひょうぎかい",
+      "variants": [],
+      "note": "ワードの指導者による評議会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734523364-2",
+      "ja": "自立計画",
+      "en": "Self-Reliance Plan",
+      "category": "life",
+      "reading": "じりつけいかく",
+      "variants": [],
+      "note": "生活や霊的自立のための個人・家族計画",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734523364-1",
+      "ja": "神殿・家族歴史活動",
+      "en": "temple and family history work",
+      "category": "life",
+      "reading": "しんでん・かぞくれきしかつどう",
+      "variants": [],
+      "note": "先祖の調査と神殿儀式の執行",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734523364-0",
+      "ja": "愛はいつまでも絶えることがない",
+      "en": "Charity never faileth",
+      "category": "scripture",
+      "reading": "あいはいつまでもたえることがない",
+      "variants": [],
+      "note": "扶助協会のモットー（1コリント13:8）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734400315-6",
+      "ja": "賛意の表明",
+      "en": "sustaining vote",
+      "category": "worship",
+      "reading": "さんいのひょうめい",
+      "variants": [],
+      "note": "教会の召しを支持する意思表示",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734400315-5",
+      "ja": "ワード神殿・家族歴史主任",
+      "en": "ward temple and family history leader",
+      "category": "roles",
+      "reading": "わーどしんでん・かぞくれきししゅにん",
+      "variants": [],
+      "note": "神殿活動・家族歴史調査の責任者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734400315-4",
+      "ja": "ワード伝道主任",
+      "en": "ward mission leader",
+      "category": "roles",
+      "reading": "わーどでんどうしゅにん",
+      "variants": [],
+      "note": "会衆レベルでの宣教活動責任者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734400315-3",
+      "ja": "神殿衣",
+      "en": "temple clothing",
+      "category": "custom",
+      "reading": "しんでんぎ",
+      "variants": [
+        "神殿着"
+      ],
+      "note": "神殿内で着用する儀式用の衣服",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734400315-2",
+      "ja": "ビショップによる注文",
+      "en": "bishop’s order",
+      "category": "custom",
+      "reading": "びしょっぷによるちゅうもん",
+      "variants": [],
+      "note": "食糧・基本物資支援の制度",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734400315-1",
+      "ja": "長老見込み会員",
+      "en": "prospective elder",
+      "category": "roles",
+      "reading": "ちょうろうみこみかいいん",
+      "variants": [],
+      "note": "メルキゼデク神権をまだ受けていない成人男性教会員",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734400315-0",
+      "ja": "使徒",
+      "en": "Apostle",
+      "category": "roles",
+      "reading": "しと",
+      "variants": [
+        "使途",
+        "使徒職"
+      ],
+      "note": "メルキゼデク神権の職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734265435-5",
+      "ja": "セミナリーやインスティテュート",
+      "en": "seminary and institute",
+      "category": "custom",
+      "reading": "せみなりーやいんすてぃてゅーと",
+      "variants": [],
+      "note": "中高生および青年のための宗教教育機関",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734265435-4",
+      "ja": "幹部書記",
+      "en": "executive secretary",
+      "category": "roles",
+      "reading": "かんぶしょき",
+      "variants": [],
+      "note": "ビショップリック等の事務・日程調整担当",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734265435-3",
+      "ja": "神殿・家族歴史",
+      "en": "temple and family history",
+      "category": "custom",
+      "reading": "しんでん・かぞくれきし",
+      "variants": [],
+      "note": "系図調査と神殿活動",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734265435-2",
+      "ja": "ワード青少年評議会",
+      "en": "ward youth council",
+      "category": "roles",
+      "reading": "わーどせいしょうねんひょうぎかい",
+      "variants": [],
+      "note": "青少年の評議会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734265435-1",
+      "ja": "子供の命名と祝福",
+      "en": "naming and blessing of children",
+      "category": "custom",
+      "reading": "こどものめいめいとしゅくふく",
+      "variants": [],
+      "note": "幼児の儀式",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734265434-0",
+      "ja": "顧問",
+      "en": "counselors",
+      "category": "roles",
+      "reading": "こもん",
+      "variants": [
+        "子門",
+        "古文書"
+      ],
+      "note": "ビショップリックなどの補佐役",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734219509-5",
+      "ja": "召しと解任",
+      "en": "callings and releases",
+      "category": "custom",
+      "reading": "めしとかいにん",
+      "variants": [],
+      "note": "教会の役職任命と任免",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734219509-4",
+      "ja": "ワード幹部書記",
+      "en": "ward executive secretary",
+      "category": "roles",
+      "reading": "わーどかんぶしょき",
+      "variants": [],
+      "note": "ビショップリックを補佐する役職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734219509-3",
+      "ja": "什分の一の申告",
+      "en": "tithing declaration",
+      "category": "custom",
+      "reading": "じゅうぶんのいちのしんこく",
+      "variants": [],
+      "note": "年末に行われる什分の一の確認",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734219509-2",
+      "ja": "教師",
+      "en": "teacher",
+      "category": "roles",
+      "reading": "きょうし",
+      "variants": [],
+      "note": "アロン神権の職名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734219509-1",
+      "ja": "若い女性",
+      "en": "Young Women",
+      "category": "roles",
+      "reading": "わかいじょせい",
+      "variants": [],
+      "note": "青少年の女子組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734219509-0",
+      "ja": "若い世代",
+      "en": "rising generation",
+      "category": "life",
+      "reading": "わかいせだい",
+      "variants": [],
+      "note": "子供、青少年、ヤングシングルアダルト",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734127531-1",
+      "ja": "神殿推薦状",
+      "en": "temple recommend",
+      "category": "custom",
+      "reading": "しんでんすいせんじょう",
+      "variants": [],
+      "note": "神殿に参入するために必要な推薦証明書",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734127531-0",
+      "ja": "会員資格評議会",
+      "en": "membership councils",
+      "category": "roles",
+      "reading": "かいいんしかくひょうぎかい",
+      "variants": [],
+      "note": "教会規律を扱う評議会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-9",
+      "ja": "高等評議員",
+      "en": "high councilors",
+      "category": "roles",
+      "reading": "こうとうひょうぎいん",
+      "variants": [
+        "高等評議会"
+      ],
+      "note": "ステークの管理・支援を担う神権役職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-8",
+      "ja": "地域組織アドバイザー",
+      "en": "area organization advisers",
+      "category": "roles",
+      "reading": "ちいきそしきあどばいざー",
+      "variants": [],
+      "note": "ステーク補助組織会長会を指導・支援する地域の召し",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-7",
+      "ja": "調整評議会",
+      "en": "coordinating council",
+      "category": "roles",
+      "reading": "ちょうせいひょうぎかい",
+      "variants": [],
+      "note": "ステーク会長・伝道部会長らの調整会議",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-6",
+      "ja": "地域評議会",
+      "en": "area council",
+      "category": "roles",
+      "reading": "ちいきひょうぎかい",
+      "variants": [],
+      "note": "地域会長会と地域七十人の定期会議",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-5",
+      "ja": "中央幹部七十人",
+      "en": "General Authority Seventies",
+      "category": "roles",
+      "reading": "ちゅうおうかんぶななじゅうにん",
+      "variants": [
+        "中央幹部70人"
+      ],
+      "note": "教会全体で奉仕するフルタイムの七十人",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-4",
+      "ja": "特別の証人",
+      "en": "special witnesses",
+      "category": "theology",
+      "reading": "とくべつのしょうにん",
+      "variants": [
+        "特別な証人"
+      ],
+      "note": "使徒・七十人の召し（イエス・キリストの名の特別な証人）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-3",
+      "ja": "先任使徒",
+      "en": "senior Apostle",
+      "category": "roles",
+      "reading": "せんにんしと",
+      "variants": [
+        "選任使徒"
+      ],
+      "note": "使徒職の先任順位トップ",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-2",
+      "ja": "啓示者",
+      "en": "revelator",
+      "category": "roles",
+      "reading": "けいじしゃ",
+      "variants": [
+        "刑事者"
+      ],
+      "note": "大管長会・使徒の称号",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-1",
+      "ja": "管理ビショップリック",
+      "en": "Presiding Bishopric",
+      "category": "roles",
+      "reading": "かんりびしょっぷりっく",
+      "variants": [],
+      "note": "教会中央の管理組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794734050731-0",
+      "ja": "隅のかしら石",
+      "en": "chief corner stone",
+      "category": "theology",
+      "reading": "すみのかしらいし",
+      "variants": [
+        "頭石",
+        "頭の石"
+      ],
+      "note": "エペソ2:20引用、キリストの称号",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733983481-4",
+      "ja": "大管長会・十二使徒定員会評議会",
+      "en": "Council of the First Presidency and Quorum of the Twelve Apostles",
+      "category": "roles",
+      "reading": "だいかんちょうかい・じゅうにしとていいんかいひょうぎかい",
+      "variants": [],
+      "note": "教会の最高指導機関・評議会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733983481-3",
+      "ja": "報告責任の徹底",
+      "en": "Ensure Accountability",
+      "category": "roles",
+      "reading": "ほうこくせきにんのてってい",
+      "variants": [],
+      "note": "割り当てられた働きを報告し説明する責任",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733983481-2",
+      "ja": "真に従う者",
+      "en": "true followers",
+      "category": "theology",
+      "reading": "しんにしたがうもの",
+      "variants": [],
+      "note": "モロナイ7:48より引用されるキリストの弟子の定義",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733983481-1",
+      "ja": "献身的な奉仕",
+      "en": "consecrated service",
+      "category": "life",
+      "reading": "けんしんてきなほうし",
+      "variants": [],
+      "note": "指導者に求められる時間的犠牲を伴う奉仕",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733983481-0",
+      "ja": "会長会集会",
+      "en": "presidency meetings",
+      "category": "worship",
+      "reading": "かいちょうかいしゅうかい",
+      "variants": [],
+      "note": "教会内の指導者による評議会集会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733952715-6",
+      "ja": "報告責任",
+      "en": "accountability",
+      "category": "roles",
+      "reading": "ほうこくせきにん",
+      "variants": [
+        "報告席任"
+      ],
+      "note": "委任された割り当てに対する説明・報告の義務",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733952715-5",
+      "ja": "第一顧問",
+      "en": "first counselor",
+      "category": "roles",
+      "reading": "だいいちこもん",
+      "variants": [
+        "第1顧問"
+      ],
+      "note": "会長会を支える指導職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733952715-4",
+      "ja": "任命され",
+      "en": "set apart",
+      "category": "custom",
+      "reading": "にんめいされ",
+      "variants": [
+        "任名され"
+      ],
+      "note": "召しを授ける際の儀礼（set apart）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733952715-3",
+      "ja": "日曜学校",
+      "en": "Sunday School",
+      "category": "roles",
+      "reading": "にちようがっこう",
+      "variants": [
+        "日用学校"
+      ],
+      "note": "福音学習のための補助組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733952715-2",
+      "ja": "管理役員",
+      "en": "presiding officers",
+      "category": "roles",
+      "reading": "かんりやくいん",
+      "variants": [
+        "管掌役員"
+      ],
+      "note": "教会組織・集会を管轄する責任者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733952715-1",
+      "ja": "会長会",
+      "en": "presidency",
+      "category": "roles",
+      "reading": "かいちょうかい",
+      "variants": [
+        "開庁会"
+      ],
+      "note": "組織の管理単位（会長会集会 = presidency meetings）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733952714-0",
+      "ja": "評議会",
+      "en": "council",
+      "category": "roles",
+      "reading": "ひょうぎかい",
+      "variants": [
+        "協議会"
+      ],
+      "note": "章全体の中心主題語（ステーク評議会、ワード評議会など）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-18",
+      "ja": "ワード評議会集会",
+      "en": "ward council meetings",
+      "category": "custom",
+      "reading": "わーどひょうぎかいしゅうかい",
+      "variants": [],
+      "note": "ワードレベルでの評議会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-17",
+      "ja": "神性の力",
+      "en": "power of godliness",
+      "category": "theology",
+      "reading": "しんせいのちから",
+      "variants": [],
+      "note": "教義と聖約84:20の重要語句",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-16",
+      "ja": "ミニスタリングシスター",
+      "en": "ministering sisters",
+      "category": "roles",
+      "reading": "みにすたりんぐしすたー",
+      "variants": [],
+      "note": " pastoral care 担当者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-15",
+      "ja": "ミニスタリングブラザー",
+      "en": "ministering brothers",
+      "category": "roles",
+      "reading": "みにすたりんぐぶらざー",
+      "variants": [],
+      "note": " pastoral care 担当者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-14",
+      "ja": "七十人",
+      "en": "Seventy",
+      "category": "roles",
+      "reading": "ななじゅうにん",
+      "variants": [],
+      "note": "総会管理者等の役職",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-13",
+      "ja": "解任",
+      "en": "release",
+      "category": "custom",
+      "reading": "かいにん",
+      "variants": [],
+      "note": "教会の召しを解かれること",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-12",
+      "ja": "神権の誓詞と聖約",
+      "en": "Oath and Covenant of the Priesthood",
+      "category": "theology",
+      "reading": "しんけんのせいしとせいやく",
+      "variants": [],
+      "note": "教義と聖約84章の主題",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-11",
+      "ja": "任命",
+      "en": "set apart / setting apart",
+      "category": "custom",
+      "reading": "にんめい",
+      "variants": [],
+      "note": "召しに応じた職務のために按手により権能を授ける儀礼",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-10",
+      "ja": "宣教師訓練センター",
+      "en": "missionary training center",
+      "category": "custom",
+      "reading": "せんきょうしくんれんせんたー",
+      "variants": [],
+      "note": "MTC",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-9",
+      "ja": "伝道部会長",
+      "en": "mission president",
+      "category": "roles",
+      "reading": "でんどうぶかいちょう",
+      "variants": [],
+      "note": "伝道本部の長",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-8",
+      "ja": "支部会長",
+      "en": "branch president",
+      "category": "roles",
+      "reading": "しぶかいちょう",
+      "variants": [],
+      "note": "支部の管理指導者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-7",
+      "ja": "地方部会長",
+      "en": "district president",
+      "category": "roles",
+      "reading": "ちほうぶかいちょう",
+      "variants": [],
+      "note": "地方部の管理指導者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-6",
+      "ja": "祝福師の祝福",
+      "en": "patriarchal blessings",
+      "category": "worship",
+      "reading": "しゅくふくしのしゅくふく",
+      "variants": [],
+      "note": "特定の神権の祝福",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-5",
+      "ja": "十二使徒定員会",
+      "en": "Quorum of the Twelve Apostles",
+      "category": "roles",
+      "reading": "じゅうにしとしていいんかい",
+      "variants": [],
+      "note": "管理評議組織",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-4",
+      "ja": "エリヤ",
+      "en": "Elijah",
+      "category": "roles",
+      "reading": "えりや",
+      "variants": [],
+      "note": "預言者",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-3",
+      "ja": "エライヤス",
+      "en": "Elias",
+      "category": "roles",
+      "reading": "えらいやす",
+      "variants": [],
+      "note": "聖典の人物",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-2",
+      "ja": "カートランド神殿",
+      "en": "Kirtland Temple",
+      "category": "custom",
+      "reading": "かーとらんどしんでん",
+      "variants": [],
+      "note": "教会初期の神殿",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-1",
+      "ja": "バプテスマのヨハネ",
+      "en": "John the Baptist",
+      "category": "roles",
+      "reading": "ばぷてすまのよはね",
+      "variants": [],
+      "note": "聖書登場人物",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733856498-0",
+      "ja": "神権の回復",
+      "en": "Restoration of the Priesthood",
+      "category": "theology",
+      "reading": "しんけんのかいふく",
+      "variants": [],
+      "note": "回復信仰の基本概念",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733774665-5",
+      "ja": "子供と青少年",
+      "en": "Children and Youth",
+      "category": "custom",
+      "reading": "こどもとせいしょうねん",
+      "variants": [],
+      "note": "教会公式の育成・成長プログラム名",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733774665-4",
+      "ja": "総大会",
+      "en": "General conference",
+      "category": "custom",
+      "reading": "そうだいかい",
+      "variants": [
+        "総大会議"
+      ],
+      "note": "教会全体の大会行事",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733774665-3",
+      "ja": "増えよ，地に満ちよ",
+      "en": "multiply and replenish the earth",
+      "category": "scripture",
+      "reading": "ふえよち に みちよ",
+      "variants": [],
+      "note": "創世記1:28に基づく神の戒め",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733774665-2",
+      "ja": "結び合う",
+      "en": "cleave to each other",
+      "category": "life",
+      "reading": "むすびあう",
+      "variants": [],
+      "note": "創世記2:24、教義と聖約42:22における完全な献身・忠実を表す動詞",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733774665-1",
+      "ja": "結び固めの儀式",
+      "en": "sealing ordinances",
+      "category": "worship",
+      "reading": "むすびかためのぎしき",
+      "variants": [
+        "結び固めの形式"
+      ],
+      "note": "神殿で行われる儀式（marriage sealing ordinance等）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733774665-0",
+      "ja": "天の両親",
+      "en": "heavenly parents",
+      "category": "theology",
+      "reading": "てんのりょうしん",
+      "variants": [
+        "天の良心"
+      ],
+      "note": "神学概念（霊の両親）",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733717037-6",
+      "ja": "支部",
+      "en": "branch",
+      "category": "roles",
+      "reading": "しぶ",
+      "variants": [
+        "師父"
+      ],
+      "note": "小規模な地域会衆",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733717037-5",
+      "ja": "大管長会",
+      "en": "First Presidency",
+      "category": "roles",
+      "reading": "だいかんちょうかい",
+      "variants": [
+        "大官長会"
+      ],
+      "note": "教会の最高指導機関",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733717037-4",
+      "ja": "定員会",
+      "en": "quorum",
+      "category": "roles",
+      "reading": "ていいんかい",
+      "variants": [
+        "定員階"
+      ],
+      "note": "神権保持者の組織・集会",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733717037-3",
+      "ja": "『わたしに従ってきなさい』",
+      "en": "Come, Follow Me",
+      "category": "custom",
+      "reading": "わたしにしたがってきなさい",
+      "variants": [
+        "わたしにしたがえ"
+      ],
+      "note": "家庭・教会での福音学習カリキュラム",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733717037-2",
+      "ja": "聖餐会",
+      "en": "sacrament meetings",
+      "category": "worship",
+      "reading": "せいさんかい",
+      "variants": [
+        "聖餐界"
+      ],
+      "note": "日曜日の中心的な礼拝行事",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733717037-1",
+      "ja": "家族—世界への宣言",
+      "en": "The Family: A Proclamation to the World",
+      "category": "scripture",
+      "reading": "かぞくせかいへのせんげん",
+      "variants": [
+        "家族世界への宣言"
+      ],
+      "note": "教会公式の重要宣言文書",
+      "enabled": true
+    },
+    {
+      "id": "sermon-1794733717036-0",
+      "ja": "日の栄えの結婚",
+      "en": "celestial marriage",
+      "category": "theology",
+      "reading": "ひのさかえのけっこん",
+      "variants": [
+        "日の栄の結婚"
+      ],
+      "note": "教義と聖約131章に言及される結婚",
+      "enabled": true
+    },
     {
       "id": "sermon-1794733590760-19",
       "ja": "ティファナ神殿",
@@ -365,47 +1870,47 @@
     {
       "id": "sermon-1794733419749-15",
       "ja": "大祭司",
-      "en": "high priest",
+      "en": "high priest / high priests",
       "category": "roles",
       "reading": "だいさいし",
       "variants": [
         "代祭司"
       ],
-      "note": "神権の職名",
+      "note": "メルキゼデク神権の職",
       "enabled": true
     },
     {
       "id": "sermon-1794733419749-14",
       "ja": "長老定員会",
-      "en": "elders quorum",
+      "en": "elders quorum / elders quorums",
       "category": "roles",
       "reading": "ちょうろうていいんかい",
       "variants": [
         "長老定員界"
       ],
-      "note": "神権保有者の定員会",
+      "note": "神権保持者の組織",
       "enabled": true
     },
     {
       "id": "sermon-1794733419749-13",
       "ja": "ワード",
-      "en": "ward",
+      "en": "wards",
       "category": "custom",
       "reading": "わーど",
       "variants": [
         "和人"
       ],
-      "note": "地域教会・会衆の単位",
+      "note": "教会の基本単位となる単位組織（会衆）",
       "enabled": true
     },
     {
       "id": "sermon-1794733419749-12",
       "ja": "ビショップリック",
-      "en": "bishopric",
+      "en": "bishopric / bishoprics",
       "category": "roles",
       "reading": "びしょっぷりっく",
       "variants": [],
-      "note": "ビショップとその顧問からなる指導部",
+      "note": "ビショップとその2人の顧問で構成されるワード指導部",
       "enabled": true
     },
     {
@@ -415,7 +1920,7 @@
       "category": "roles",
       "reading": "すてーくかいちょうかい",
       "variants": [],
-      "note": "ステークの指導部",
+      "note": "ワードを監督する上位組織",
       "enabled": true
     },
     {
@@ -439,27 +1944,27 @@
       "variants": [
         "地域70人"
       ],
-      "note": "教会指導者の役職",
+      "note": "特定の地域を管理する神権指導者",
       "enabled": true
     },
     {
       "id": "sermon-1794733419749-8",
       "ja": "中央幹部",
-      "en": "General Authorities",
+      "en": "General Authority",
       "category": "roles",
       "reading": "ちゅうおうかんぶ",
       "variants": [],
-      "note": "教会中央の指導者階層",
+      "note": "教会全般を指導する役員",
       "enabled": true
     },
     {
       "id": "sermon-1794733419749-7",
       "ja": "家庭の夕べ",
-      "en": "home evening",
+      "en": "home evenings",
       "category": "custom",
       "reading": "かていのゆうべ",
       "variants": [],
-      "note": "家庭で行う活動・集会",
+      "note": "家庭で行われる習慣・集会",
       "enabled": true
     },
     {
@@ -522,13 +2027,13 @@
     {
       "id": "sermon-1794733419749-1",
       "ja": "神の救いと昇栄の業",
-      "en": "God’s work of salvation and exaltation",
+      "en": "God's work of salvation and exaltation",
       "category": "theology",
       "reading": "かみのすくいとしょうえいのわざ",
       "variants": [
         "神の救いと証言の業"
       ],
-      "note": "教会の中心的な教義・目的",
+      "note": "教会の中心的な目的・教義フレーズ",
       "enabled": true
     },
     {
@@ -610,14 +2115,14 @@
     {
       "id": "sermon-1794729701413-6",
       "ja": "聖任",
-      "en": "ordination",
+      "en": "ordain / ordination",
       "category": "custom",
       "reading": "せいにん",
       "variants": [
         "選任",
         "専任"
       ],
-      "note": "神権や職務への任命",
+      "note": "神権の職に任じる儀礼",
       "enabled": true
     },
     {
@@ -701,11 +2206,11 @@
     {
       "id": "sermon-1794718389871-28",
       "ja": "信仰箇条",
-      "en": "Articles of Faith",
+      "en": "Article of Faith",
       "category": "theology",
       "reading": "しんこうかじょう",
       "variants": [],
-      "note": "基本信条・文書名",
+      "note": "教会の基本的信条",
       "enabled": true
     },
     {
@@ -2854,9 +4359,9 @@
         "断食現金",
         "断食検診"
       ],
-      "en": "fast offerings",
+      "en": "fast offerings / fast-offering funds",
       "category": "worship",
-      "note": "助けの必要な人々を祝福するための献金",
+      "note": "貧しい人を救済するための献金",
       "enabled": true
     },
     {
@@ -3048,9 +4553,9 @@
         "大館長",
         "大艦長"
       ],
-      "en": "President",
+      "en": "President of the Church",
       "category": "roles",
-      "note": "例: ジョセフ・F・スミス大管長 = President Joseph F. Smith",
+      "note": "教会の最高指導者",
       "enabled": true
     },
     {
@@ -3218,9 +4723,9 @@
       "ja": "ミニスタリング",
       "reading": "みにすたりんぐ",
       "variants": [],
-      "en": "ministering (to minister)",
+      "en": "ministering / minister",
       "category": "life",
-      "note": "キリストのように人々に仕え養う働き",
+      "note": "互いに世話をし仕え合う教会の実践",
       "enabled": true
     },
     {

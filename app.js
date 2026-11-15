@@ -81,6 +81,8 @@ class GraceInterpretApp {
     this.settingsDropdownMenu = document.getElementById('settingsDropdownMenu');
     this.menuExportTxtBtn = document.getElementById('menuExportTxtBtn');
     this.menuFeedbackBtn = document.getElementById('menuFeedbackBtn');
+    this.menuGlossaryBtn = document.getElementById('menuGlossaryBtn');
+    this.menuGlossaryCount = document.getElementById('menuGlossaryCount');
     this.menuApiSettingsBtn = document.getElementById('menuApiSettingsBtn');
     this.apiStatusDot = document.getElementById('apiStatusDot');
 
@@ -154,7 +156,9 @@ class GraceInterpretApp {
     this.clearManualInputBtn = document.getElementById('clearManualInputBtn');
     this.historyCountLabel = document.getElementById('historyCountLabel');
 
-    // Glossary sidebar
+    // Glossary dialog
+    this.glossaryDialog = document.getElementById('glossaryDialog');
+    this.closeGlossaryDialogBtn = document.getElementById('closeGlossaryDialogBtn');
     this.addTermQuickBtn = document.getElementById('addTermQuickBtn');
     this.glossarySearchInput = document.getElementById('glossarySearchInput');
     this.categoryFilterChips = document.getElementById('categoryFilterChips');
@@ -594,7 +598,12 @@ class GraceInterpretApp {
 
   updateHeaderStatus() {
     const activeCount = this.glossary.filter((g) => g.enabled).length;
-    this.activeGlossaryCount.textContent = String(activeCount);
+    if (this.activeGlossaryCount) {
+      this.activeGlossaryCount.textContent = String(activeCount);
+    }
+    if (this.menuGlossaryCount) {
+      this.menuGlossaryCount.textContent = String(activeCount);
+    }
 
     const totalLearned =
       (this.feedbackRules?.length || 0) + (this.correctionExamples?.length || 0);
@@ -803,6 +812,15 @@ class GraceInterpretApp {
     this.menuFeedbackBtn?.addEventListener('click', () => {
       this.closeSettingsMenu();
       this.openFeedbackDialog();
+    });
+
+    this.menuGlossaryBtn?.addEventListener('click', () => {
+      this.closeSettingsMenu();
+      this.glossaryDialog?.showModal();
+    });
+
+    this.closeGlossaryDialogBtn?.addEventListener('click', () => {
+      this.glossaryDialog?.close();
     });
 
     this.menuApiSettingsBtn?.addEventListener('click', () => {

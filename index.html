@@ -78,6 +78,14 @@
             </div>
             <span class="badge-count" id="activeFeedbackCount">0</span>
           </button>
+          <button type="button" id="menuGlossaryBtn" class="settings-menu-item">
+            <span class="menu-item-icon">📖</span>
+            <div class="menu-item-text">
+              <span class="menu-item-title">教会用語集（辞書）</span>
+              <span class="menu-item-desc">用語の検索・追加・インポート管理</span>
+            </div>
+            <span class="badge-count" id="menuGlossaryCount">0</span>
+          </button>
           <div class="settings-menu-divider"></div>
           <button type="button" id="menuApiSettingsBtn" class="settings-menu-item">
             <span class="menu-item-icon">⚙️</span>
@@ -272,22 +280,26 @@
         </button>
       </div>
     </section>
+  </main>
 
-    <!-- 右パネル: 教会用語集（辞書）リアルタイム管理サイドバー -->
-    <aside class="glossary-sidebar" id="glossarySidebar" aria-label="教会用語集パネル">
-      <div class="sidebar-header">
+  <!-- モーダル0: 教会用語集（辞書）管理ダイアログ (Modern Web Guidance 準拠: native <dialog closedby="any">) -->
+  <dialog id="glossaryDialog" class="dialog-wide glossary-dialog" closedby="any" aria-labelledby="glossaryDialogTitle">
+    <div class="dialog-card glossary-dialog-card">
+      <div class="dialog-header">
         <div>
-          <h2 class="sidebar-title">📖 教会用語集（辞書） <span class="badge-count" id="activeGlossaryCount">0</span></h2>
-          <p class="sidebar-desc">ONの用語に沿ってAIが通訳・音声認識補正を行います</p>
+          <h2 id="glossaryDialogTitle">📖 教会用語集（辞書） <span class="badge-count" id="activeGlossaryCount">0</span></h2>
+          <p class="sidebar-desc" style="margin-top: 0.25rem;">ONの用語に沿ってAIが通訳・音声認識補正を行います</p>
         </div>
-        <div class="sidebar-header-actions">
-          <button type="button" id="openSermonExtractBtn" class="btn btn-secondary btn-compact" title="説教の日本語・英語原稿から用語候補を自動リストアップします">
-            📄 原稿から抽出
-          </button>
-          <button type="button" id="addTermQuickBtn" class="btn btn-primary btn-compact">
-            ＋ 用語追加
-          </button>
-        </div>
+        <button type="button" id="closeGlossaryDialogBtn" class="btn-icon-close" aria-label="閉じる">✕</button>
+      </div>
+
+      <div class="glossary-dialog-actions">
+        <button type="button" id="openSermonExtractBtn" class="btn btn-secondary btn-compact" title="説教の日本語・英語原稿から用語候補を自動リストアップします">
+          📄 原稿から抽出
+        </button>
+        <button type="button" id="addTermQuickBtn" class="btn btn-primary btn-compact">
+          ＋ 用語追加
+        </button>
       </div>
 
       <!-- 検索・カテゴリ絞り込み -->
@@ -298,6 +310,7 @@
           class="text-input input-sm"
           placeholder="用語を検索（例：贖い、聖餐、Pastor...）"
           aria-label="教会用語を検索"
+          autofocus
         />
         <div class="category-chips" id="categoryFilterChips" role="group" aria-label="カテゴリ絞り込み">
           <button type="button" class="chip active" data-cat="all">すべて</button>
@@ -311,10 +324,10 @@
       </div>
 
       <!-- 用語リスト -->
-      <div class="glossary-list" id="glossaryListContainer"></div>
+      <div class="glossary-list glossary-dialog-list" id="glossaryListContainer"></div>
 
       <!-- 辞書インポート / エクスポート / リセット / GitHubバックアップ -->
-      <div class="sidebar-footer" style="flex-direction: column; align-items: stretch; gap: 0.45rem;">
+      <div class="sidebar-footer glossary-dialog-footer">
         <div style="display: flex; gap: 0.4rem;">
           <button type="button" id="backupGlossaryGithubBtn" class="btn btn-compact btn-secondary" style="flex: 1;" title="現在の用語集をGitHubリポジトリ（glossary-backup.json）に保存します">
             ☁️ GitHub保存
@@ -336,8 +349,8 @@
           </button>
         </div>
       </div>
-    </aside>
-  </main>
+    </div>
+  </dialog>
 
   <!-- モーダル1: 教会用語の追加・編集ダイアログ (Modern Web Guidance 準拠: native <dialog closedby="any">) -->
   <dialog id="termDialog" closedby="any" aria-labelledby="termDialogTitle">

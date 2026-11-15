@@ -320,23 +320,13 @@ body {
 .workspace {
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 390px;
+  grid-template-columns: minmax(0, 1fr);
   min-height: 0;
   overflow: hidden;
   background: #ffffff;
 }
 
 /* ビューモード切替 */
-body[data-view-mode="bilingual"] .workspace,
-body[data-view-mode="english-only"] .workspace {
-  grid-template-columns: 1fr;
-}
-
-body[data-view-mode="bilingual"] .glossary-sidebar,
-body[data-view-mode="english-only"] .glossary-sidebar {
-  display: none;
-}
-
 body[data-view-mode="english-only"] .manual-input-bar,
 body[data-view-mode="english-only"] .box-ja,
 body[data-view-mode="english-only"] .box-splitter,
@@ -352,13 +342,8 @@ body[data-view-mode="english-only"] .two-boxes-workspace {
 /* プロジェクター全画面モード */
 body.projector-mode .app-header,
 body.projector-mode .audio-control-bar,
-body.projector-mode .manual-input-bar,
-body.projector-mode .glossary-sidebar {
+body.projector-mode .manual-input-bar {
   display: none !important;
-}
-
-body.projector-mode .workspace {
-  grid-template-columns: 1fr;
 }
 
 body.projector-mode .interpreter-panel {
@@ -1675,6 +1660,51 @@ dialog.dialog-wide:modal {
   max-width: 780px;
 }
 
+dialog.glossary-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+  overflow: hidden;
+}
+
+.glossary-dialog-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 88vh;
+}
+
+.glossary-dialog-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: #ffffff;
+}
+
+.glossary-dialog-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.glossary-dialog-list {
+  flex: 1;
+  min-height: 220px;
+  overflow-y: auto;
+  padding: 0.75rem 1.25rem;
+}
+
+.glossary-dialog-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  background: #f8fafc;
+}
+
 .feedback-dialog-body {
   max-height: 76vh;
   gap: 1.15rem;
@@ -1817,10 +1847,5 @@ dialog.dialog-wide:modal {
   .workspace {
     grid-template-columns: 1fr;
     overflow: visible;
-  }
-  .glossary-sidebar {
-    border-left: none;
-    border-top: 1px solid var(--border-subtle);
-    max-height: 500px;
   }
 }

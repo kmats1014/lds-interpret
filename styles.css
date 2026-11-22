@@ -509,6 +509,7 @@ body.compact-mode .btn-toggle-compact {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 8px 16px;
   border-radius: var(--ds-radius-medium);

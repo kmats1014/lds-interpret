@@ -1580,7 +1580,7 @@ class GraceInterpretApp {
     this.micToggleBtn.setAttribute('aria-pressed', String(active));
     this.micBtnText.textContent = active
       ? '同時通訳を停止'
-      : '同時通訳';
+      : '同時通訳スタート';
     if (this.pauseMicBtn) {
       this.pauseMicBtn.disabled = !active;
       if (!active) {

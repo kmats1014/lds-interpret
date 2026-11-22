@@ -572,8 +572,19 @@ body.compact-mode .btn-toggle-compact {
 .audio-secondary-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 6px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.audio-secondary-actions::-webkit-scrollbar {
+  display: none;
+}
+
+.audio-secondary-actions > * {
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .demo-dropdown-wrap {

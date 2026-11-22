@@ -628,13 +628,17 @@ class GraceInterpretApp {
       const activeModel = this.interpreter.getActiveModelName();
       this.apiStatusDot.className = 'status-dot status-connected';
       this.apiStatusDot.title = `Gemini API 接続設定済み (${activeModel})`;
-      const modeSuffix =
-        this.settings.audioInputMode === 'gemini-live' ? ' / Live Audio' : ' / ⚡高速モード';
-      this.stageModelInfo.textContent = `${activeModel}${modeSuffix} (用語 ${activeCount}語${learnedSuffix})`;
+      if (this.stageModelInfo) {
+        const modeSuffix =
+          this.settings.audioInputMode === 'gemini-live' ? ' / Live Audio' : ' / ⚡高速モード';
+        this.stageModelInfo.textContent = `${activeModel}${modeSuffix} (用語 ${activeCount}語${learnedSuffix})`;
+      }
     } else {
       this.apiStatusDot.className = 'status-dot status-demo';
       this.apiStatusDot.title = 'デモモード（APIキーを設定するとフルAI通訳が有効になります）';
-      this.stageModelInfo.textContent = `デモ通訳モード（教会用語 ${activeCount}語${learnedSuffix} 適用中 — 右上の「API・設定」からGemini APIキー登録可能）`;
+      if (this.stageModelInfo) {
+        this.stageModelInfo.textContent = `デモ通訳モード（教会用語 ${activeCount}語${learnedSuffix} 適用中 — 右上の「API・設定」からGemini APIキー登録可能）`;
+      }
     }
   }
 

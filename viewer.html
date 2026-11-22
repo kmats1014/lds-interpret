@@ -45,13 +45,20 @@
 
     .viewer-header {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      padding: 0.65rem 1rem;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.45rem;
+      padding: 0.6rem 0.9rem;
       border-bottom: 1px solid var(--border);
       background: var(--elevated);
       flex-shrink: 0;
+    }
+
+    .header-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
       flex-wrap: wrap;
     }
 
@@ -95,15 +102,18 @@
     .controls-group {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start;
       gap: 0.4rem;
+      width: 100%;
     }
 
     .controls-row {
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       gap: 0.45rem;
       flex-wrap: wrap;
+      width: 100%;
     }
 
     .select-input {
@@ -238,9 +248,16 @@
 </head>
 <body data-theme="light">
   <header class="viewer-header">
-    <div class="brand-title">
-      <span>📖</span>
-      <span id="headerTitle">LDS Interpret 字幕</span>
+    <div class="header-top-row">
+      <div class="brand-title">
+        <span>📖</span>
+        <span id="headerTitle">LDS Interpret 字幕</span>
+      </div>
+
+      <div class="status-badge" id="statusBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">接続中...</span>
+      </div>
     </div>
 
     <div class="controls-group">
@@ -259,11 +276,6 @@
         <button type="button" id="fontDecBtn" class="btn-icon" title="文字を小さく">A-</button>
         <button type="button" id="fontIncBtn" class="btn-icon" title="文字を大きく">A+</button>
         <button type="button" id="themeToggleBtn" class="btn-icon" title="ダーク / ライト切り替え">🌓</button>
-
-        <div class="status-badge" id="statusBadge">
-          <span class="status-dot"></span>
-          <span id="statusText">接続中...</span>
-        </div>
       </div>
     </div>
   </header>

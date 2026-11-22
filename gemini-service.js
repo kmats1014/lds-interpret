@@ -305,7 +305,8 @@ export class ChurchInterpreterService {
 ${sceneConfig.instruction}
 Rules:
 1. Output ONLY the ${tgtInfo.nameEn} translation. No notes, no romaji, no explanations.
-2. Translate incomplete spoken clauses naturally so they read smoothly as live subtitles.${targetStyleExtra}${glossarySection}${feedbackSection}${correctionsSection}`;
+2. Translate incomplete spoken clauses naturally so they read smoothly as live subtitles.
+3. Silently infer and correct obvious speech-to-text homophone errors from context (e.g., church terms, scripture names, ward/stake names, prayer phrases) without mentioning the typo.${targetStyleExtra}${glossarySection}${feedbackSection}${correctionsSection}`;
   }
 
   /**

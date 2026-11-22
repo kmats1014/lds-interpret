@@ -43,6 +43,7 @@ class GraceInterpretApp {
 
     // 音声認識・連続文章連結の状態
     this.isListening = false;
+    this.isPaused = false;
     this.recognition = null;
     this.committedOffsets = new Map();
     this.interimPauseTimer = null;
@@ -89,6 +90,7 @@ class GraceInterpretApp {
     // Audio & Live stage controls
     this.micToggleBtn = document.getElementById('micToggleBtn');
     this.micBtnText = document.getElementById('micBtnText');
+    this.pauseMicBtn = document.getElementById('pauseMicBtn');
     this.liveStatusBadge = document.getElementById('liveStatusBadge');
     this.liveStatusText = document.getElementById('liveStatusText');
     this.sampleSegmentSelect = document.getElementById('sampleSegmentSelect');
@@ -682,6 +684,8 @@ class GraceInterpretApp {
       }
     });
 
+    this.pauseMicBtn?.addEventListener('click', () => this.togglePauseMicrophone());
+
     // 参加者用リアルタイム字幕 URL・QRコード発行モーダル
     this.openShareModalBtn?.addEventListener('click', () => this.openShareDialog());
     this.closeShareDialogBtn?.addEventListener('click', () => this.shareDialog.close());
@@ -1255,6 +1259,7 @@ class GraceInterpretApp {
         };
 
         rec.onresult = (event) => {
+          if (!this.isListening || this.isPaused) return;
           if (this.interimPauseTimer) {
             clearTimeout(this.interimPauseTimer);
             this.interimPauseTimer = null;
@@ -1274,6 +1279,8 @@ class GraceInterpretApp {
           }
 
           let latestActiveInterim = '';
+          let latestActiveInterimIndex = -1;
+          let latestActiveInterimRawLength = 0;
 
           for (let i = event.resultIndex; i < event.results.length; i++) {
             const result = event.results[i];
@@ -1293,6 +1300,8 @@ class GraceInterpretApp {
               if (!activeInterim.trim()) continue;
 
               latestActiveInterim = activeInterim;
+              latestActiveInterimIndex = i;
+              latestActiveInterimRawLength = rawTranscript.length;
 
               if (isJapaneseSource) {
                 // 日本語入力時: 句点または自然な文末・接続助詞で先行通訳
@@ -1311,8 +1320,9 @@ class GraceInterpretApp {
                   (activeInterim.length >= threshold + 20 ? activeInterim : null);
 
                 if (matchedPrefix) {
-                  this.committedOffsets.set(i, alreadyCommitted + matchedPrefix.length);
-                  latestActiveInterim = rawTranscript.slice(alreadyCommitted + matchedPrefix.length);
+                  const newOffset = alreadyCommitted + matchedPrefix.length;
+                  this.committedOffsets.set(i, newOffset);
+                  latestActiveInterim = rawTranscript.slice(newOffset);
                   currentPendingInterim = latestActiveInterim.trim();
                   this.processRecognizedJapaneseSentence(matchedPrefix.trim());
                 }
@@ -1326,8 +1336,9 @@ class GraceInterpretApp {
                 const matchedPrefix = sentenceEndMatch?.[1] || clauseMatch?.[1] || null;
 
                 if (matchedPrefix) {
-                  this.committedOffsets.set(i, alreadyCommitted + matchedPrefix.length);
-                  latestActiveInterim = rawTranscript.slice(alreadyCommitted + matchedPrefix.length);
+                  const newOffset = alreadyCommitted + matchedPrefix.length;
+                  this.committedOffsets.set(i, newOffset);
+                  latestActiveInterim = rawTranscript.slice(newOffset);
                   currentPendingInterim = latestActiveInterim.trim();
                   this.processRecognizedJapaneseSentence(matchedPrefix.trim());
                 }
@@ -1344,18 +1355,22 @@ class GraceInterpretApp {
             this.jaLiveInterimSpan.textContent = previewNormalized;
             this.scrollToBottomIfAuto();
 
-            // 話し手が 0.55秒 息継ぎ・ポーズしたら確定文として通訳を開始
+            // 話し手が 0.9秒 息継ぎ・ポーズしたら確定文として通訳を開始（同じresultIndexの既送信位置を保持し重複防止）
+            const commitIdx = latestActiveInterimIndex;
+            const commitRawLen = latestActiveInterimRawLength;
             clearTimeout(this.interimPauseTimer);
             this.interimPauseTimer = setTimeout(() => {
-              if (!this.isListening) return;
+              if (!this.isListening || this.isPaused) return;
               const textToCommit = currentPendingInterim.trim();
               if (textToCommit) {
                 currentPendingInterim = '';
-                this.committedOffsets.clear();
+                if (commitIdx >= 0) {
+                  this.committedOffsets.set(commitIdx, commitRawLen);
+                }
                 this.jaLiveInterimSpan.textContent = '';
                 this.processRecognizedJapaneseSentence(textToCommit);
               }
-            }, 550);
+            }, 900);
           } else {
             this.jaLiveInterimSpan.textContent = '';
           }
@@ -1398,12 +1413,15 @@ class GraceInterpretApp {
         rec.onend = () => {
           if (!this.isListening) return;
 
-          // 未確定の保留テキストがあれば即座に確定して通訳を漏らさない
+          // 未確定の保留テキストがあれば即座に確定して通訳を漏らさない（一時停止中を除く）
           const flushText = currentPendingInterim.trim();
-          if (flushText) {
+          if (flushText && !this.isPaused) {
             currentPendingInterim = '';
             this.jaLiveInterimSpan.textContent = '';
             this.processRecognizedJapaneseSentence(flushText);
+          } else {
+            currentPendingInterim = '';
+            this.jaLiveInterimSpan.textContent = '';
           }
 
           // network / audio-capture エラー時は診断メッセージが読めるよう長めの間隔で再試行
@@ -1548,8 +1566,42 @@ class GraceInterpretApp {
     this.micBtnText.textContent = active
       ? '同時通訳を停止（マイクOFF）'
       : '同時通訳を開始（マイクON）';
+    if (this.pauseMicBtn) {
+      this.pauseMicBtn.hidden = !active;
+      if (!active) {
+        this.isPaused = false;
+        this.pauseMicBtn.textContent = '⏸ 一時停止（賛美歌中）';
+        this.pauseMicBtn.classList.remove('btn-primary');
+        this.pauseMicBtn.classList.add('btn-outline');
+      }
+    }
     this.liveStatusBadge.className = `live-status-indicator ${badgeStateClass}`.trim();
     this.liveStatusText.textContent = statusText;
+  }
+
+  togglePauseMicrophone() {
+    if (!this.isListening) return;
+    this.isPaused = !this.isPaused;
+    if (this.isPaused) {
+      clearTimeout(this.interimPauseTimer);
+      this.interimPauseTimer = null;
+      this.jaLiveInterimSpan.textContent = '';
+      if (this.pauseMicBtn) {
+        this.pauseMicBtn.textContent = '▶️ 通訳を再開する';
+        this.pauseMicBtn.classList.remove('btn-outline');
+        this.pauseMicBtn.classList.add('btn-primary');
+      }
+      this.liveStatusBadge.className = 'live-status-indicator';
+      this.liveStatusText.textContent = '⏸ 一時停止中（賛美歌・聖餐）';
+    } else {
+      if (this.pauseMicBtn) {
+        this.pauseMicBtn.textContent = '⏸ 一時停止（賛美歌中）';
+        this.pauseMicBtn.classList.remove('btn-primary');
+        this.pauseMicBtn.classList.add('btn-outline');
+      }
+      this.liveStatusBadge.className = 'live-status-indicator is-listening';
+      this.liveStatusText.textContent = '🟢 音声認識を再開しました';
+    }
   }
 
   /**
@@ -1557,11 +1609,31 @@ class GraceInterpretApp {
    * 同時に選択された最大3つの通訳先言語へ並列にリアルタイムストリーミング追記する
    */
   async processRecognizedJapaneseSentence(rawSourceText) {
+    if (this.isPaused) return;
     const isJapaneseSource = (this.settings.sourceLang || 'ja') === 'ja';
     const normalizedSource = isJapaneseSource
       ? normalizeChurchSpeechText(rawSourceText, this.glossary)
       : rawSourceText.trim();
     if (!normalizedSource) return;
+
+    // 1〜2文字の意味のない断片（賛美歌・雑音由来の助詞等）は翻訳に送らずスキップ
+    const coreText = normalizedSource.replace(/[\s、。！？.,!?…\-ー「」『』()（）]/g, '');
+    if (
+      coreText.length <= 2 &&
+      !/^(はい|いいえ|うん|アーメン|あーめん|Amen|Yes|No|Opo|Ya)$/i.test(coreText)
+    ) {
+      return;
+    }
+
+    // 直近3件のコミット済み文との重複チェック（Web Speech API の確定/途中書き換えによる二重送信防止）
+    const recentEntries = this.history.filter((h) => !h.isParagraphBreak).slice(-3);
+    for (const prev of recentEntries) {
+      const prevCore = (prev.sourceText || prev.ja || '').replace(/[\s、。！？.,!?…\-ー]/g, '');
+      if (!prevCore) continue;
+      if (coreText === prevCore || (coreText.length >= 6 && prevCore.includes(coreText))) {
+        return;
+      }
+    }
 
     this.liveStatusBadge.className = 'live-status-indicator is-translating';
     this.liveStatusText.textContent = '⚡ 複数言語同時通訳中...';

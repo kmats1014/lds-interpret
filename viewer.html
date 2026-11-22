@@ -7,23 +7,52 @@
   <script src="./mqtt.min.js"></script>
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --elevated: #f8fafc;
-      --primary: #2563eb;
-      --green: #16a34a;
+      /* Atlassian Design System (ADS) Light Tokens */
+      --ds-surface: #ffffff;
+      --ds-surface-sunken: #f7f8f9;
+      --ds-text: #172b4d;
+      --ds-text-subtlest: #626f86;
+      --ds-border: #dcdfe4;
+      --ds-bg-neutral: #f1f2f4;
+      --ds-bg-neutral-hovered: #dcdfe4;
+      --ds-bg-brand-bold: #0c66e4;
+      --ds-bg-brand-bold-hovered: #0055cc;
+      --ds-bg-brand-text: #ffffff;
+      --ds-bg-success-bold: #1f845a;
+      --ds-radius-medium: 6px;
+      --ds-radius-large: 8px;
+
+      --bg: var(--ds-surface);
+      --text: var(--ds-text);
+      --text-muted: var(--ds-text-subtlest);
+      --border: var(--ds-border);
+      --elevated: var(--ds-surface-sunken);
+      --primary: var(--ds-bg-brand-bold);
+      --green: var(--ds-bg-success-bold);
       --font-scale: 1.25rem;
     }
 
     body[data-theme="dark"] {
-      --bg: #090d16;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --border: #1e293b;
-      --elevated: #111827;
-      --primary: #3b82f6;
+      /* Atlassian Design System (ADS) Dark Tokens */
+      --ds-surface: #1d2125;
+      --ds-surface-sunken: #161a1d;
+      --ds-text: #b6c2cf;
+      --ds-text-subtlest: #8c9bab;
+      --ds-border: #38414a;
+      --ds-bg-neutral: #22272b;
+      --ds-bg-neutral-hovered: #2c333a;
+      --ds-bg-brand-bold: #579dff;
+      --ds-bg-brand-bold-hovered: #85b8ff;
+      --ds-bg-brand-text: #1d2125;
+      --ds-bg-success-bold: #4bce97;
+
+      --bg: var(--ds-surface);
+      --text: var(--ds-text);
+      --text-muted: var(--ds-text-subtlest);
+      --border: var(--ds-border);
+      --elevated: var(--ds-surface-sunken);
+      --primary: var(--ds-bg-brand-bold);
+      --green: var(--ds-bg-success-bold);
     }
 
     * {
@@ -117,47 +146,54 @@
     }
 
     .select-input {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
+      padding: 6px 10px;
+      border-radius: var(--ds-radius-medium);
       border: 1px solid var(--border);
       background: var(--bg);
       color: var(--text);
     }
 
     .btn-icon {
-      background: var(--bg);
-      border: 1px solid var(--border);
+      background: var(--ds-bg-neutral);
+      border: 1px solid transparent;
       color: var(--text);
-      border-radius: 6px;
-      padding: 0.3rem 0.6rem;
+      border-radius: var(--ds-radius-medium);
+      padding: 6px 10px;
       font-size: 0.82rem;
       cursor: pointer;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      transition: background-color 0.15s ease;
     }
 
     .btn-icon:hover {
-      background: var(--elevated);
+      background: var(--ds-bg-neutral-hovered);
     }
 
     .btn-audio {
-      gap: 0.3rem;
-      border-color: #007da5;
-      color: #007da5;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid var(--ds-bg-brand-bold);
+      color: var(--ds-bg-brand-bold);
+    }
+
+    .btn-audio:hover {
+      background: rgba(12, 102, 228, 0.08);
     }
 
     .btn-audio.is-active {
-      background: #007da5;
-      border-color: #006184;
-      color: #ffffff;
+      background: var(--ds-bg-brand-bold);
+      border-color: var(--ds-bg-brand-bold);
+      color: var(--ds-bg-brand-text);
     }
 
     .btn-audio.is-active:hover {
-      background: #006184;
+      background: var(--ds-bg-brand-bold-hovered);
+      border-color: var(--ds-bg-brand-bold-hovered);
     }
 
     .viewer-content {

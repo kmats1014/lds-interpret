@@ -1579,13 +1579,13 @@ class GraceInterpretApp {
   updateMicUI(active, statusText, badgeStateClass) {
     this.micToggleBtn.setAttribute('aria-pressed', String(active));
     this.micBtnText.textContent = active
-      ? '同時通訳を停止（マイクOFF）'
-      : '同時通訳を開始（マイクON）';
+      ? '同時通訳を停止'
+      : '同時通訳';
     if (this.pauseMicBtn) {
-      this.pauseMicBtn.hidden = !active;
+      this.pauseMicBtn.disabled = !active;
       if (!active) {
         this.isPaused = false;
-        this.pauseMicBtn.textContent = '⏸ 一時停止（賛美歌中）';
+        this.pauseMicBtn.textContent = '⏸ 一時停止';
         this.pauseMicBtn.classList.remove('btn-primary');
         this.pauseMicBtn.classList.add('btn-outline');
       }
@@ -1602,15 +1602,15 @@ class GraceInterpretApp {
       this.interimPauseTimer = null;
       this.jaLiveInterimSpan.textContent = '';
       if (this.pauseMicBtn) {
-        this.pauseMicBtn.textContent = '▶️ 通訳を再開する';
+        this.pauseMicBtn.textContent = '▶️ 再開';
         this.pauseMicBtn.classList.remove('btn-outline');
         this.pauseMicBtn.classList.add('btn-primary');
       }
       this.liveStatusBadge.className = 'live-status-indicator';
-      this.liveStatusText.textContent = '⏸ 一時停止中（賛美歌・聖餐）';
+      this.liveStatusText.textContent = '⏸ 一時停止中';
     } else {
       if (this.pauseMicBtn) {
-        this.pauseMicBtn.textContent = '⏸ 一時停止（賛美歌中）';
+        this.pauseMicBtn.textContent = '⏸ 一時停止';
         this.pauseMicBtn.classList.remove('btn-primary');
         this.pauseMicBtn.classList.add('btn-outline');
       }

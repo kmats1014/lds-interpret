@@ -298,10 +298,10 @@
 
     <div class="controls-group">
       <div class="controls-row">
-        <select id="viewerLangSelect" class="select-input" aria-label="字幕言語の選択">
-          <option value="en">🇺🇸 英語 (English)</option>
-          <option value="tl">🇵🇭 タガログ語 (Tagalog)</option>
-          <option value="id">🇮🇩 インドネシア語</option>
+        <select id="viewerLangSelect" class="select-input" aria-label="Language">
+          <option value="en">🇺🇸 English</option>
+          <option value="tl">🇵🇭 Tagalog</option>
+          <option value="id">🇮🇩 Bahasa Indonesia</option>
           <option value="ja">🇯🇵 日本語</option>
         </select>
 
@@ -349,16 +349,135 @@
   </main>
 
   <script type="module">
-    const SUPPORTED_LANGS = {
-      en: { code: 'en', flag: '🇺🇸', name: '英語 (English)' },
-      tl: { code: 'tl', flag: '🇵🇭', name: 'タガログ語 (Tagalog)' },
-      id: { code: 'id', flag: '🇮🇩', name: 'インドネシア語 (Indonesian)' },
-      ja: { code: 'ja', flag: '🇯🇵', name: '日本語' },
+    const UI_STRINGS = {
+      en: {
+        pageTitle: 'LDS Interpret — Live Subtitles',
+        headerTitle: 'LDS Interpret Subtitles',
+        langAria: 'Select subtitle language',
+        audioOff: 'Listen with AI Voice',
+        audioOn: 'AI Voice ON',
+        audioPlaying: 'Playing AI Voice…',
+        audioTitle: 'Read finalized translations aloud with AI voice',
+        fontDecTitle: 'Decrease font size',
+        fontIncTitle: 'Increase font size',
+        themeTitle: 'Toggle dark / light theme',
+        statusConnecting: 'Connecting...',
+        statusReconnecting: 'Reconnecting...',
+        statusStandby: 'Waiting for host',
+        statusConnected: '🟢 Connected (Live)',
+        overlayConnecting: (r) => `Connecting to room "${r}"...`,
+        overlaySub: 'Waiting for the interpreter host (PC).<br>Subtitles will appear automatically once streaming starts.',
+        retryBtn: '🔄 Retry Connection',
+        retryingBtn: '🔄 Retrying...',
+        standbyTitle: '⏳ Waiting for Interpreter Host',
+        standbyDesc: (r) => `Waiting for the host in room "<b>${r}</b>".<br>Subtitles will appear automatically once the host starts.`,
+        standbyOfflineDesc: (r) => `The host (room "<b>${r}</b>") paused or is restarting. It will reconnect automatically when resumed.`,
+        connectedTitle: '🟢 Connected to Host (Waiting for speech)',
+        connectedDesc: 'Live subtitles will appear here as soon as the speaker begins...',
+        scrollLatest: '⬇ Jump to Latest',
+        libErrorTitle: '⚠️ Failed to load communication library',
+        libErrorSub: 'Please check your network connection and reload the page.',
+        reloadBtn: '🔄 Reload Page',
+      },
+      tl: {
+        pageTitle: 'LDS Interpret — Live na Subtitle',
+        headerTitle: 'LDS Interpret Subtitle',
+        langAria: 'Pumili ng wika ng subtitle',
+        audioOff: 'Pakinggan gamit ang AI',
+        audioOn: 'AI Voice ON',
+        audioPlaying: 'Nagpe-play…',
+        audioTitle: 'Basahin nang malakas ang mga natapos na salin gamit ang boses ng AI',
+        fontDecTitle: 'Paliitin ang teksto',
+        fontIncTitle: 'Palakihin ang teksto',
+        themeTitle: 'Lumipat ng dark / light theme',
+        statusConnecting: 'Kumokonekta...',
+        statusReconnecting: 'Muling kumokonekta...',
+        statusStandby: 'Naghihintay sa host',
+        statusConnected: '🟢 Nakakonekta (Live)',
+        overlayConnecting: (r) => `Kumokonekta sa room "${r}"...`,
+        overlaySub: 'Naghihintay sa interpreter host (PC).<br>Awtomatikong lalabas ang mga subtitle kapag nagsimula na.',
+        retryBtn: '🔄 Subukang Kumonekta Muli',
+        retryingBtn: '🔄 Sinusubukan...',
+        standbyTitle: '⏳ Naghihintay sa Interpreter Host',
+        standbyDesc: (r) => `Naghihintay sa host sa room "<b>${r}</b>".<br>Awtomatikong lalabas ang subtitle kapag nagsimula na ang host.`,
+        standbyOfflineDesc: (r) => `Nakahinto o nagre-restart ang host (room "<b>${r}</b>"). Awtomatikong kokonekta kapag nagpatuloy.`,
+        connectedTitle: '🟢 Nakakonekta sa Host (Naghihintay ng salita)',
+        connectedDesc: 'Lalabas dito ang live na subtitle kapag nagsimula nang magsalita...',
+        scrollLatest: '⬇ Pumunta sa Pinakabago',
+        libErrorTitle: '⚠️ Nabigong i-load ang communication library',
+        libErrorSub: 'Pakisuri ang iyong koneksyon sa internet at i-reload ang pahina.',
+        reloadBtn: '🔄 I-reload ang Pahina',
+      },
+      id: {
+        pageTitle: 'LDS Interpret — Terjemahan Langsung',
+        headerTitle: 'LDS Interpret Terjemahan',
+        langAria: 'Pilih bahasa terjemahan',
+        audioOff: 'Dengarkan Suara AI',
+        audioOn: 'Suara AI ON',
+        audioPlaying: 'Memutar…',
+        audioTitle: 'Bacakan hasil terjemahan dengan suara AI',
+        fontDecTitle: 'Perkecil teks',
+        fontIncTitle: 'Perbesar teks',
+        themeTitle: 'Ganti tema gelap / terang',
+        statusConnecting: 'Menghubungkan...',
+        statusReconnecting: 'Menghubungkan ulang...',
+        statusStandby: 'Menunggu host',
+        statusConnected: '🟢 Terhubung (Langsung)',
+        overlayConnecting: (r) => `Menghubungkan ke ruang "${r}"...`,
+        overlaySub: 'Menunggu host penerjemah (PC).<br>Terjemahan akan muncul otomatis setelah siaran dimulai.',
+        retryBtn: '🔄 Coba Hubungkan Lagi',
+        retryingBtn: '🔄 Mencoba lagi...',
+        standbyTitle: '⏳ Menunggu Host Penerjemah',
+        standbyDesc: (r) => `Menunggu host di ruang "<b>${r}</b>".<br>Terjemahan akan muncul otomatis saat host mulai.`,
+        standbyOfflineDesc: (r) => `Host (ruang "<b>${r}</b>") berhenti atau sedang memulai ulang. Akan terhubung otomatis saat dilanjutkan.`,
+        connectedTitle: '🟢 Terhubung ke Host (Menunggu suara)',
+        connectedDesc: 'Terjemahan langsung akan muncul di sini saat pembicara mulai...',
+        scrollLatest: '⬇ Kembali ke Terbaru',
+        libErrorTitle: '⚠️ Gagal memuat pustaka komunikasi',
+        libErrorSub: 'Periksa koneksi jaringan Anda dan muat ulang halaman.',
+        reloadBtn: '🔄 Muat Ulang Halaman',
+      },
+      ja: {
+        pageTitle: 'LDS Interpret — 参加者用リアルタイム字幕',
+        headerTitle: 'LDS Interpret 字幕',
+        langAria: '字幕言語の選択',
+        audioOff: 'AI音声を聞く',
+        audioOn: 'AI音声 ON',
+        audioPlaying: 'AI音声 再生中…',
+        audioTitle: '確定した通訳をAI音声で順番に読み上げます',
+        fontDecTitle: '文字を小さく',
+        fontIncTitle: '文字を大きく',
+        themeTitle: 'ダーク / ライト切り替え',
+        statusConnecting: '接続中...',
+        statusReconnecting: '再接続中...',
+        statusStandby: '待機中 (ホスト準備待ち)',
+        statusConnected: '🟢 接続中 (リアルタイム受信)',
+        overlayConnecting: (r) => `ルーム「${r}」に接続中...`,
+        overlaySub: '通訳ホスト（パソコン側）の準備を待機しています。<br>配信が始まると自動的に字幕が流れます。',
+        retryBtn: '🔄 今すぐ再接続を試す',
+        retryingBtn: '🔄 再試行中...',
+        standbyTitle: '⏳ 通訳ホストの配信開始を待機中',
+        standbyDesc: (r) => `ルーム「<b>${r}</b>」の通訳ホスト（パソコン側）を待機しています。<br>パソコン側で通訳アプリが開かれると自動的に接続されます。`,
+        standbyOfflineDesc: (r) => `ホスト（ルーム「<b>${r}</b>」）が終了または再起動中です。再開すると自動的に接続されます。`,
+        connectedTitle: '🟢 ホストに接続しました（通訳待機中）',
+        connectedDesc: '通訳が話すと、ここにリアルタイムで字幕が流れ始めます...',
+        scrollLatest: '⬇ 最新の字幕へ戻る',
+        libErrorTitle: '⚠️ 通信ライブラリの読み込みに失敗しました',
+        libErrorSub: 'ネットワーク接続を確認し、ページを再読み込みしてください。',
+        reloadBtn: '🔄 ページを再読み込み',
+      },
     };
 
     const urlParams = new URLSearchParams(window.location.search);
     const roomId = urlParams.get('room') || 'lds-live';
-    let currentLang = urlParams.get('lang') || 'en';
+    let currentLang = UI_STRINGS[urlParams.get('lang')] ? urlParams.get('lang') : 'en';
+    let connectionState = 'connecting'; // 'connecting' | 'reconnecting' | 'standby' | 'standbyOffline' | 'connected'
+
+    function t(key, ...args) {
+      const dict = UI_STRINGS[currentLang] || UI_STRINGS.en;
+      const val = dict[key] ?? UI_STRINGS.en[key];
+      return typeof val === 'function' ? val(...args) : val;
+    }
 
     const headerTitle = document.getElementById('headerTitle');
     const viewerLangSelect = document.getElementById('viewerLangSelect');
@@ -421,13 +540,52 @@
       if (!audioToggleBtn) return;
       audioToggleBtn.setAttribute('aria-pressed', String(audioEnabled));
       audioToggleBtn.classList.toggle('is-active', audioEnabled);
+      audioToggleBtn.title = t('audioTitle');
       if (!audioEnabled) {
-        audioToggleBtn.textContent = 'AI音声を聞く';
+        audioToggleBtn.textContent = t('audioOff');
       } else if (isPlayingAudio) {
-        audioToggleBtn.textContent = 'AI音声 再生中…';
+        audioToggleBtn.textContent = t('audioPlaying');
       } else {
-        audioToggleBtn.textContent = 'AI音声 ON';
+        audioToggleBtn.textContent = t('audioOn');
       }
+    }
+
+    function applyViewerLocale() {
+      document.documentElement.lang = currentLang;
+      document.title = t('pageTitle');
+      if (headerTitle) headerTitle.textContent = t('headerTitle');
+      if (viewerLangSelect) viewerLangSelect.setAttribute('aria-label', t('langAria'));
+      if (fontDecBtn) fontDecBtn.title = t('fontDecTitle');
+      if (fontIncBtn) fontIncBtn.title = t('fontIncTitle');
+      if (themeToggleBtn) themeToggleBtn.title = t('themeTitle');
+      if (scrollToLatestBtn) scrollToLatestBtn.textContent = t('scrollLatest');
+      if (manualRetryBtn) manualRetryBtn.textContent = t('retryBtn');
+      if (placeholderRetryBtn) placeholderRetryBtn.textContent = t('retryBtn');
+      const connectingSub = document.getElementById('connectingSub');
+      if (connectingSub) connectingSub.innerHTML = t('overlaySub');
+      if (connectingMessage && connectionState === 'connecting') {
+        connectingMessage.textContent = t('overlayConnecting', roomId);
+      }
+
+      if (connectionState === 'connected') {
+        statusText.textContent = t('statusConnected');
+        if (placeholderStatusTitle) placeholderStatusTitle.textContent = t('connectedTitle');
+        if (placeholderStatusDesc) placeholderStatusDesc.innerHTML = t('connectedDesc');
+      } else if (connectionState === 'standby') {
+        statusText.textContent = t('statusStandby');
+        if (placeholderStatusTitle) placeholderStatusTitle.textContent = t('standbyTitle');
+        if (placeholderStatusDesc) placeholderStatusDesc.innerHTML = t('standbyDesc', roomId);
+      } else if (connectionState === 'standbyOffline') {
+        statusText.textContent = t('statusStandby');
+        if (placeholderStatusTitle) placeholderStatusTitle.textContent = t('standbyTitle');
+        if (placeholderStatusDesc) placeholderStatusDesc.innerHTML = t('standbyOfflineDesc', roomId);
+      } else if (connectionState === 'reconnecting') {
+        statusText.textContent = t('statusReconnecting');
+      } else {
+        statusText.textContent = t('statusConnecting');
+      }
+
+      updateAudioToggleUI();
     }
 
     function base64ToBlobUrl(base64Data, mimeType) {
@@ -515,6 +673,7 @@
     // 言語切替
     viewerLangSelect.addEventListener('change', () => {
       currentLang = viewerLangSelect.value;
+      applyViewerLocale();
       renderCurrentLangStream();
       if (audioEnabled) {
         stopAndClearAudioQueue();
@@ -608,58 +767,47 @@
     const placeholderStatusTitle = document.getElementById('placeholderStatusTitle');
     const placeholderStatusDesc = document.getElementById('placeholderStatusDesc');
 
-    function setStandbyUI(message, subMessage) {
-      if (placeholderStatusTitle && message) placeholderStatusTitle.textContent = message;
-      if (placeholderStatusDesc && subMessage) placeholderStatusDesc.innerHTML = subMessage;
+    function setStandbyUI(isOffline = false) {
+      connectionState = isOffline ? 'standbyOffline' : 'standby';
       statusBadge.className = 'status-badge';
-      statusText.textContent = '待機中 (ホスト準備待ち)';
+      applyViewerLocale();
     }
 
     function setConnectedUI() {
       hostOnline = true;
+      connectionState = 'connected';
       clearTimeout(connectTimeout);
       connectingOverlay.hidden = true;
       statusBadge.className = 'status-badge connected';
-      statusText.textContent = '🟢 接続中 (リアルタイム受信)';
-      if (historyRecords.length === 0) {
-        if (placeholderStatusTitle) {
-          placeholderStatusTitle.textContent = '🟢 ホストに接続しました（通訳待機中）';
-        }
-        if (placeholderStatusDesc) {
-          placeholderStatusDesc.innerHTML = '通訳が話すと、ここにリアルタイムで字幕が流れ始めます...';
-        }
-        if (placeholderRetryBtn) {
-          placeholderRetryBtn.style.display = 'none';
-        }
+      if (historyRecords.length === 0 && placeholderRetryBtn) {
+        placeholderRetryBtn.style.display = 'none';
       }
+      applyViewerLocale();
     }
 
     function initViewerConnection() {
       if (typeof mqtt === 'undefined') {
         connectingOverlay.hidden = false;
-        connectingMessage.textContent = '⚠️ 通信ライブラリの読み込みに失敗しました';
-        document.getElementById('connectingSub').textContent = 'ネットワーク接続を確認し、ページを再読み込みしてください。';
+        connectingMessage.textContent = t('libErrorTitle');
+        document.getElementById('connectingSub').textContent = t('libErrorSub');
         manualRetryBtn.style.display = 'inline-block';
-        manualRetryBtn.textContent = '🔄 ページを再読み込み';
+        manualRetryBtn.textContent = t('reloadBtn');
         manualRetryBtn.onclick = () => window.location.reload();
         return;
       }
 
+      connectionState = 'connecting';
       statusBadge.className = 'status-badge';
-      statusText.textContent = '接続中...';
       connectingOverlay.hidden = false;
-      connectingMessage.textContent = `ルーム「${roomId}」に接続中...`;
       manualRetryBtn.style.display = 'none';
+      applyViewerLocale();
 
       // 4秒以内にホストの配信信号が来ない場合はオーバーレイを閉じ、待機画面を表示して操作可能にする
       clearTimeout(connectTimeout);
       connectTimeout = setTimeout(() => {
         if (!hostOnline) {
           connectingOverlay.hidden = true;
-          setStandbyUI(
-            '⏳ 通訳ホストの配信開始を待機中',
-            `ルーム「<b>${roomId}</b>」の通訳ホスト（パソコン側）を待機しています。<br>パソコン側で通訳アプリが開かれると自動的に接続されます。（※ホスト側の「参加者URL・QR発行」に表示されているルームIDと一致しているかもご確認ください）`
-          );
+          setStandbyUI(false);
         }
       }, 4000);
 
@@ -700,10 +848,7 @@
                 mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang, audioEnabled }));
               } else {
                 hostOnline = false;
-                setStandbyUI(
-                  '⏳ 通訳ホストの配信開始を待機中',
-                  `ホスト（ルーム「<b>${roomId}</b>」）が終了または再起動中です。再開すると自動的に接続されます。`
-                );
+                setStandbyUI(true);
                 if (placeholderRetryBtn) placeholderRetryBtn.style.display = 'inline-block';
               }
               return;
@@ -765,8 +910,9 @@
 
         mqttClient.on('reconnect', () => {
           if (!hostOnline) {
+            connectionState = 'reconnecting';
             statusBadge.className = 'status-badge';
-            statusText.textContent = '再接続中...';
+            applyViewerLocale();
           }
         });
 
@@ -788,25 +934,26 @@
     }
 
     manualRetryBtn?.addEventListener('click', () => {
-      manualRetryBtn.textContent = '🔄 再試行中...';
+      manualRetryBtn.textContent = t('retryingBtn');
       if (mqttClient && mqttClient.connected) {
-        mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+        mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang, audioEnabled }));
       } else {
         initViewerConnection();
       }
-      setTimeout(() => { manualRetryBtn.textContent = '🔄 今すぐ再接続を試す'; }, 2000);
+      setTimeout(() => { manualRetryBtn.textContent = t('retryBtn'); }, 2000);
     });
 
     placeholderRetryBtn?.addEventListener('click', () => {
-      placeholderRetryBtn.textContent = '🔄 再試行中...';
+      placeholderRetryBtn.textContent = t('retryingBtn');
       if (mqttClient && mqttClient.connected) {
-        mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+        mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang, audioEnabled }));
       } else {
         initViewerConnection();
       }
-      setTimeout(() => { placeholderRetryBtn.textContent = '🔄 今すぐ再接続を試す'; }, 2000);
+      setTimeout(() => { placeholderRetryBtn.textContent = t('retryBtn'); }, 2000);
     });
 
+    applyViewerLocale();
     initViewerConnection();
   </script>
 </body>

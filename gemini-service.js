@@ -899,6 +899,84 @@ Rules:
     }
   }
 
+  /**
+   * Gemini Interactions API (TTSモデル) でテキストを音声合成し、Base64音声データとMIMEタイプを返す
+   */
+  async synthesizeSpeech(text, { model = 'gemini-3.8-flash-lite-tts', voice = 'Kore', style } = {}) {
+    const cleanText = (text || '').trim();
+    if (!cleanText || !this.hasApiKey()) return null;
+
+    const cleanModel = (model || 'gemini-3.8-flash-lite-tts').replace(/^models\//, '');
+    const url = `https://generativelanguage.googleapis.com/v1beta/interactions?key=${encodeURIComponent(this.apiKey)}`;
+
+    const body = {
+      model: cleanModel,
+      input: [
+        {
+          type: 'user_input',
+          content: [
+            {
+              type: 'text',
+              text: cleanText,
+              annotations: [
+                {
+                  type: 'speech_metadata',
+                  style: style || 'calm, warm, and reverent tone suitable for a church service',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      response_format: {
+        type: 'audio',
+      },
+      generation_config: {
+        speech_config: [
+          {
+            voice: voice || 'Kore',
+          },
+        ],
+      },
+      store: false,
+    };
+
+    const response = await window.fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+
+    if (!response.ok) {
+      const errText = await response.text().catch(() => '');
+      throw new Error(`TTS API Error ${response.status}: ${errText.slice(0, 200)}`);
+    }
+
+    const result = await response.json();
+    if (result?.output_audio?.data) {
+      return {
+        data: result.output_audio.data,
+        mimeType: result.output_audio.mime_type || 'audio/wav',
+      };
+    }
+
+    if (Array.isArray(result?.steps)) {
+      for (const step of result.steps) {
+        if (step?.type !== 'model_output' || !Array.isArray(step.content)) continue;
+        for (const part of step.content) {
+          if (part?.type === 'audio' && part.data) {
+            return {
+              data: part.data,
+              mimeType: part.mime_type || 'audio/wav',
+            };
+          }
+        }
+      }
+    }
+
+    return null;
+  }
+
   arrayBufferToBase64(buffer) {
     let binary = '';
     const bytes = new Uint8Array(buffer);

@@ -484,11 +484,36 @@
         </div>
 
         <div class="form-field">
-          <label for="geminiModelSelect">使用する Gemini モデル</label>
+          <label for="geminiModelSelect">使用する Gemini モデル（翻訳）</label>
           <select id="geminiModelSelect" class="select-input">
             <option value="gemini-3.5-flash-lite">⚡ Gemini 3.5 Flash-Lite（最速・同時通訳に推奨）</option>
             <option value="gemini-3.8-flash">✨ Gemini 3.8 Flash（高精度・標準）</option>
             <option value="gemini-3.1-flash-lite">🚀 Gemini 3.1 Flash-Lite（超軽量・高速）</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="ttsModelSelect">参加者向け AI 音声モデル（TTS）</label>
+          <select id="ttsModelSelect" class="select-input">
+            <option value="gemini-3.8-flash-lite-tts">⚡ Gemini 3.8 Flash-Lite TTS（高速・低コスト・推奨）</option>
+            <option value="gemini-3.8-flash-tts">🎙️ Gemini 3.8 Flash TTS（高音質・表現力重視）</option>
+          </select>
+          <small class="field-hint">
+            共有URL（参加者画面）で「AI音声を聞く」をONにした参加者がいる場合のみ音声を生成して配信します。
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label for="ttsVoiceSelect">AI 音声の声質（ボイス）</label>
+          <select id="ttsVoiceSelect" class="select-input">
+            <option value="Kore">Kore（落ち着いた自然な声・推奨）</option>
+            <option value="Aoede">Aoede（明瞭で温かみのある声）</option>
+            <option value="Zephyr">Zephyr（軽やかで聞き取りやすい声）</option>
+            <option value="Leda">Leda（柔らかく穏やかな声）</option>
+            <option value="Charon">Charon（落ち着いた低めの男性声）</option>
+            <option value="Fenrir">Fenrir（力強く明瞭な男性声）</option>
+            <option value="Puck">Puck（親しみやすい声）</option>
+            <option value="Orus">Orus（安定したナレーション向け）</option>
           </select>
         </div>
 

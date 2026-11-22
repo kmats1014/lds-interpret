@@ -127,6 +127,22 @@
       background: var(--elevated);
     }
 
+    .btn-audio {
+      gap: 0.3rem;
+      border-color: #007da5;
+      color: #007da5;
+    }
+
+    .btn-audio.is-active {
+      background: #007da5;
+      border-color: #006184;
+      color: #ffffff;
+    }
+
+    .btn-audio.is-active:hover {
+      background: #006184;
+    }
+
     .viewer-content {
       flex: 1;
       overflow-y: auto;
@@ -228,6 +244,7 @@
         <option value="ja">🇯🇵 日本語</option>
       </select>
 
+      <button type="button" id="audioToggleBtn" class="btn-icon btn-audio" aria-pressed="false" title="確定した通訳をAI音声で順番に読み上げます">🔇 AI音声を聞く</button>
       <button type="button" id="fontDecBtn" class="btn-icon" title="文字を小さく">A-</button>
       <button type="button" id="fontIncBtn" class="btn-icon" title="文字を大きく">A+</button>
       <button type="button" id="themeToggleBtn" class="btn-icon" title="ダーク / ライト切り替え">🌓</button>
@@ -297,10 +314,141 @@
     const fontIncBtn = document.getElementById('fontIncBtn');
     const fontDecBtn = document.getElementById('fontDecBtn');
     const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const audioToggleBtn = document.getElementById('audioToggleBtn');
 
     let historyRecords = [];
     let autoScroll = true;
     let fontRem = 1.25;
+
+    // AI音声再生キュー（スマホ自動再生制限解除＋順次再生）
+    let audioEnabled = false;
+    const audioQueue = [];
+    let isPlayingAudio = false;
+    const audioPlayer = new Audio();
+    audioPlayer.playsInline = true;
+    let currentAudioObjectUrl = null;
+
+    function unlockAudioPlayback() {
+      try {
+        // ユーザー操作内で無音WAVを再生し、モバイルブラウザの再生ロックを解除
+        audioPlayer.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+        const p = audioPlayer.play();
+        if (p && typeof p.then === 'function') {
+          p.then(() => {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+          }).catch(() => {});
+        }
+      } catch {}
+    }
+
+    function stopAndClearAudioQueue() {
+      audioQueue.length = 0;
+      isPlayingAudio = false;
+      try {
+        audioPlayer.pause();
+        audioPlayer.removeAttribute('src');
+        audioPlayer.load();
+      } catch {}
+      if (currentAudioObjectUrl) {
+        URL.revokeObjectURL(currentAudioObjectUrl);
+        currentAudioObjectUrl = null;
+      }
+      updateAudioToggleUI();
+    }
+
+    function updateAudioToggleUI() {
+      if (!audioToggleBtn) return;
+      audioToggleBtn.setAttribute('aria-pressed', String(audioEnabled));
+      audioToggleBtn.classList.toggle('is-active', audioEnabled);
+      if (!audioEnabled) {
+        audioToggleBtn.textContent = '🔇 AI音声を聞く';
+      } else if (isPlayingAudio) {
+        audioToggleBtn.textContent = '🔊 再生中…';
+      } else {
+        audioToggleBtn.textContent = '🔊 AI音声 ON';
+      }
+    }
+
+    function base64ToBlobUrl(base64Data, mimeType) {
+      const bin = atob(base64Data);
+      const len = bin.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = bin.charCodeAt(i);
+      }
+      const blob = new Blob([bytes], { type: mimeType || 'audio/wav' });
+      return URL.createObjectURL(blob);
+    }
+
+    function processAudioQueue() {
+      if (!audioEnabled || isPlayingAudio || audioQueue.length === 0) {
+        updateAudioToggleUI();
+        return;
+      }
+      const next = audioQueue.shift();
+      if (!next || !next.data) {
+        processAudioQueue();
+        return;
+      }
+      isPlayingAudio = true;
+      updateAudioToggleUI();
+
+      try {
+        if (currentAudioObjectUrl) {
+          URL.revokeObjectURL(currentAudioObjectUrl);
+          currentAudioObjectUrl = null;
+        }
+        currentAudioObjectUrl = base64ToBlobUrl(next.data, next.mimeType);
+        audioPlayer.src = currentAudioObjectUrl;
+        audioPlayer.onended = () => {
+          isPlayingAudio = false;
+          processAudioQueue();
+        };
+        audioPlayer.onerror = () => {
+          isPlayingAudio = false;
+          processAudioQueue();
+        };
+        const playPromise = audioPlayer.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch((err) => {
+            console.warn('Audio play blocked/failed:', err);
+            isPlayingAudio = false;
+            updateAudioToggleUI();
+          });
+        }
+      } catch (err) {
+        console.warn('Audio queue error:', err);
+        isPlayingAudio = false;
+        processAudioQueue();
+      }
+    }
+
+    function publishAudioSubscription() {
+      if (mqttClient && mqttClient.connected) {
+        mqttClient.publish(
+          ctrlTopic,
+          JSON.stringify({
+            type: 'audio_sub',
+            clientId: viewerClientId,
+            lang: currentLang,
+            enabled: audioEnabled,
+          })
+        );
+      }
+    }
+
+    audioToggleBtn?.addEventListener('click', () => {
+      audioEnabled = !audioEnabled;
+      if (audioEnabled) {
+        unlockAudioPlayback();
+        updateAudioToggleUI();
+        publishAudioSubscription();
+      } else {
+        stopAndClearAudioQueue();
+        publishAudioSubscription();
+      }
+    });
 
     viewerLangSelect.value = currentLang;
 
@@ -308,6 +456,10 @@
     viewerLangSelect.addEventListener('change', () => {
       currentLang = viewerLangSelect.value;
       renderCurrentLangStream();
+      if (audioEnabled) {
+        stopAndClearAudioQueue();
+        publishAudioSubscription();
+      }
     });
 
     // 文字サイズ調整
@@ -467,12 +619,12 @@
 
         mqttClient.on('connect', () => {
           mqttClient.subscribe([streamTopic, presenceTopic], { qos: 0 });
-          mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+          mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang, audioEnabled }));
 
           clearInterval(pingTimer);
           pingTimer = setInterval(() => {
             if (mqttClient && mqttClient.connected) {
-              mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'ping', clientId: viewerClientId }));
+              mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'ping', clientId: viewerClientId, lang: currentLang, audioEnabled }));
             }
           }, 20000);
         });
@@ -485,7 +637,7 @@
             if (topic === presenceTopic) {
               if (msg.online) {
                 setConnectedUI();
-                mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang }));
+                mqttClient.publish(ctrlTopic, JSON.stringify({ type: 'hello', clientId: viewerClientId, lang: currentLang, audioEnabled }));
               } else {
                 hostOnline = false;
                 setStandbyUI(
@@ -531,9 +683,21 @@
                 streamCommitted.appendChild(document.createTextNode('\n\n'));
                 historyRecords.push({ isParagraphBreak: true });
                 scrollToBottom();
+              } else if (msg.type === 'tts_audio') {
+                if (audioEnabled && msg.payload?.lang === currentLang && msg.payload?.data) {
+                  audioQueue.push({
+                    id: msg.payload.id,
+                    data: msg.payload.data,
+                    mimeType: msg.payload.mimeType || 'audio/wav',
+                  });
+                  processAudioQueue();
+                }
               } else if (msg.type === 'clear') {
                 historyRecords = [];
                 renderCurrentLangStream();
+                if (audioEnabled) {
+                  stopAndClearAudioQueue();
+                }
               }
             }
           } catch {}

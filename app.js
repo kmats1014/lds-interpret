@@ -40,6 +40,7 @@ class GraceInterpretApp {
     this.currentViewTargetLang = 'all'; // 'all' (並列) または 特定の言語コード
     this.hostPeer = null;
     this.connectedClients = new Set();
+    this.viewerAudioSubscribers = new Map(); // clientId -> { lang, updatedAt }
 
     // 音声認識・連続文章連結の状態
     this.isListening = false;
@@ -192,6 +193,8 @@ class GraceInterpretApp {
     this.testApiConnectionBtn = document.getElementById('testApiConnectionBtn');
     this.apiTestResultBox = document.getElementById('apiTestResultBox');
     this.geminiModelSelect = document.getElementById('geminiModelSelect');
+    this.ttsModelSelect = document.getElementById('ttsModelSelect');
+    this.ttsVoiceSelect = document.getElementById('ttsVoiceSelect');
     this.audioInputModeSelect = document.getElementById('audioInputModeSelect');
     this.churchNameInput = document.getElementById('churchNameInput');
     this.autoCommitLengthInput = document.getElementById('autoCommitLengthInput');
@@ -319,6 +322,8 @@ class GraceInterpretApp {
       boxSplitRatio: 50,
       githubRepo: 'kmats1014/lds-interpret',
       githubToken: '',
+      ttsModel: 'gemini-3.8-flash-lite-tts',
+      ttsVoice: 'Kore',
     };
     try {
       const legacy = localStorage.getItem('grace_interpret_settings_v1');
@@ -1022,6 +1027,12 @@ class GraceInterpretApp {
       e.preventDefault();
       this.settings.apiKey = this.apiKeyInput.value.trim();
       this.settings.model = this.geminiModelSelect.value;
+      if (this.ttsModelSelect) {
+        this.settings.ttsModel = this.ttsModelSelect.value;
+      }
+      if (this.ttsVoiceSelect) {
+        this.settings.ttsVoice = this.ttsVoiceSelect.value;
+      }
       this.settings.audioInputMode = this.audioInputModeSelect.value;
       this.settings.churchName = this.churchNameInput.value.trim();
       this.settings.autoCommitLength = Math.max(
@@ -1866,6 +1877,9 @@ class GraceInterpretApp {
       type: 'new_segment',
       payload: entry,
     });
+
+    // AI音声を購読中の参加者がいる言語だけ非同期でTTS音声を生成・配信
+    this.dispatchViewerTtsForEntry(entry);
   }
 
   insertParagraphBreak() {
@@ -2249,6 +2263,12 @@ class GraceInterpretApp {
 
           if (data.type === 'hello' || data.type === 'ping') {
             this.activeViewerMap.set(data.clientId, Date.now());
+            if (data.audioEnabled && data.lang) {
+              this.viewerAudioSubscribers.set(data.clientId, {
+                lang: data.lang,
+                updatedAt: Date.now(),
+              });
+            }
             this.updateConnectedPeersCount();
             if (data.type === 'hello') {
               // 新規接続クライアントへ現在の履歴を配信
@@ -2258,8 +2278,19 @@ class GraceInterpretApp {
                 targetClient: data.clientId,
               });
             }
+          } else if (data.type === 'audio_sub') {
+            this.activeViewerMap.set(data.clientId, Date.now());
+            if (data.enabled && data.lang) {
+              this.viewerAudioSubscribers.set(data.clientId, {
+                lang: data.lang,
+                updatedAt: Date.now(),
+              });
+            } else {
+              this.viewerAudioSubscribers.delete(data.clientId);
+            }
           } else if (data.type === 'bye') {
             this.activeViewerMap.delete(data.clientId);
+            this.viewerAudioSubscribers.delete(data.clientId);
             this.updateConnectedPeersCount();
           }
         } catch {}
@@ -2286,6 +2317,7 @@ class GraceInterpretApp {
         for (const [cid, lastSeen] of this.activeViewerMap.entries()) {
           if (now - lastSeen > 45000) {
             this.activeViewerMap.delete(cid);
+            this.viewerAudioSubscribers.delete(cid);
             changed = true;
           }
         }
@@ -2321,6 +2353,62 @@ class GraceInterpretApp {
       this.mqttClient.publish(this._mqttStreamTopic, JSON.stringify(message), { qos: 0 });
     } catch (err) {
       console.warn('Broadcast error:', err);
+    }
+  }
+
+  /**
+   * 参加者画面で「AI音声を聞く」をONにしている言語だけを抽出し、
+   * Gemini TTS で非同期に音声生成して MQTT 配信する
+   */
+  async dispatchViewerTtsForEntry(entry) {
+    if (!entry || !this.interpreter?.hasApiKey?.()) return;
+    if (!this.viewerAudioSubscribers || this.viewerAudioSubscribers.size === 0) return;
+
+    const now = Date.now();
+    const subscribedLangs = new Set();
+    for (const [cid, sub] of this.viewerAudioSubscribers.entries()) {
+      if (now - sub.updatedAt > 90000) {
+        this.viewerAudioSubscribers.delete(cid);
+        continue;
+      }
+      if (sub.lang) subscribedLangs.add(sub.lang);
+    }
+    if (subscribedLangs.size === 0) return;
+
+    const sceneStyleMap = {
+      sermon: 'calm, warm, and reverent tone suitable for a church sermon',
+      prayer: 'gentle, humble, and reverent prayer tone',
+      worship: 'clear, dignified, and welcoming church worship tone',
+      announcement: 'clear, friendly, and informative announcement tone',
+    };
+    const style = sceneStyleMap[this.settings.sceneMode] || sceneStyleMap.sermon;
+    const ttsModel = this.settings.ttsModel || 'gemini-3.8-flash-lite-tts';
+    const ttsVoice = this.settings.ttsVoice || 'Kore';
+
+    for (const lang of subscribedLangs) {
+      const text =
+        entry.translations?.[lang] ||
+        (lang === (this.settings.sourceLang || 'ja') ? entry.sourceText || entry.ja : '');
+      const cleanText = (text || '').trim();
+      if (!cleanText) continue;
+
+      this.interpreter
+        .synthesizeSpeech(cleanText, { model: ttsModel, voice: ttsVoice, style })
+        .then((audio) => {
+          if (!audio?.data) return;
+          this.broadcastToViewers({
+            type: 'tts_audio',
+            payload: {
+              id: entry.id,
+              lang,
+              data: audio.data,
+              mimeType: audio.mimeType || 'audio/wav',
+            },
+          });
+        })
+        .catch((err) => {
+          console.warn(`Viewer TTS (${lang}) failed:`, err?.message || err);
+        });
     }
   }
 
@@ -3327,6 +3415,12 @@ class GraceInterpretApp {
   openSettingsDialog() {
     this.apiKeyInput.value = this.settings.apiKey || '';
     this.geminiModelSelect.value = this.settings.model || 'gemini-3.5-flash-lite';
+    if (this.ttsModelSelect) {
+      this.ttsModelSelect.value = this.settings.ttsModel || 'gemini-3.8-flash-lite-tts';
+    }
+    if (this.ttsVoiceSelect) {
+      this.ttsVoiceSelect.value = this.settings.ttsVoice || 'Kore';
+    }
     this.audioInputModeSelect.value = this.settings.audioInputMode || 'webspeech-gemini';
     this.churchNameInput.value = this.settings.churchName || '';
     this.autoCommitLengthInput.value = String(this.settings.autoCommitLength || 42);

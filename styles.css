@@ -276,15 +276,19 @@ body {
 }
 
 .target-lang-chips {
-  display: inline-flex;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   align-items: center;
   gap: 0.32rem;
-  flex-wrap: wrap;
 }
 
 .target-chip {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  white-space: nowrap;
   gap: 0.25rem;
   padding: 0.22rem 0.55rem;
   font-size: 0.78rem;

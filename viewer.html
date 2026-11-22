@@ -94,6 +94,13 @@
 
     .controls-group {
       display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.4rem;
+    }
+
+    .controls-row {
+      display: flex;
       align-items: center;
       gap: 0.45rem;
       flex-wrap: wrap;
@@ -237,21 +244,26 @@
     </div>
 
     <div class="controls-group">
-      <select id="viewerLangSelect" class="select-input" aria-label="字幕言語の選択">
-        <option value="en">🇺🇸 英語 (English)</option>
-        <option value="tl">🇵🇭 タガログ語 (Tagalog)</option>
-        <option value="id">🇮🇩 インドネシア語</option>
-        <option value="ja">🇯🇵 日本語</option>
-      </select>
+      <div class="controls-row">
+        <select id="viewerLangSelect" class="select-input" aria-label="字幕言語の選択">
+          <option value="en">🇺🇸 英語 (English)</option>
+          <option value="tl">🇵🇭 タガログ語 (Tagalog)</option>
+          <option value="id">🇮🇩 インドネシア語</option>
+          <option value="ja">🇯🇵 日本語</option>
+        </select>
 
-      <button type="button" id="audioToggleBtn" class="btn-icon btn-audio" aria-pressed="false" title="確定した通訳をAI音声で順番に読み上げます">🔇 AI音声を聞く</button>
-      <button type="button" id="fontDecBtn" class="btn-icon" title="文字を小さく">A-</button>
-      <button type="button" id="fontIncBtn" class="btn-icon" title="文字を大きく">A+</button>
-      <button type="button" id="themeToggleBtn" class="btn-icon" title="ダーク / ライト切り替え">🌓</button>
+        <button type="button" id="audioToggleBtn" class="btn-icon btn-audio" aria-pressed="false" title="確定した通訳をAI音声で順番に読み上げます">AI音声を聞く</button>
+      </div>
 
-      <div class="status-badge" id="statusBadge">
-        <span class="status-dot"></span>
-        <span id="statusText">接続中...</span>
+      <div class="controls-row">
+        <button type="button" id="fontDecBtn" class="btn-icon" title="文字を小さく">A-</button>
+        <button type="button" id="fontIncBtn" class="btn-icon" title="文字を大きく">A+</button>
+        <button type="button" id="themeToggleBtn" class="btn-icon" title="ダーク / ライト切り替え">🌓</button>
+
+        <div class="status-badge" id="statusBadge">
+          <span class="status-dot"></span>
+          <span id="statusText">接続中...</span>
+        </div>
       </div>
     </div>
   </header>
@@ -362,11 +374,11 @@
       audioToggleBtn.setAttribute('aria-pressed', String(audioEnabled));
       audioToggleBtn.classList.toggle('is-active', audioEnabled);
       if (!audioEnabled) {
-        audioToggleBtn.textContent = '🔇 AI音声を聞く';
+        audioToggleBtn.textContent = 'AI音声を聞く';
       } else if (isPlayingAudio) {
-        audioToggleBtn.textContent = '🔊 再生中…';
+        audioToggleBtn.textContent = 'AI音声 再生中…';
       } else {
-        audioToggleBtn.textContent = '🔊 AI音声 ON';
+        audioToggleBtn.textContent = 'AI音声 ON';
       }
     }
 
